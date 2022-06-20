@@ -19,8 +19,15 @@ class NumbersApiServiceImpl implements NumbersApiService {
   Future<NumberModel> getNumber({required NumberRequestParams params}) async {
     final response = await _dio.get('$_baseUrl/${params.number}');
 
-    if (response.statusCode != HttpStatus.ok) throw Exception();
+    if (response.statusCode == HttpStatus.ok) {
+      return NumberModel.fromJson(json.decode(response.data));
+    }
 
-    return NumberModel.fromJson(json.decode(response.data));
+    throw DioError(
+      requestOptions: response.requestOptions,
+      error: response.statusMessage,
+      response: response.data,
+      type: DioErrorType.response,
+    );
   }
 }
