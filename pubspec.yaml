@@ -18,6 +18,7 @@ dependencies:
   freezed_annotation: ^2.0.3
   get_it: ^7.2.0
   json_annotation: ^4.5.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   build_runner: ^2.1.11
@@ -30,3 +31,45 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
+
+  assets:
+    - assets/images/
+
+  fonts:
+    - family: RobotoMono
+      fonts:
+        - asset: assets/fonts/RobotoMono-Thin.ttf
+          weight: 100
+        - asset: assets/fonts/RobotoMono-ThinItalic.ttf
+          weight: 100
+          style: italic
+        - asset: assets/fonts/RobotoMono-ExtraLight.ttf
+          weight: 200
+        - asset: assets/fonts/RobotoMono-ExtraLightItalic.ttf
+          weight: 200
+          style: italic
+        - asset: assets/fonts/RobotoMono-Light.ttf
+          weight: 300
+        - asset: assets/fonts/RobotoMono-LightItalic.ttf
+          weight: 300
+          style: italic
+        - asset: assets/fonts/RobotoMono-Regular.ttf
+          weight: 400
+        - asset: assets/fonts/RobotoMono-Italic.ttf
+          weight: 400
+          style: italic
+        - asset: assets/fonts/RobotoMono-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/RobotoMono-MediumItalic.ttf
+          weight: 500
+          style: italic
+        - asset: assets/fonts/RobotoMono-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/RobotoMono-SemiBoldItalic.ttf
+          weight: 600
+          style: italic
+        - asset: assets/fonts/RobotoMono-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/RobotoMono-BoldItalic.ttf
+          weight: 700
+          style: italic
