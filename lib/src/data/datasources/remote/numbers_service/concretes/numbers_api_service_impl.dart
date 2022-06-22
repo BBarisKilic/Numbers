@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:dio/dio.dart';
@@ -20,7 +19,8 @@ class NumbersApiServiceImpl implements NumbersApiService {
     final response = await _dio.get('$_baseUrl/${params.number}');
 
     if (response.statusCode == HttpStatus.ok) {
-      return NumberModel.fromJson(json.decode(response.data));
+      // return NumberModel.fromJson(json.decode(response.data));
+      return NumberModel(info: response.data);
     }
 
     throw DioError(
