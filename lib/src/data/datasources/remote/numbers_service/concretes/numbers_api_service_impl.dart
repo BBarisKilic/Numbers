@@ -10,7 +10,7 @@ class NumbersApiServiceImpl implements NumbersApiService {
   final Dio _dio;
   final String _baseUrl;
 
-  const NumbersApiServiceImpl(Dio dio, {required String baseUrl})
+  const NumbersApiServiceImpl({required Dio dio, required String baseUrl})
       : _dio = dio,
         _baseUrl = baseUrl;
 

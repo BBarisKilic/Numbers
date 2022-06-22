@@ -13,7 +13,7 @@ Future<void> initializeDependencies() async {
   injector
     ..registerSingleton<Dio>(Dio())
     ..registerSingleton<NumbersApiService>(
-      NumbersApiServiceImpl(injector(), baseUrl: kBaseUrl),
+      NumbersApiServiceImpl(dio: injector(), baseUrl: kBaseUrl),
     )
     ..registerSingleton<NumberRepository>(
       NumberRepositoryImpl(service: injector()),
