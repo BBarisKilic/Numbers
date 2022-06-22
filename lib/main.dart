@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sizer/sizer.dart';
 
+import 'src/config/config.dart';
 import 'src/core/core.dart';
 import 'src/injector.dart' as di;
 import 'src/presentation/number/number.dart';
@@ -18,12 +20,15 @@ class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) => BlocProvider<NumberCubit>(
-        create: (context) => di.injector(),
-        child: const MaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: kMaterialAppTitle,
-          home: NumberPage(),
+  Widget build(BuildContext context) => Sizer(
+        builder: (_, __, ___) => BlocProvider<NumberCubit>(
+          create: (_) => di.injector(),
+          child: MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: kMaterialAppTitle,
+            theme: di.injector<AppTheme>(instanceName: kDarkTheme).getData,
+            home: const NumberPage(),
+          ),
         ),
       );
 }
