@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 import 'config/config.dart';
@@ -29,5 +30,8 @@ Future<void> initializeDependencies() async {
     ..registerSingleton<GetNumberUseCase>(
       GetNumberUseCase(repository: injector()),
     )
-    ..registerFactory<NumberCubit>(() => NumberCubit(useCase: injector()));
+    ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
+    ..registerFactory<NumberCubit>(
+      () => NumberCubit(useCase: injector(), controller: injector()),
+    );
 }
