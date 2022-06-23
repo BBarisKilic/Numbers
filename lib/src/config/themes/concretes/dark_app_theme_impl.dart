@@ -21,20 +21,12 @@ class DarkAppThemeImpl implements AppTheme {
     splashColor: const Color(0x33F8F3F7),
     textSelectionTheme:
         const TextSelectionThemeData(cursorColor: Color(0xffF8F3F7)),
-    inputDecorationTheme: const InputDecorationTheme(
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Color(0x33F8F3F7)),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(color: Color(0x33F8F3F7)),
-      ),
-    ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: Color(0xffF8F3F7),
     ),
     colorScheme: const ColorScheme.dark().copyWith(
-      primary: const Color(0xff181818),
-      secondary: const Color(0xffF8F3F7),
+      primary: const Color(0xff838383),
+      secondary: const Color(0xffFF9E0B),
     ),
     iconTheme: const IconThemeData(color: Color(0xffF8F3F7)),
     appBarTheme: AppBarTheme(

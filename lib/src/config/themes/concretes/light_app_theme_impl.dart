@@ -21,24 +21,12 @@ class LightAppThemeImpl implements AppTheme {
     splashColor: const Color(0x33181818),
     textSelectionTheme:
         const TextSelectionThemeData(cursorColor: Color(0xff181818)),
-    inputDecorationTheme: const InputDecorationTheme(
-      enabledBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Color(0x80181818),
-        ),
-      ),
-      focusedBorder: OutlineInputBorder(
-        borderSide: BorderSide(
-          color: Color(0x80181818),
-        ),
-      ),
-    ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: Color(0xff181818),
     ),
-    colorScheme: const ColorScheme.dark().copyWith(
-      primary: const Color(0xffF8F3F7),
-      secondary: const Color(0xff181818),
+    colorScheme: const ColorScheme.light().copyWith(
+      primary: const Color(0xff838383),
+      secondary: const Color(0xffFF9E0B),
     ),
     iconTheme: const IconThemeData(color: Color(0xff181818)),
     appBarTheme: AppBarTheme(
