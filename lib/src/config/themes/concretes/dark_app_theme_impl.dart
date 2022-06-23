@@ -19,6 +19,16 @@ class DarkAppThemeImpl implements AppTheme {
     focusColor: const Color(0x66181818),
     dividerColor: const Color(0x33F8F3F7),
     splashColor: const Color(0x33F8F3F7),
+    textSelectionTheme:
+        const TextSelectionThemeData(cursorColor: Color(0xffF8F3F7)),
+    inputDecorationTheme: const InputDecorationTheme(
+      enabledBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Color(0x33F8F3F7)),
+      ),
+      focusedBorder: OutlineInputBorder(
+        borderSide: BorderSide(color: Color(0x33F8F3F7)),
+      ),
+    ),
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: Color(0xffF8F3F7),
     ),
