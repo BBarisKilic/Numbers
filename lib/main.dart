@@ -6,7 +6,6 @@ import 'src/config/config.dart';
 import 'src/core/core.dart';
 import 'src/injector.dart' as di;
 import 'src/presentation/number/number.dart';
-import 'src/presentation/number/pages/number_page.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();

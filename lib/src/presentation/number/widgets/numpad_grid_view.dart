@@ -3,8 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 import '../number.dart';
-import 'numpad_action_button.dart';
-import 'numpad_number_button.dart';
 
 class NumpadGridView extends StatelessWidget {
   const NumpadGridView({
