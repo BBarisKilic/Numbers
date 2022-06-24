@@ -20,4 +20,15 @@ class NumberRepositoryImpl implements NumberRepository {
       return DataFailed(e);
     }
   }
+
+  @override
+  Future<DataState<Number>> getRandomNumber() async {
+    try {
+      final response = await _numbersApiService.getRandomNumber();
+
+      return DataSuccess(response.toEntity());
+    } on DioError catch (e) {
+      return DataFailed(e);
+    }
+  }
 }
