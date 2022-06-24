@@ -3,19 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../core/core.dart';
-import '../../../domain/usecases/get_number_usecase.dart';
+import '../../../domain/domain.dart';
 
 part 'number_state.dart';
 part 'number_cubit.freezed.dart';
 
 class NumberCubit extends Cubit<NumberState> {
   final GetNumberUseCase _getNumberUseCase;
+  final GetRandomNumberUseCase _getRandomNumberUseCase;
   final TextEditingController _editingController;
 
   NumberCubit({
-    required GetNumberUseCase useCase,
+    required GetNumberUseCase getNumberUseCase,
+    required GetRandomNumberUseCase getRandomNumberUseCase,
     required TextEditingController controller,
-  })  : _getNumberUseCase = useCase,
+  })  : _getNumberUseCase = getNumberUseCase,
+        _getRandomNumberUseCase = getRandomNumberUseCase,
         _editingController = controller,
         super(const NumberState.initial());
 
@@ -27,6 +30,19 @@ class NumberCubit extends Cubit<NumberState> {
     final dataState = await _getNumberUseCase.call(
       params: NumberRequestParams(number: number),
     );
+    if (dataState is DataFailed) {
+      emit(const NumberState.error());
+      return;
+    }
+
+    emit(NumberState.loaded(info: dataState.data!.info));
+  }
+
+  Future<void> _getRandomNumberInfo() async {
+    emit(const NumberState.loading());
+
+    final dataState =
+        await _getRandomNumberUseCase.call(params: const NoParams());
     if (dataState is DataFailed) {
       emit(const NumberState.error());
       return;
@@ -57,7 +73,7 @@ class NumberCubit extends Cubit<NumberState> {
         .substring(0, _editingController.text.length - 1);
   }
 
-  void onPressedRandomButton() => null;
+  void onPressedRandomButton() => _getRandomNumberInfo();
 
   void onPressedSearchButton() =>
       _getNumberInfo(number: int.parse(_editingController.text));
