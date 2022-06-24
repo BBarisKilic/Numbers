@@ -37,6 +37,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
             SizedBox(width: iconSize),
           ],
         ),
+        automaticallyImplyLeading: false,
         bottom: const PreferredSize(
           preferredSize: Size.fromHeight(1.0),
           child: Divider(thickness: 1.0, height: 0.0),
