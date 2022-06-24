@@ -19,7 +19,22 @@ class NumbersApiServiceImpl implements NumbersApiService {
     final response = await _dio.get('$_baseUrl/${params.number}');
 
     if (response.statusCode == HttpStatus.ok) {
-      // return NumberModel.fromJson(json.decode(response.data));
+      return NumberModel(info: response.data);
+    }
+
+    throw DioError(
+      requestOptions: response.requestOptions,
+      error: response.statusMessage,
+      response: response.data,
+      type: DioErrorType.response,
+    );
+  }
+
+  @override
+  Future<NumberModel> getRandomNumber() async {
+    final response = await _dio.get('$_baseUrl/random');
+
+    if (response.statusCode == HttpStatus.ok) {
       return NumberModel(info: response.data);
     }
 
