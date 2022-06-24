@@ -1,4 +1,5 @@
 const String kSettingsIconPath = 'assets/images/settings.svg';
+const String kBackIconPath = 'assets/images/back.svg';
 const String kThemeIconPath = 'assets/images/theme.svg';
 const String kStarIconPath = 'assets/images/star.svg';
 const String kMailIconPath = 'assets/images/mail.svg';

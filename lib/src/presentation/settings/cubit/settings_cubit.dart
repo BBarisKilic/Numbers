@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:go_router/go_router.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
 import '../../../core/core.dart';
@@ -52,4 +53,6 @@ class SettingsCubit extends Cubit<SettingsState> {
       builder: (context) => child,
     );
   }
+
+  void onTapBackButton(BuildContext context) => context.pop();
 }

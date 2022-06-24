@@ -78,5 +78,5 @@ class NumberCubit extends Cubit<NumberState> {
       _getNumberInfo(number: int.parse(_editingController.text));
 
   void onTapSettingsButton(BuildContext context) =>
-      context.go(kSettingsPagePath);
+      context.push(kSettingsPagePath);
 }

@@ -11,9 +11,9 @@ class NumberPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         appBar: CustomAppBar(
-          kMaterialAppTitle,
+          kAppTitle,
           iconPath: kSettingsIconPath,
-          iconSize: kIconSize,
+          iconSize: kSmallIconSize,
           titleSpacing: kHorizontalSpace,
           onTap: () => context.read<NumberCubit>().onTapSettingsButton(context),
         ),

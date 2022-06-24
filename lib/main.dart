@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
           ],
           child: MaterialApp.router(
             debugShowCheckedModeBanner: false,
-            title: kMaterialAppTitle,
+            title: kAppTitle,
             theme: di.injector<AppTheme>(instanceName: kDarkTheme).getData,
             routeInformationProvider:
                 di.injector<AppRoute>().getRouter.routeInformationProvider,

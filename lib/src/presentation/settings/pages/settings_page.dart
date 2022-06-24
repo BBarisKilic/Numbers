@@ -1,3 +1,4 @@
+import 'package:custom_app_bar/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -9,25 +10,34 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: kHorizontalSpace,
-            vertical: kVerticalSpace,
-          ),
-          child: Column(
-            children: [
-              Expanded(
-                child: BlocBuilder<SettingsCubit, SettingsState>(
-                  builder: (_, state) => state.when(
-                    initial: () => const Center(
-                      child: CircularProgressIndicator(),
+        appBar: CustomAppBar(
+          kSettingsTitle,
+          iconPath: kBackIconPath,
+          iconSize: kSmallIconSize,
+          titleSpacing: kHorizontalSpace,
+          onTap: () => context.read<SettingsCubit>().onTapBackButton(context),
+        ),
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: kHorizontalSpace,
+              vertical: kVerticalSpace,
+            ),
+            child: Column(
+              children: [
+                Expanded(
+                  child: BlocBuilder<SettingsCubit, SettingsState>(
+                    builder: (_, state) => state.when(
+                      initial: () => const Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                      loaded: OptionsListView.new,
                     ),
-                    loaded: OptionsListView.new,
                   ),
                 ),
-              ),
-              const CopyrightText(),
-            ],
+                const CopyrightText(),
+              ],
+            ),
           ),
         ),
       );

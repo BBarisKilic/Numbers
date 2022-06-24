@@ -1,4 +1,5 @@
 const double kIconSize = 32.0;
+const double kSmallIconSize = 24.0;
 
 const double kVerticalSpace = 12.0;
 const double kLongVerticalSpace = 22.0;
