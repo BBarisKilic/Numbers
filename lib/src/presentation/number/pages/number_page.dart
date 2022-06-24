@@ -21,7 +21,7 @@ class NumberPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: const [
-              NumberTextFromField(),
+              NumberTextFormField(),
               SizedBox(height: kVerticalSpace),
               InfoContainer(),
               SizedBox(height: kVerticalSpace),

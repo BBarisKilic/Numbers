@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../number.dart';
 
-class NumberTextFromField extends StatelessWidget {
-  const NumberTextFromField({
+class NumberTextFormField extends StatelessWidget {
+  const NumberTextFormField({
     Key? key,
   }) : super(key: key);
 
