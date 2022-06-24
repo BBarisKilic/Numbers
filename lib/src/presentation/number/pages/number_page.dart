@@ -17,18 +17,23 @@ class NumberPage extends StatelessWidget {
           titleSpacing: kHorizontalSpace,
           onTap: () => context.read<NumberCubit>().onTapSettingsButton(context),
         ),
-        body: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: kHorizontalSpace),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: const [
-              NumberTextFormField(),
-              SizedBox(height: kVerticalSpace),
-              InfoContainer(),
-              SizedBox(height: kVerticalSpace),
-              NumpadGridView(),
-            ],
+        body: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: kHorizontalSpace,
+              vertical: kVerticalSpace,
+            ),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: const [
+                NumberTextFormField(),
+                SizedBox(height: kVerticalSpace),
+                Expanded(child: InfoContainer()),
+                SizedBox(height: kVerticalSpace),
+                NumpadGridView(),
+              ],
+            ),
           ),
         ),
       );
