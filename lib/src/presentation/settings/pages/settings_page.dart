@@ -14,6 +14,7 @@ class SettingsPage extends StatelessWidget {
           kSettingsTitle,
           iconPath: kBackIconPath,
           iconSize: kSmallIconSize,
+          iconColor: Theme.of(context).primaryColorLight,
           titleSpacing: kHorizontalSpace,
           onTap: () => context.read<SettingsCubit>().onTapBackButton(context),
         ),

@@ -7,16 +7,21 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar(
     this.title, {
     super.key,
+    this.titleColor,
+    this.titleSpacing = 8.0,
     required this.iconPath,
     required this.iconSize,
-    this.titleSpacing = 8.0,
+    this.iconColor,
     required this.onTap,
   });
 
   final String title;
+  final Color? titleColor;
+  final double titleSpacing;
   final String iconPath;
   final double iconSize;
-  final double titleSpacing;
+  final Color? iconColor;
+
   final void Function() onTap;
 
   @override
@@ -29,11 +34,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
               onTap: onTap,
               child: SvgPicture.asset(
                 iconPath,
-                color: Theme.of(context).primaryColorLight,
+                color: iconColor,
                 width: iconSize,
               ),
             ),
-            Text(title),
+            Text(
+              title,
+              style: TextStyle(color: titleColor),
+            ),
             SizedBox(width: iconSize),
           ],
         ),
