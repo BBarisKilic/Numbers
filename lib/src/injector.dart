@@ -30,8 +30,15 @@ Future<void> initializeDependencies() async {
     ..registerSingleton<GetNumberUseCase>(
       GetNumberUseCase(repository: injector()),
     )
+    ..registerSingleton<GetRandomNumberUseCase>(
+      GetRandomNumberUseCase(repository: injector()),
+    )
     ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
     ..registerFactory<NumberCubit>(
-      () => NumberCubit(useCase: injector(), controller: injector()),
+      () => NumberCubit(
+        getNumberUseCase: injector(),
+        getRandomNumberUseCase: injector(),
+        controller: injector(),
+      ),
     );
 }
