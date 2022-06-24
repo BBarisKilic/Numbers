@@ -5,7 +5,7 @@ import 'package:sizer/sizer.dart';
 import 'src/config/config.dart';
 import 'src/core/core.dart';
 import 'src/injector.dart' as di;
-import 'src/presentation/number/number.dart';
+import 'src/presentation/presentation.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,13 +20,20 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Sizer(
-        builder: (_, __, ___) => BlocProvider<NumberCubit>(
-          create: (_) => di.injector(),
-          child: MaterialApp(
+        builder: (_, __, ___) => MultiBlocProvider(
+          providers: [
+            BlocProvider(create: (_) => di.injector<NumberCubit>()),
+            BlocProvider(create: (_) => di.injector<SettingsCubit>()),
+          ],
+          child: MaterialApp.router(
             debugShowCheckedModeBanner: false,
             title: kMaterialAppTitle,
             theme: di.injector<AppTheme>(instanceName: kDarkTheme).getData,
-            home: const NumberPage(),
+            routeInformationProvider:
+                di.injector<AppRoute>().getRouter.routeInformationProvider,
+            routeInformationParser:
+                di.injector<AppRoute>().getRouter.routeInformationParser,
+            routerDelegate: di.injector<AppRoute>().getRouter.routerDelegate,
           ),
         ),
       );

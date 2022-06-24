@@ -1,6 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../core/core.dart';
 import '../../../domain/domain.dart';
@@ -75,4 +76,7 @@ class NumberCubit extends Cubit<NumberState> {
 
   void onPressedSearchButton() =>
       _getNumberInfo(number: int.parse(_editingController.text));
+
+  void onTapSettingsButton(BuildContext context) =>
+      context.go(kSettingsPagePath);
 }

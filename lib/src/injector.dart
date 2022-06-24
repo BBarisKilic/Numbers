@@ -12,6 +12,7 @@ final injector = GetIt.instance;
 
 Future<void> initializeDependencies() async {
   injector
+    ..registerSingleton<AppRoute>(AppRoute())
     ..registerLazySingleton<AppTheme>(
       LightAppThemeImpl.new,
       instanceName: kLightTheme,
@@ -40,5 +41,6 @@ Future<void> initializeDependencies() async {
         getRandomNumberUseCase: injector(),
         controller: injector(),
       ),
-    );
+    )
+    ..registerFactory<SettingsCubit>(SettingsCubit.new);
 }
