@@ -17,7 +17,7 @@ class NumberRepositoryImpl implements NumberRepository {
 
       return DataSuccess(response.toEntity());
     } on DioError catch (e) {
-      return DataFailed(e);
+      return DataFailure(Failure(title: '${e.type}', message: e.message));
     }
   }
 
@@ -28,7 +28,7 @@ class NumberRepositoryImpl implements NumberRepository {
 
       return DataSuccess(response.toEntity());
     } on DioError catch (e) {
-      return DataFailed(e);
+      return DataFailure(Failure(title: '${e.type}', message: e.message));
     }
   }
 }

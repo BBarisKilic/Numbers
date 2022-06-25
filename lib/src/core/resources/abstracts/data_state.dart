@@ -1,8 +1,8 @@
-import 'package:dio/dio.dart';
+import '../../core.dart';
 
 abstract class DataState<T> {
   final T? data;
-  final DioError? error;
+  final Failure? failure;
 
-  const DataState({this.data, this.error});
+  const DataState({this.data, this.failure});
 }
