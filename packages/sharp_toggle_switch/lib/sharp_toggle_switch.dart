@@ -53,9 +53,7 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
         width: widget.width ?? 140.0,
         decoration: BoxDecoration(
           border: Border.all(
-            color: position == SwitchPosition.left
-                ? widget.secondaryColor
-                : widget.primaryColor,
+            color: widget.secondaryColor,
             width: 1.0,
           ),
         ),
