@@ -5,3 +5,4 @@ const String kStarIconPath = 'assets/images/star.svg';
 const String kMailIconPath = 'assets/images/mail.svg';
 const String kTermsIconPath = 'assets/images/terms.svg';
 const String kPrivacyIconPath = 'assets/images/privacy.svg';
+const String kCloseIconPath = 'assets/images/close.svg';

@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:nil/nil.dart';
 
 import '../cubit/settings_cubit.dart';
+import 'themes_bottom_sheet.dart';
 
 class OptionsListView extends StatelessWidget {
   const OptionsListView(
@@ -23,7 +24,7 @@ class OptionsListView extends StatelessWidget {
                 onTap: () => context.read<SettingsCubit>().onTapListTile(
                       context: context,
                       index: index,
-                      theme: const SizedBox(),
+                      theme: const ThemesBottomSheet(),
                     ),
                 leading: Hero(
                   tag: 'option$index',

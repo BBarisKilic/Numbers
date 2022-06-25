@@ -16,7 +16,7 @@ class SettingsCubit extends Cubit<SettingsState> {
 
   void _loadOptions() {
     const List<Option> options = [
-      Option(iconPath: kThemeIconPath, title: kThemeText),
+      Option(iconPath: kThemeIconPath, title: kThemesText),
       Option(iconPath: kStarIconPath, title: kRateText),
       Option(iconPath: kMailIconPath, title: kContactsText),
       Option(iconPath: kTermsIconPath, title: kTermsText),
