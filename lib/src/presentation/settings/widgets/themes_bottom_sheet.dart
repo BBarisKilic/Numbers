@@ -43,7 +43,9 @@ class ThemesBottomSheet extends StatelessWidget {
                         ),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () => context
+                            .read<SettingsCubit>()
+                            .onTapCloseButton(context),
                         overlayColor:
                             MaterialStateProperty.all(Colors.transparent),
                         highlightColor: Colors.transparent,
@@ -86,8 +88,8 @@ class ThemesBottomSheet extends StatelessWidget {
                     : SwitchPosition.right,
             leftSwitch: kLightText,
             rightSwitch: kDarkText,
-            primaryColor: Theme.of(context).primaryColor,
-            secondaryColor: Theme.of(context).primaryColorLight,
+            primaryColor: Theme.of(context).primaryColorLight,
+            secondaryColor: Theme.of(context).backgroundColor,
           ),
         ],
       );

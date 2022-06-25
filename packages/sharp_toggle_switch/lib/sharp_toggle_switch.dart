@@ -53,7 +53,7 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
         width: widget.width ?? 140.0,
         decoration: BoxDecoration(
           border: Border.all(
-            color: widget.secondaryColor,
+            color: widget.primaryColor,
             width: 1.0,
           ),
         ),
@@ -65,16 +65,16 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: position == SwitchPosition.left
-                        ? widget.secondaryColor
-                        : widget.primaryColor,
+                        ? widget.primaryColor
+                        : widget.secondaryColor,
                   ),
                   child: Center(
                     child: Text(
                       widget.leftSwitch,
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             color: position == SwitchPosition.right
-                                ? widget.secondaryColor
-                                : widget.primaryColor,
+                                ? widget.primaryColor
+                                : widget.secondaryColor,
                           ),
                     ),
                   ),
@@ -87,16 +87,16 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     color: position == SwitchPosition.right
-                        ? widget.secondaryColor
-                        : widget.primaryColor,
+                        ? widget.primaryColor
+                        : widget.secondaryColor,
                   ),
                   child: Center(
                     child: Text(
                       widget.rightSwitch,
                       style: Theme.of(context).textTheme.bodyText1!.copyWith(
                             color: position == SwitchPosition.right
-                                ? widget.primaryColor
-                                : widget.secondaryColor,
+                                ? widget.secondaryColor
+                                : widget.primaryColor,
                           ),
                     ),
                   ),
