@@ -28,6 +28,8 @@ dependencies:
       url: https://github.com/BBarisKilic/modal_bottom_sheet.git
       ref: master
   nil: ^1.1.1
+  sharp_toggle_switch:
+    path: ./packages/sharp_toggle_switch
   sizer: ^2.0.15
 
 dev_dependencies:
