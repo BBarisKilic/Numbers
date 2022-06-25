@@ -6,23 +6,22 @@ import 'package:flutter_svg/flutter_svg.dart';
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar(
     this.title, {
-    super.key,
+    Key? key,
+    required this.onTap,
     this.titleColor,
     this.titleSpacing = 8.0,
     required this.iconPath,
     required this.iconSize,
     this.iconColor,
-    required this.onTap,
-  });
+  }) : super(key: key);
 
   final String title;
+  final void Function() onTap;
   final Color? titleColor;
   final double titleSpacing;
   final String iconPath;
   final double iconSize;
   final Color? iconColor;
-
-  final void Function() onTap;
 
   @override
   Widget build(BuildContext context) => AppBar(
