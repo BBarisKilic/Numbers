@@ -11,7 +11,7 @@ environment:
 dependencies:
   bloc: ^8.0.3
   cupertino_icons: ^1.0.2
-  custom_app_bar: 
+  custom_app_bar:
     path: ./packages/custom_app_bar/
   dio: ^4.0.6
   flutter:
@@ -28,6 +28,7 @@ dependencies:
       url: https://github.com/BBarisKilic/modal_bottom_sheet.git
       ref: master
   nil: ^1.1.1
+  shared_preferences: ^2.0.15
   sharp_toggle_switch:
     path: ./packages/sharp_toggle_switch
   sizer: ^2.0.15
