@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
+import 'app/app.dart';
 import 'config/config.dart';
 import 'core/core.dart';
 import 'data/data.dart';
@@ -15,11 +16,11 @@ Future<void> initializeDependencies() async {
     ..registerSingleton<AppRoute>(AppRoute())
     ..registerLazySingleton<AppTheme>(
       LightAppThemeImpl.new,
-      instanceName: kLightTheme,
+      instanceName: '${AvailableTheme.light}',
     )
     ..registerLazySingleton<AppTheme>(
       DarkAppThemeImpl.new,
-      instanceName: kDarkTheme,
+      instanceName: '${AvailableTheme.dark}',
     )
     ..registerSingleton<Dio>(Dio())
     ..registerSingleton<NumbersApiService>(
@@ -35,6 +36,7 @@ Future<void> initializeDependencies() async {
       GetRandomNumberUseCase(repository: injector()),
     )
     ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
+    ..registerFactory<AppCubit>(AppCubit.new)
     ..registerFactory<NumberCubit>(
       () => NumberCubit(
         getNumberUseCase: injector(),

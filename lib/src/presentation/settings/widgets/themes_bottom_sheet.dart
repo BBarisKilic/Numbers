@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
 
+import '../../../app/app.dart';
 import '../../../core/core.dart';
+import '../cubit/settings_cubit.dart';
 
 class ThemesBottomSheet extends StatelessWidget {
   const ThemesBottomSheet({Key? key}) : super(key: key);
@@ -74,7 +77,13 @@ class ThemesBottomSheet extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SharpToggleSwitch(
-            onToggle: (position) {},
+            onToggle: (position) => context
+                .read<SettingsCubit>()
+                .onToggleThemeSwitch(context, position),
+            initialPosition:
+                context.read<AppCubit>().state.theme == AvailableTheme.light
+                    ? SwitchPosition.left
+                    : SwitchPosition.right,
             leftSwitch: kLightText,
             rightSwitch: kDarkText,
             primaryColor: Theme.of(context).primaryColor,

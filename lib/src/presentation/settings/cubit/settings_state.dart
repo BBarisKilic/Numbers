@@ -1,7 +1,7 @@
 part of 'settings_cubit.dart';
 
 @freezed
-class SettingsState with _$SettingsState {
+abstract class SettingsState with _$SettingsState {
   const factory SettingsState.initial() = _Initial;
   const factory SettingsState.loaded({required List<Option> options}) = _Loaded;
 }
