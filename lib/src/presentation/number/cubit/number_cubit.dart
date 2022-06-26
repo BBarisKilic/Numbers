@@ -30,7 +30,8 @@ class NumberCubit extends Cubit<NumberState> {
 
     final dataState =
         await _getNumberUseCase(params: NumberRequestParams(number: number));
-    if (dataState is DataFailed) {
+
+    if (dataState is DataFailure) {
       emit(const NumberState.error());
       return;
     }
@@ -42,7 +43,8 @@ class NumberCubit extends Cubit<NumberState> {
     emit(const NumberState.loading());
 
     final dataState = await _getRandomNumberUseCase(params: const NoParams());
-    if (dataState is DataFailed) {
+
+    if (dataState is DataFailure) {
       emit(const NumberState.error());
       return;
     }
