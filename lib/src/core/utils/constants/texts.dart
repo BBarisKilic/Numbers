@@ -1,5 +1,8 @@
 const String kAppTitle = 'Numbers';
 const String kSettingsTitle = 'Settings';
+const String kSearchANumberText = 'Search a number!';
+const String kCheckInternetConnection =
+    'Oops!\n\nSomething went wrong. Please try again later.';
 const String kThemesText = 'Themes';
 const String kRateText = 'Rate Us';
 const String kContactsText = 'Contact Us';

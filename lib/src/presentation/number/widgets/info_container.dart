@@ -22,14 +22,22 @@ class InfoContainer extends StatelessWidget {
           child: SingleChildScrollView(
             child: BlocBuilder<NumberCubit, NumberState>(
               builder: (_, state) => state.when(
-                initial: () => const SizedBox(),
+                initial: () => Text(
+                  kSearchANumberText,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
                 loading: () => const CircularProgressIndicator(),
                 loaded: (info) => Text(
                   info,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyText1,
                 ),
-                error: () => const SizedBox(),
+                error: () => Text(
+                  kCheckInternetConnection,
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.bodyText1,
+                ),
               ),
             ),
           ),
