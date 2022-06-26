@@ -1,7 +1,7 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../../../../core/core.dart';
-import '../abstracts/shared_pref_service.dart';
+import '../../../../data.dart';
 
 class SharedPrefServiceImpl implements SharedPrefService {
   final SharedPreferences _preferences;

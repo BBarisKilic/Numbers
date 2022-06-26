@@ -1,6 +1,6 @@
 import '../../core/core.dart';
 import '../../domain/domain.dart';
-import '../datasources/local/shared_pref_service/abstracts/shared_pref_service.dart';
+import '../data.dart';
 
 class SharedPrefRepositoryImpl implements SharedPrefRepository {
   final SharedPrefService _sharedPrefService;
@@ -15,11 +15,11 @@ class SharedPrefRepositoryImpl implements SharedPrefRepository {
     try {
       final response = await _sharedPrefService.getString(params: params);
 
-      print(this);
-
       return DataSuccess(response);
     } catch (e) {
-      return DataFailure(Failure(title: '$this', message: '$e'));
+      return DataFailure(
+        Failure(title: '$SharedPrefRepositoryImpl', message: '$e'),
+      );
     }
   }
 
@@ -28,11 +28,11 @@ class SharedPrefRepositoryImpl implements SharedPrefRepository {
     try {
       final response = await _sharedPrefService.setString(params: params);
 
-      print(this);
-
       return DataSuccess(response);
     } catch (e) {
-      return DataFailure(Failure(title: '$this', message: '$e'));
+      return DataFailure(
+        Failure(title: '$SharedPrefRepositoryImpl', message: '$e'),
+      );
     }
   }
 }

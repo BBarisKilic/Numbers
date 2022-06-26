@@ -8,14 +8,12 @@ import 'config/config.dart';
 import 'core/core.dart';
 import 'data/data.dart';
 import 'domain/domain.dart';
-import 'domain/usecases/set_string_usecase.dart';
 import 'presentation/presentation.dart';
 
 final injector = GetIt.instance;
 
 Future<void> initializeDependencies() async {
   injector
-    ..registerSingleton<AppRoute>(AppRoute())
     ..registerLazySingleton<AppTheme>(
       LightAppThemeImpl.new,
       instanceName: '${AvailableTheme.light}',
@@ -24,10 +22,12 @@ Future<void> initializeDependencies() async {
       DarkAppThemeImpl.new,
       instanceName: '${AvailableTheme.dark}',
     )
+    ..registerSingleton<AppRoute>(AppRoute())
     ..registerSingleton<SharedPreferences>(
       await SharedPreferences.getInstance(),
     )
     ..registerSingleton<Dio>(Dio())
+    ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
     ..registerSingleton<SharedPrefService>(
       SharedPrefServiceImpl(preferences: injector()),
     )
@@ -52,7 +52,6 @@ Future<void> initializeDependencies() async {
     ..registerSingleton<GetRandomNumberUseCase>(
       GetRandomNumberUseCase(repository: injector()),
     )
-    ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
     ..registerFactory<AppCubit>(
       () =>
           AppCubit(getStringUseCase: injector(), setStringUseCase: injector()),

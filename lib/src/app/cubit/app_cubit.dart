@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../core/core.dart';
 import '../../domain/domain.dart';
-import '../../domain/usecases/set_string_usecase.dart';
 
 part 'app_state.dart';
 part 'app_cubit.freezed.dart';

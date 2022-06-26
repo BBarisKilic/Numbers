@@ -3,8 +3,7 @@ import 'dart:io';
 import 'package:dio/dio.dart';
 
 import '../../../../../core/core.dart';
-import '../../../../models/number_model.dart';
-import '../abstracts/numbers_api_service.dart';
+import '../../../../data.dart';
 
 class NumbersApiServiceImpl implements NumbersApiService {
   final Dio _dio;

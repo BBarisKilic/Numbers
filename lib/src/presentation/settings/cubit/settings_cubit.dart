@@ -8,8 +8,8 @@ import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
 import '../../../app/app.dart';
 import '../../../core/core.dart';
 
-part 'settings_state.dart';
 part 'settings_cubit.freezed.dart';
+part 'settings_state.dart';
 
 class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit() : super(const SettingsState.initial()) {

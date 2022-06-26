@@ -1,5 +1,5 @@
 import '../../core/core.dart';
-import '../repositories/shared_pref_repository.dart';
+import '../domain.dart';
 
 class GetStringUseCase
     implements UseCase<DataState<String>, SharedPrefStringRequestParams> {
