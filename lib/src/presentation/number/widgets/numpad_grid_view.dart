@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
+import '../../../core/core.dart';
 import '../number.dart';
 
 class NumpadGridView extends StatelessWidget {
@@ -16,66 +17,66 @@ class NumpadGridView extends StatelessWidget {
         crossAxisSpacing: 1.0,
         children: [
           NumpadNumberButton(
-            '1',
+            kNumpadOneText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '1'),
           ),
           NumpadNumberButton(
-            '2',
+            kNumpadTwoText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '2'),
           ),
           NumpadNumberButton(
-            '3',
+            kNumpadThreeText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '3'),
           ),
           NumpadActionButton(
-            'C',
+            kNumpadClearText,
             onPressed: () => context.read<NumberCubit>().onPressedClearButton(),
           ),
           NumpadNumberButton(
-            '4',
+            kNumpadFourText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '4'),
           ),
           NumpadNumberButton(
-            '5',
+            kNumpadFiveText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '5'),
           ),
           NumpadNumberButton(
-            '6',
+            kNumpadSixText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '6'),
           ),
           NumpadActionButton(
-            'CE',
+            kNumpadRemoveLastText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedRemoveLastButton(),
           ),
           NumpadNumberButton(
-            '7',
+            kNumpadSevenText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '7'),
           ),
           NumpadNumberButton(
-            '8',
+            kNumpadEightText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '8'),
           ),
           NumpadNumberButton(
-            '9',
+            kNumpadNineText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedNumberButton(context, '9'),
           ),
           NumpadActionButton(
-            'Rand',
+            kNumpadRandomText,
             onPressed: () =>
                 context.read<NumberCubit>().onPressedRandomButton(),
           ),
           NumpadNumberButton(
-            '0',
+            kNumpadZeroText,
             crossAxisCellCount: 2,
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(12.0),
@@ -84,7 +85,7 @@ class NumpadGridView extends StatelessWidget {
                 context.read<NumberCubit>().onPressedNumberButton(context, '0'),
           ),
           NumpadActionButton(
-            'Search',
+            kNumpadSearchText,
             crossAxisCellCount: 2,
             borderRadius: const BorderRadius.only(
               bottomRight: Radius.circular(12.0),
