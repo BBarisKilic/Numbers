@@ -43,7 +43,10 @@ void main() {
 
           final result = await sut(params: noParams);
 
-          expect(result.failure, const Failure(title: '', message: ''));
+          expect(
+            result,
+            equals(const DataFailure<Number>(Failure(title: '', message: ''))),
+          );
           verify(mockNumberRepository.getRandomNumber);
           verifyNoMoreInteractions(mockNumberRepository);
         },
