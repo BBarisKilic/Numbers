@@ -9,11 +9,13 @@ const String _kResponseInfo =
 class MockNumberRepository extends Mock implements NumberRepository {}
 
 void main() {
-  late GetNumberUseCase sut;
   late MockNumberRepository mockNumberRepository;
+  late NumberRequestParams numberRequestParams;
+  late GetNumberUseCase sut;
 
   setUp(() {
     mockNumberRepository = MockNumberRepository();
+    numberRequestParams = const NumberRequestParams(number: 0);
     sut = GetNumberUseCase(repository: mockNumberRepository);
   });
 
@@ -29,27 +31,24 @@ void main() {
       test(
         'Calls "getNumber" function only one time.',
         () async {
-          const params = NumberRequestParams(number: 0);
+          arrangeNumberRepositoryReturnData(numberRequestParams);
 
-          arrangeNumberRepositoryReturnData(params);
+          await sut(params: numberRequestParams);
 
-          await sut(params: params);
-
-          verify(() => mockNumberRepository.getNumber(params)).called(1);
+          verify(() => mockNumberRepository.getNumber(numberRequestParams))
+              .called(1);
         },
       );
 
       test(
         'Gets data from the repository.',
         () async {
-          const params = NumberRequestParams(number: 0);
+          arrangeNumberRepositoryReturnData(numberRequestParams);
 
-          arrangeNumberRepositoryReturnData(params);
-
-          final result = await sut(params: params);
+          final result = await sut(params: numberRequestParams);
 
           expect(result, const DataSuccess(Number(info: _kResponseInfo)));
-          verify(() => mockNumberRepository.getNumber(params));
+          verify(() => mockNumberRepository.getNumber(numberRequestParams));
           verifyNoMoreInteractions(mockNumberRepository);
         },
       );
