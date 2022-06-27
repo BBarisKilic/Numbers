@@ -14,6 +14,7 @@ dependencies:
   custom_app_bar:
     path: ./packages/custom_app_bar/
   dio: ^4.0.6
+  equatable: ^2.0.3
   flutter:
     sdk: flutter
   flutter_bloc: ^8.0.1
