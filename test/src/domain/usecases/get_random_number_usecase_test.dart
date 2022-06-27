@@ -16,7 +16,7 @@ void main() {
     sut = GetRandomNumberUseCase(repository: mockNumberRepository);
   });
 
-  arrangeNumberRepositoryReturnData() {
+  arrangeNumberRepositoryResponse() {
     when(mockNumberRepository.getRandomNumber).thenAnswer(
       (_) async => const DataFailure(Failure(title: '', message: '')),
     );
@@ -28,7 +28,7 @@ void main() {
       test(
         'Calls "getRandomNumber" function only one time.',
         () async {
-          arrangeNumberRepositoryReturnData();
+          arrangeNumberRepositoryResponse();
 
           await sut(params: noParams);
 
@@ -39,7 +39,7 @@ void main() {
       test(
         'Gets failure from the repository.',
         () async {
-          arrangeNumberRepositoryReturnData();
+          arrangeNumberRepositoryResponse();
 
           final result = await sut(params: noParams);
 
