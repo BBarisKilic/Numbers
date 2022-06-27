@@ -1,0 +1,55 @@
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/domain/domain.dart';
+
+const String _kResponseInfo =
+    '0 is the atomic number of the theoretical element tetraneutron.';
+
+class MockNumberRepository extends Mock implements NumberRepository {}
+
+void main() {
+  late GetNumberUseCase sut;
+  late MockNumberRepository mockNumberRepository;
+
+  setUp(() {
+    mockNumberRepository = MockNumberRepository();
+    sut = GetNumberUseCase(repository: mockNumberRepository);
+  });
+
+  arrangeNumberRepositoryReturnData(NumberRequestParams params) {
+    when(
+      () => mockNumberRepository.getNumber(params),
+    ).thenAnswer((_) async => const DataSuccess(Number(info: _kResponseInfo)));
+  }
+
+  group('GetNumberUsecase:', () {
+    test(
+      'Calls "getNumber" function only one time.',
+      () async {
+        const params = NumberRequestParams(number: 0);
+
+        arrangeNumberRepositoryReturnData(params);
+
+        await sut(params: params);
+
+        verify(() => mockNumberRepository.getNumber(params)).called(1);
+      },
+    );
+
+    test(
+      'Gets data from the repository.',
+      () async {
+        const params = NumberRequestParams(number: 0);
+
+        arrangeNumberRepositoryReturnData(params);
+
+        final result = await sut(params: params);
+
+        expect(result, const DataSuccess(Number(info: _kResponseInfo)));
+        verify(() => mockNumberRepository.getNumber(params));
+        verifyNoMoreInteractions(mockNumberRepository);
+      },
+    );
+  });
+}
