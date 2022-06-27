@@ -65,7 +65,7 @@ void main() {
 
           final result = await sut.getNumber(numberRequestParams);
 
-          expect(result.data, const NumberModel(info: '').toEntity());
+          expect(result.data, equals(const NumberModel(info: '').toEntity()));
           verify(
             () => mockNumbersApiService.getNumber(params: numberRequestParams),
           );
@@ -80,7 +80,7 @@ void main() {
 
           final result = await sut.getRandomNumber();
 
-          expect(result.data, const NumberModel(info: '').toEntity());
+          expect(result.data, equals(const NumberModel(info: '').toEntity()));
           verify(
             () => mockNumbersApiService.getRandomNumber(),
           );
