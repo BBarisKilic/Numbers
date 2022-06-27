@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/data/data.dart';
+import 'package:numbers/src/domain/domain.dart';
 
 class MockNumbersApiService extends Mock implements NumbersApiService {}
 
@@ -65,7 +66,10 @@ void main() {
 
           final result = await sut.getNumber(numberRequestParams);
 
-          expect(result.data, equals(const NumberModel(info: '').toEntity()));
+          expect(
+            result,
+            equals(DataSuccess(const NumberModel(info: '').toEntity())),
+          );
           verify(
             () => mockNumbersApiService.getNumber(params: numberRequestParams),
           );
@@ -80,7 +84,10 @@ void main() {
 
           final result = await sut.getRandomNumber();
 
-          expect(result.data, equals(const NumberModel(info: '').toEntity()));
+          expect(
+            result,
+            equals(const DataSuccess(Number(info: ''))),
+          );
           verify(
             () => mockNumbersApiService.getRandomNumber(),
           );
