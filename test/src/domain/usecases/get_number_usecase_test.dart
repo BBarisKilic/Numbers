@@ -47,7 +47,10 @@ void main() {
 
           final result = await sut(params: numberRequestParams);
 
-          expect(result, const DataSuccess(Number(info: _kResponseInfo)));
+          expect(
+            result,
+            equals(const DataSuccess(Number(info: _kResponseInfo))),
+          );
           verify(() => mockNumberRepository.getNumber(numberRequestParams));
           verifyNoMoreInteractions(mockNumberRepository);
         },
