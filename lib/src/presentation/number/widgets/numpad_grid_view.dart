@@ -18,18 +18,21 @@ class NumpadGridView extends StatelessWidget {
         children: [
           NumpadNumberButton(
             kNumpadOneText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '1'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadOneText),
           ),
           NumpadNumberButton(
             kNumpadTwoText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '2'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadTwoText),
           ),
           NumpadNumberButton(
             kNumpadThreeText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '3'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadThreeText),
           ),
           NumpadActionButton(
             kNumpadClearText,
@@ -37,18 +40,21 @@ class NumpadGridView extends StatelessWidget {
           ),
           NumpadNumberButton(
             kNumpadFourText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '4'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadFourText),
           ),
           NumpadNumberButton(
             kNumpadFiveText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '5'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadFiveText),
           ),
           NumpadNumberButton(
             kNumpadSixText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '6'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadSixText),
           ),
           NumpadActionButton(
             kNumpadRemoveLastText,
@@ -57,18 +63,21 @@ class NumpadGridView extends StatelessWidget {
           ),
           NumpadNumberButton(
             kNumpadSevenText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '7'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadSevenText),
           ),
           NumpadNumberButton(
             kNumpadEightText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '8'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadEightText),
           ),
           NumpadNumberButton(
             kNumpadNineText,
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '9'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadNineText),
           ),
           NumpadActionButton(
             kNumpadRandomText,
@@ -81,8 +90,9 @@ class NumpadGridView extends StatelessWidget {
             borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(12.0),
             ),
-            onPressed: () =>
-                context.read<NumberCubit>().onPressedNumberButton(context, '0'),
+            onPressed: () => context
+                .read<NumberCubit>()
+                .onPressedNumberButton(context, kNumpadZeroText),
           ),
           NumpadActionButton(
             kNumpadSearchText,
