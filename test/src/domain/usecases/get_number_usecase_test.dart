@@ -19,7 +19,7 @@ void main() {
     sut = GetNumberUseCase(repository: mockNumberRepository);
   });
 
-  arrangeNumberRepositoryReturnData(NumberRequestParams params) {
+  arrangeNumberRepositoryResponse(NumberRequestParams params) {
     when(
       () => mockNumberRepository.getNumber(params),
     ).thenAnswer((_) async => const DataSuccess(Number(info: _kResponseInfo)));
@@ -31,7 +31,7 @@ void main() {
       test(
         'Calls "getNumber" function only one time.',
         () async {
-          arrangeNumberRepositoryReturnData(numberRequestParams);
+          arrangeNumberRepositoryResponse(numberRequestParams);
 
           await sut(params: numberRequestParams);
 
@@ -43,7 +43,7 @@ void main() {
       test(
         'Gets data from the repository.',
         () async {
-          arrangeNumberRepositoryReturnData(numberRequestParams);
+          arrangeNumberRepositoryResponse(numberRequestParams);
 
           final result = await sut(params: numberRequestParams);
 
