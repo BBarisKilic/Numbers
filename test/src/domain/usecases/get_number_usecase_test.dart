@@ -23,33 +23,36 @@ void main() {
     ).thenAnswer((_) async => const DataSuccess(Number(info: _kResponseInfo)));
   }
 
-  group('GetNumberUsecase:', () {
-    test(
-      'Calls "getNumber" function only one time.',
-      () async {
-        const params = NumberRequestParams(number: 0);
+  group(
+    'GetNumberUsecase:',
+    () {
+      test(
+        'Calls "getNumber" function only one time.',
+        () async {
+          const params = NumberRequestParams(number: 0);
 
-        arrangeNumberRepositoryReturnData(params);
+          arrangeNumberRepositoryReturnData(params);
 
-        await sut(params: params);
+          await sut(params: params);
 
-        verify(() => mockNumberRepository.getNumber(params)).called(1);
-      },
-    );
+          verify(() => mockNumberRepository.getNumber(params)).called(1);
+        },
+      );
 
-    test(
-      'Gets data from the repository.',
-      () async {
-        const params = NumberRequestParams(number: 0);
+      test(
+        'Gets data from the repository.',
+        () async {
+          const params = NumberRequestParams(number: 0);
 
-        arrangeNumberRepositoryReturnData(params);
+          arrangeNumberRepositoryReturnData(params);
 
-        final result = await sut(params: params);
+          final result = await sut(params: params);
 
-        expect(result, const DataSuccess(Number(info: _kResponseInfo)));
-        verify(() => mockNumberRepository.getNumber(params));
-        verifyNoMoreInteractions(mockNumberRepository);
-      },
-    );
-  });
+          expect(result, const DataSuccess(Number(info: _kResponseInfo)));
+          verify(() => mockNumberRepository.getNumber(params));
+          verifyNoMoreInteractions(mockNumberRepository);
+        },
+      );
+    },
+  );
 }
