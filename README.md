@@ -1,16 +1,20 @@
-# numbers
+# <p align="center">Numbers</p>
 
-A new Flutter project.
+An app that shows interesting information about any specific number that searched. In addition, it is possible to search for a random number and see interesting facts about that number as well.
 
-## Getting Started
+Keeping code `clean` and `tested` are the two most important development practices. In Flutter, this is even more true than with other frameworks. Therefore, even `state management` patterns like `BLoC` are not sufficient in themselves to allow for an easily extendable codebase.
 
-This project is a starting point for a Flutter application.
+As proposed by `Uncle Bob`, we should all strive to separate code into independent layers and depend on abstractions instead of concrete implementations.
 
-A few resources to get you started if this is your first Flutter project:
+For this purpose, in this project, applied `clean architecture`. The project has been written solely in Dart Language.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Screenshots of the app:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p align="center"><img src="screenshots/1.png" width="300">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="screenshots/2.png" width="300"></p>
+
+&nbsp;
+
+<p align="center"><img src="screenshots/3.png" width="300">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="screenshots/4.png" width="300"></p>
+
+<p align="center"><img src="screenshots/5.png" width="300"></p>
+
