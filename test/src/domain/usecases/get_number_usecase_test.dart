@@ -26,10 +26,10 @@ void main() {
   }
 
   group(
-    'GetNumberUsecase:',
+    'GetNumberUsecase',
     () {
       test(
-        'Calls "getNumber" function only one time.',
+        'calls "getNumber" function only one time',
         () async {
           arrangeNumberRepositoryResponse(numberRequestParams);
 
@@ -41,7 +41,7 @@ void main() {
       );
 
       test(
-        'Gets data from the repository.',
+        'gets data from the repository',
         () async {
           arrangeNumberRepositoryResponse(numberRequestParams);
 

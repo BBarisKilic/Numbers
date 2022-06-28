@@ -23,10 +23,10 @@ void main() {
   }
 
   group(
-    'GetRandomNumberUseCase:',
+    'GetRandomNumberUseCase',
     () {
       test(
-        'Calls "getRandomNumber" function only one time.',
+        'calls "getRandomNumber" function only one time',
         () async {
           arrangeNumberRepositoryResponse();
 
@@ -37,7 +37,7 @@ void main() {
       );
 
       test(
-        'Gets failure from the repository.',
+        'gets failure from the repository',
         () async {
           arrangeNumberRepositoryResponse();
 

@@ -30,10 +30,10 @@ void main() {
   }
 
   group(
-    'NumberRepositoryImpl:',
+    'NumberRepositoryImpl',
     () {
       test(
-        'Calls "getNumber" function only one time.',
+        'calls "getNumber" function only one time',
         () async {
           arrangeNumbersApiServiceGetNumberResponse();
 
@@ -46,7 +46,7 @@ void main() {
       );
 
       test(
-        'Calls "getRandomNumber" function two times.',
+        'calls "getRandomNumber" function two times',
         () async {
           arrangeNumbersApiServiceGetRandomNumberResponse();
 
@@ -60,7 +60,7 @@ void main() {
       );
 
       test(
-        'Gets number from the service.',
+        'gets number from the service',
         () async {
           arrangeNumbersApiServiceGetNumberResponse();
 
@@ -78,7 +78,7 @@ void main() {
       );
 
       test(
-        'Gets random number from the service.',
+        'gets random number from the service',
         () async {
           arrangeNumbersApiServiceGetRandomNumberResponse();
 
