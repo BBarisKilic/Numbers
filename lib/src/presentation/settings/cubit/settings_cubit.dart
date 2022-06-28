@@ -6,6 +6,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
 
 import '../../../app/app.dart';
+import '../../../config/config.dart';
 import '../../../core/core.dart';
 
 part 'settings_cubit.freezed.dart';

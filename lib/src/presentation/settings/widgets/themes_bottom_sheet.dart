@@ -4,6 +4,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
 
 import '../../../app/app.dart';
+import '../../../config/config.dart';
 import '../../../core/core.dart';
 import '../cubit/settings_cubit.dart';
 
