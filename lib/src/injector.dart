@@ -13,6 +13,8 @@ import 'presentation/presentation.dart';
 final injector = GetIt.instance;
 
 Future<void> initializeDependencies() async {
+  final sharedPreferences = await SharedPreferences.getInstance();
+
   injector
     ..registerLazySingleton<AppTheme>(
       LightAppThemeImpl.new,
@@ -23,9 +25,7 @@ Future<void> initializeDependencies() async {
       instanceName: '${AvailableTheme.dark}',
     )
     ..registerSingleton<AppRoute>(AppRoute())
-    ..registerSingleton<SharedPreferences>(
-      await SharedPreferences.getInstance(),
-    )
+    ..registerSingleton<SharedPreferences>(sharedPreferences)
     ..registerSingleton<Dio>(Dio())
     ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
     ..registerSingleton<SharedPrefService>(
@@ -53,8 +53,10 @@ Future<void> initializeDependencies() async {
       GetRandomNumberUseCase(repository: injector()),
     )
     ..registerFactory<AppCubit>(
-      () =>
-          AppCubit(getStringUseCase: injector(), setStringUseCase: injector()),
+      () => AppCubit(
+        getStringUseCase: injector(),
+        setStringUseCase: injector(),
+      ),
     )
     ..registerFactory<NumberCubit>(
       () => NumberCubit(
