@@ -8,6 +8,8 @@ As proposed by `Uncle Bob`, we should all strive to separate code into independe
 
 For this purpose, in this project, applied `clean architecture`. The project has been written solely in Dart Language.
 
+&nbsp;
+
 ### Screenshots of the app:
 
 <p align="center"><img src="screenshots/1.png" width="300">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="screenshots/2.png" width="300"></p>
@@ -15,6 +17,8 @@ For this purpose, in this project, applied `clean architecture`. The project has
 &nbsp;
 
 <p align="center"><img src="screenshots/3.png" width="300">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<img src="screenshots/4.png" width="300"></p>
+
+&nbsp;
 
 <p align="center"><img src="screenshots/5.png" width="300"></p>
 
