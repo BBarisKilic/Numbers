@@ -47,7 +47,7 @@ class SettingsCubit extends Cubit<SettingsState> {
     required BuildContext context,
     required Widget child,
   }) async {
-    await showCupertinoModalBottomSheet(
+    await showCupertinoModalBottomSheet<void>(
       backgroundColor: Colors.transparent,
       context: context,
       useRootNavigator: true,

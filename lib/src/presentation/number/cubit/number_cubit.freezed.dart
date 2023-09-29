@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'number_cubit.dart';
 
@@ -26,10 +26,10 @@ mixin _$NumberState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String info)? loaded,
-    TResult Function()? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String info)? loaded,
+    TResult? Function()? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -51,10 +51,10 @@ mixin _$NumberState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? error,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -72,16 +72,18 @@ mixin _$NumberState {
 abstract class $NumberStateCopyWith<$Res> {
   factory $NumberStateCopyWith(
           NumberState value, $Res Function(NumberState) then) =
-      _$NumberStateCopyWithImpl<$Res>;
+      _$NumberStateCopyWithImpl<$Res, NumberState>;
 }
 
 /// @nodoc
-class _$NumberStateCopyWithImpl<$Res> implements $NumberStateCopyWith<$Res> {
+class _$NumberStateCopyWithImpl<$Res, $Val extends NumberState>
+    implements $NumberStateCopyWith<$Res> {
   _$NumberStateCopyWithImpl(this._value, this._then);
 
-  final NumberState _value;
   // ignore: unused_field
-  final $Res Function(NumberState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -92,13 +94,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$NumberStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$NumberStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -134,10 +134,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String info)? loaded,
-    TResult Function()? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String info)? loaded,
+    TResult? Function()? error,
   }) {
     return initial?.call();
   }
@@ -171,10 +171,10 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? error,
   }) {
     return initial?.call(this);
   }
@@ -207,13 +207,11 @@ abstract class _$$_LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_LoadingCopyWithImpl<$Res> extends _$NumberStateCopyWithImpl<$Res>
+class __$$_LoadingCopyWithImpl<$Res>
+    extends _$NumberStateCopyWithImpl<$Res, _$_Loading>
     implements _$$_LoadingCopyWith<$Res> {
   __$$_LoadingCopyWithImpl(_$_Loading _value, $Res Function(_$_Loading) _then)
-      : super(_value, (v) => _then(v as _$_Loading));
-
-  @override
-  _$_Loading get _value => super._value as _$_Loading;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -249,10 +247,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String info)? loaded,
-    TResult Function()? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String info)? loaded,
+    TResult? Function()? error,
   }) {
     return loading?.call();
   }
@@ -286,10 +284,10 @@ class _$_Loading implements _Loading {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? error,
   }) {
     return loading?.call(this);
   }
@@ -318,24 +316,24 @@ abstract class _Loading implements NumberState {
 abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({String info});
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res> extends _$NumberStateCopyWithImpl<$Res>
+class __$$_LoadedCopyWithImpl<$Res>
+    extends _$NumberStateCopyWithImpl<$Res, _$_Loaded>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
-      : super(_value, (v) => _then(v as _$_Loaded));
+      : super(_value, _then);
 
-  @override
-  _$_Loaded get _value => super._value as _$_Loaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$_Loaded(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as String,
@@ -361,15 +359,15 @@ class _$_Loaded implements _Loaded {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Loaded &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
 
@@ -387,10 +385,10 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String info)? loaded,
-    TResult Function()? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String info)? loaded,
+    TResult? Function()? error,
   }) {
     return loaded?.call(info);
   }
@@ -424,10 +422,10 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? error,
   }) {
     return loaded?.call(this);
   }
@@ -451,7 +449,7 @@ class _$_Loaded implements _Loaded {
 abstract class _Loaded implements NumberState {
   const factory _Loaded({required final String info}) = _$_Loaded;
 
-  String get info => throw _privateConstructorUsedError;
+  String get info;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -464,13 +462,11 @@ abstract class _$$_ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_ErrorCopyWithImpl<$Res> extends _$NumberStateCopyWithImpl<$Res>
+class __$$_ErrorCopyWithImpl<$Res>
+    extends _$NumberStateCopyWithImpl<$Res, _$_Error>
     implements _$$_ErrorCopyWith<$Res> {
   __$$_ErrorCopyWithImpl(_$_Error _value, $Res Function(_$_Error) _then)
-      : super(_value, (v) => _then(v as _$_Error));
-
-  @override
-  _$_Error get _value => super._value as _$_Error;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -506,10 +502,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function()? loading,
-    TResult Function(String info)? loaded,
-    TResult Function()? error,
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String info)? loaded,
+    TResult? Function()? error,
   }) {
     return error?.call();
   }
@@ -543,10 +539,10 @@ class _$_Error implements _Error {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loading value)? loading,
-    TResult Function(_Loaded value)? loaded,
-    TResult Function(_Error value)? error,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loading value)? loading,
+    TResult? Function(_Loaded value)? loaded,
+    TResult? Function(_Error value)? error,
   }) {
     return error?.call(this);
   }

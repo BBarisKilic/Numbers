@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'number_model.dart';
 
@@ -32,28 +32,32 @@ mixin _$NumberModel {
 abstract class $NumberModelCopyWith<$Res> {
   factory $NumberModelCopyWith(
           NumberModel value, $Res Function(NumberModel) then) =
-      _$NumberModelCopyWithImpl<$Res>;
+      _$NumberModelCopyWithImpl<$Res, NumberModel>;
+  @useResult
   $Res call({String info});
 }
 
 /// @nodoc
-class _$NumberModelCopyWithImpl<$Res> implements $NumberModelCopyWith<$Res> {
+class _$NumberModelCopyWithImpl<$Res, $Val extends NumberModel>
+    implements $NumberModelCopyWith<$Res> {
   _$NumberModelCopyWithImpl(this._value, this._then);
 
-  final NumberModel _value;
   // ignore: unused_field
-  final $Res Function(NumberModel) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_value.copyWith(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -64,25 +68,25 @@ abstract class _$$_NumberModelCopyWith<$Res>
           _$_NumberModel value, $Res Function(_$_NumberModel) then) =
       __$$_NumberModelCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String info});
 }
 
 /// @nodoc
-class __$$_NumberModelCopyWithImpl<$Res> extends _$NumberModelCopyWithImpl<$Res>
+class __$$_NumberModelCopyWithImpl<$Res>
+    extends _$NumberModelCopyWithImpl<$Res, _$_NumberModel>
     implements _$$_NumberModelCopyWith<$Res> {
   __$$_NumberModelCopyWithImpl(
       _$_NumberModel _value, $Res Function(_$_NumberModel) _then)
-      : super(_value, (v) => _then(v as _$_NumberModel));
+      : super(_value, _then);
 
-  @override
-  _$_NumberModel get _value => super._value as _$_NumberModel;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$_NumberModel(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as String,
@@ -111,22 +115,24 @@ class _$_NumberModel extends _NumberModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NumberModel &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NumberModelCopyWith<_$_NumberModel> get copyWith =>
       __$$_NumberModelCopyWithImpl<_$_NumberModel>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_NumberModelToJson(this);
+    return _$$_NumberModelToJson(
+      this,
+    );
   }
 }
 
@@ -138,7 +144,7 @@ abstract class _NumberModel extends NumberModel {
       _$_NumberModel.fromJson;
 
   @override
-  String get info => throw _privateConstructorUsedError;
+  String get info;
   @override
   @JsonKey(ignore: true)
   _$$_NumberModelCopyWith<_$_NumberModel> get copyWith =>

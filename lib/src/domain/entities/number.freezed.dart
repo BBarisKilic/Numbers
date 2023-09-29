@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'number.dart';
 
@@ -25,28 +25,32 @@ mixin _$Number {
 /// @nodoc
 abstract class $NumberCopyWith<$Res> {
   factory $NumberCopyWith(Number value, $Res Function(Number) then) =
-      _$NumberCopyWithImpl<$Res>;
+      _$NumberCopyWithImpl<$Res, Number>;
+  @useResult
   $Res call({String info});
 }
 
 /// @nodoc
-class _$NumberCopyWithImpl<$Res> implements $NumberCopyWith<$Res> {
+class _$NumberCopyWithImpl<$Res, $Val extends Number>
+    implements $NumberCopyWith<$Res> {
   _$NumberCopyWithImpl(this._value, this._then);
 
-  final Number _value;
   // ignore: unused_field
-  final $Res Function(Number) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_value.copyWith(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -55,24 +59,24 @@ abstract class _$$_NumberCopyWith<$Res> implements $NumberCopyWith<$Res> {
   factory _$$_NumberCopyWith(_$_Number value, $Res Function(_$_Number) then) =
       __$$_NumberCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String info});
 }
 
 /// @nodoc
-class __$$_NumberCopyWithImpl<$Res> extends _$NumberCopyWithImpl<$Res>
+class __$$_NumberCopyWithImpl<$Res>
+    extends _$NumberCopyWithImpl<$Res, _$_Number>
     implements _$$_NumberCopyWith<$Res> {
   __$$_NumberCopyWithImpl(_$_Number _value, $Res Function(_$_Number) _then)
-      : super(_value, (v) => _then(v as _$_Number));
+      : super(_value, _then);
 
-  @override
-  _$_Number get _value => super._value as _$_Number;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? info = freezed,
+    Object? info = null,
   }) {
     return _then(_$_Number(
-      info: info == freezed
+      info: null == info
           ? _value.info
           : info // ignore: cast_nullable_to_non_nullable
               as String,
@@ -106,15 +110,15 @@ class _$_Number with DiagnosticableTreeMixin implements _Number {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Number &&
-            const DeepCollectionEquality().equals(other.info, info));
+            (identical(other.info, info) || other.info == info));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(info));
+  int get hashCode => Object.hash(runtimeType, info);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NumberCopyWith<_$_Number> get copyWith =>
       __$$_NumberCopyWithImpl<_$_Number>(this, _$identity);
 }
@@ -123,7 +127,7 @@ abstract class _Number implements Number {
   const factory _Number({required final String info}) = _$_Number;
 
   @override
-  String get info => throw _privateConstructorUsedError;
+  String get info;
   @override
   @JsonKey(ignore: true)
   _$$_NumberCopyWith<_$_Number> get copyWith =>

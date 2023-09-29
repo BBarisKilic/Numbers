@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'shared_pref_set_string_params.dart';
 
@@ -28,34 +28,38 @@ mixin _$SharedPrefSetStringParams {
 abstract class $SharedPrefSetStringParamsCopyWith<$Res> {
   factory $SharedPrefSetStringParamsCopyWith(SharedPrefSetStringParams value,
           $Res Function(SharedPrefSetStringParams) then) =
-      _$SharedPrefSetStringParamsCopyWithImpl<$Res>;
+      _$SharedPrefSetStringParamsCopyWithImpl<$Res, SharedPrefSetStringParams>;
+  @useResult
   $Res call({String key, String value});
 }
 
 /// @nodoc
-class _$SharedPrefSetStringParamsCopyWithImpl<$Res>
+class _$SharedPrefSetStringParamsCopyWithImpl<$Res,
+        $Val extends SharedPrefSetStringParams>
     implements $SharedPrefSetStringParamsCopyWith<$Res> {
   _$SharedPrefSetStringParamsCopyWithImpl(this._value, this._then);
 
-  final SharedPrefSetStringParams _value;
   // ignore: unused_field
-  final $Res Function(SharedPrefSetStringParams) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
-    Object? value = freezed,
+    Object? key = null,
+    Object? value = null,
   }) {
     return _then(_value.copyWith(
-      key: key == freezed
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -67,33 +71,32 @@ abstract class _$$_SharedPrefSetStringParamsCopyWith<$Res>
           $Res Function(_$_SharedPrefSetStringParams) then) =
       __$$_SharedPrefSetStringParamsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String key, String value});
 }
 
 /// @nodoc
 class __$$_SharedPrefSetStringParamsCopyWithImpl<$Res>
-    extends _$SharedPrefSetStringParamsCopyWithImpl<$Res>
+    extends _$SharedPrefSetStringParamsCopyWithImpl<$Res,
+        _$_SharedPrefSetStringParams>
     implements _$$_SharedPrefSetStringParamsCopyWith<$Res> {
   __$$_SharedPrefSetStringParamsCopyWithImpl(
       _$_SharedPrefSetStringParams _value,
       $Res Function(_$_SharedPrefSetStringParams) _then)
-      : super(_value, (v) => _then(v as _$_SharedPrefSetStringParams));
+      : super(_value, _then);
 
-  @override
-  _$_SharedPrefSetStringParams get _value =>
-      super._value as _$_SharedPrefSetStringParams;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? key = freezed,
-    Object? value = freezed,
+    Object? key = null,
+    Object? value = null,
   }) {
     return _then(_$_SharedPrefSetStringParams(
-      key: key == freezed
+      key: null == key
           ? _value.key
           : key // ignore: cast_nullable_to_non_nullable
               as String,
-      value: value == freezed
+      value: null == value
           ? _value.value
           : value // ignore: cast_nullable_to_non_nullable
               as String,
@@ -121,18 +124,16 @@ class _$_SharedPrefSetStringParams implements _SharedPrefSetStringParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_SharedPrefSetStringParams &&
-            const DeepCollectionEquality().equals(other.key, key) &&
-            const DeepCollectionEquality().equals(other.value, value));
+            (identical(other.key, key) || other.key == key) &&
+            (identical(other.value, value) || other.value == value));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(key),
-      const DeepCollectionEquality().hash(value));
+  int get hashCode => Object.hash(runtimeType, key, value);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_SharedPrefSetStringParamsCopyWith<_$_SharedPrefSetStringParams>
       get copyWith => __$$_SharedPrefSetStringParamsCopyWithImpl<
           _$_SharedPrefSetStringParams>(this, _$identity);
@@ -144,9 +145,9 @@ abstract class _SharedPrefSetStringParams implements SharedPrefSetStringParams {
       required final String value}) = _$_SharedPrefSetStringParams;
 
   @override
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @override
-  String get value => throw _privateConstructorUsedError;
+  String get value;
   @override
   @JsonKey(ignore: true)
   _$$_SharedPrefSetStringParamsCopyWith<_$_SharedPrefSetStringParams>

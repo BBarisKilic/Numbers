@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'settings_cubit.dart';
 
@@ -24,8 +24,8 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Option> options)? loaded,
+    TResult? Function()? initial,
+    TResult? Function(List<Option> options)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -43,8 +43,8 @@ mixin _$SettingsState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loaded value)? loaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -60,17 +60,18 @@ mixin _$SettingsState {
 abstract class $SettingsStateCopyWith<$Res> {
   factory $SettingsStateCopyWith(
           SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res>;
+      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
 }
 
 /// @nodoc
-class _$SettingsStateCopyWithImpl<$Res>
+class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
     implements $SettingsStateCopyWith<$Res> {
   _$SettingsStateCopyWithImpl(this._value, this._then);
 
-  final SettingsState _value;
   // ignore: unused_field
-  final $Res Function(SettingsState) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 }
 
 /// @nodoc
@@ -81,13 +82,11 @@ abstract class _$$_InitialCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_InitialCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
+class __$$_InitialCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Initial>
     implements _$$_InitialCopyWith<$Res> {
   __$$_InitialCopyWithImpl(_$_Initial _value, $Res Function(_$_Initial) _then)
-      : super(_value, (v) => _then(v as _$_Initial));
-
-  @override
-  _$_Initial get _value => super._value as _$_Initial;
+      : super(_value, _then);
 }
 
 /// @nodoc
@@ -121,8 +120,8 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Option> options)? loaded,
+    TResult? Function()? initial,
+    TResult? Function(List<Option> options)? loaded,
   }) {
     return initial?.call();
   }
@@ -152,8 +151,8 @@ class _$_Initial implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loaded value)? loaded,
   }) {
     return initial?.call(this);
   }
@@ -180,24 +179,24 @@ abstract class _Initial implements SettingsState {
 abstract class _$$_LoadedCopyWith<$Res> {
   factory _$$_LoadedCopyWith(_$_Loaded value, $Res Function(_$_Loaded) then) =
       __$$_LoadedCopyWithImpl<$Res>;
+  @useResult
   $Res call({List<Option> options});
 }
 
 /// @nodoc
-class __$$_LoadedCopyWithImpl<$Res> extends _$SettingsStateCopyWithImpl<$Res>
+class __$$_LoadedCopyWithImpl<$Res>
+    extends _$SettingsStateCopyWithImpl<$Res, _$_Loaded>
     implements _$$_LoadedCopyWith<$Res> {
   __$$_LoadedCopyWithImpl(_$_Loaded _value, $Res Function(_$_Loaded) _then)
-      : super(_value, (v) => _then(v as _$_Loaded));
+      : super(_value, _then);
 
-  @override
-  _$_Loaded get _value => super._value as _$_Loaded;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? options = freezed,
+    Object? options = null,
   }) {
     return _then(_$_Loaded(
-      options: options == freezed
+      options: null == options
           ? _value._options
           : options // ignore: cast_nullable_to_non_nullable
               as List<Option>,
@@ -213,6 +212,7 @@ class _$_Loaded implements _Loaded {
   final List<Option> _options;
   @override
   List<Option> get options {
+    if (_options is EqualUnmodifiableListView) return _options;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_options);
   }
@@ -236,6 +236,7 @@ class _$_Loaded implements _Loaded {
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       __$$_LoadedCopyWithImpl<_$_Loaded>(this, _$identity);
 
@@ -251,8 +252,8 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? initial,
-    TResult Function(List<Option> options)? loaded,
+    TResult? Function()? initial,
+    TResult? Function(List<Option> options)? loaded,
   }) {
     return loaded?.call(options);
   }
@@ -282,8 +283,8 @@ class _$_Loaded implements _Loaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Loaded value)? loaded,
+    TResult? Function(_Initial value)? initial,
+    TResult? Function(_Loaded value)? loaded,
   }) {
     return loaded?.call(this);
   }
@@ -305,7 +306,7 @@ class _$_Loaded implements _Loaded {
 abstract class _Loaded implements SettingsState {
   const factory _Loaded({required final List<Option> options}) = _$_Loaded;
 
-  List<Option> get options => throw _privateConstructorUsedError;
+  List<Option> get options;
   @JsonKey(ignore: true)
   _$$_LoadedCopyWith<_$_Loaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -323,33 +324,37 @@ mixin _$Option {
 /// @nodoc
 abstract class $OptionCopyWith<$Res> {
   factory $OptionCopyWith(Option value, $Res Function(Option) then) =
-      _$OptionCopyWithImpl<$Res>;
+      _$OptionCopyWithImpl<$Res, Option>;
+  @useResult
   $Res call({String iconPath, String title});
 }
 
 /// @nodoc
-class _$OptionCopyWithImpl<$Res> implements $OptionCopyWith<$Res> {
+class _$OptionCopyWithImpl<$Res, $Val extends Option>
+    implements $OptionCopyWith<$Res> {
   _$OptionCopyWithImpl(this._value, this._then);
 
-  final Option _value;
   // ignore: unused_field
-  final $Res Function(Option) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? iconPath = freezed,
-    Object? title = freezed,
+    Object? iconPath = null,
+    Object? title = null,
   }) {
     return _then(_value.copyWith(
-      iconPath: iconPath == freezed
+      iconPath: null == iconPath
           ? _value.iconPath
           : iconPath // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
-    ));
+    ) as $Val);
   }
 }
 
@@ -358,29 +363,29 @@ abstract class _$$_OptionCopyWith<$Res> implements $OptionCopyWith<$Res> {
   factory _$$_OptionCopyWith(_$_Option value, $Res Function(_$_Option) then) =
       __$$_OptionCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({String iconPath, String title});
 }
 
 /// @nodoc
-class __$$_OptionCopyWithImpl<$Res> extends _$OptionCopyWithImpl<$Res>
+class __$$_OptionCopyWithImpl<$Res>
+    extends _$OptionCopyWithImpl<$Res, _$_Option>
     implements _$$_OptionCopyWith<$Res> {
   __$$_OptionCopyWithImpl(_$_Option _value, $Res Function(_$_Option) _then)
-      : super(_value, (v) => _then(v as _$_Option));
+      : super(_value, _then);
 
-  @override
-  _$_Option get _value => super._value as _$_Option;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? iconPath = freezed,
-    Object? title = freezed,
+    Object? iconPath = null,
+    Object? title = null,
   }) {
     return _then(_$_Option(
-      iconPath: iconPath == freezed
+      iconPath: null == iconPath
           ? _value.iconPath
           : iconPath // ignore: cast_nullable_to_non_nullable
               as String,
-      title: title == freezed
+      title: null == title
           ? _value.title
           : title // ignore: cast_nullable_to_non_nullable
               as String,
@@ -408,18 +413,17 @@ class _$_Option implements _Option {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_Option &&
-            const DeepCollectionEquality().equals(other.iconPath, iconPath) &&
-            const DeepCollectionEquality().equals(other.title, title));
+            (identical(other.iconPath, iconPath) ||
+                other.iconPath == iconPath) &&
+            (identical(other.title, title) || other.title == title));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType,
-      const DeepCollectionEquality().hash(iconPath),
-      const DeepCollectionEquality().hash(title));
+  int get hashCode => Object.hash(runtimeType, iconPath, title);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_OptionCopyWith<_$_Option> get copyWith =>
       __$$_OptionCopyWithImpl<_$_Option>(this, _$identity);
 }
@@ -430,9 +434,9 @@ abstract class _Option implements Option {
       required final String title}) = _$_Option;
 
   @override
-  String get iconPath => throw _privateConstructorUsedError;
+  String get iconPath;
   @override
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @override
   @JsonKey(ignore: true)
   _$$_OptionCopyWith<_$_Option> get copyWith =>
