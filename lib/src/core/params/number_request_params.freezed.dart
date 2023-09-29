@@ -1,7 +1,7 @@
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
 part of 'number_request_params.dart';
 
@@ -27,29 +27,32 @@ mixin _$NumberRequestParams {
 abstract class $NumberRequestParamsCopyWith<$Res> {
   factory $NumberRequestParamsCopyWith(
           NumberRequestParams value, $Res Function(NumberRequestParams) then) =
-      _$NumberRequestParamsCopyWithImpl<$Res>;
+      _$NumberRequestParamsCopyWithImpl<$Res, NumberRequestParams>;
+  @useResult
   $Res call({int number});
 }
 
 /// @nodoc
-class _$NumberRequestParamsCopyWithImpl<$Res>
+class _$NumberRequestParamsCopyWithImpl<$Res, $Val extends NumberRequestParams>
     implements $NumberRequestParamsCopyWith<$Res> {
   _$NumberRequestParamsCopyWithImpl(this._value, this._then);
 
-  final NumberRequestParams _value;
   // ignore: unused_field
-  final $Res Function(NumberRequestParams) _then;
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
 
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? number = freezed,
+    Object? number = null,
   }) {
     return _then(_value.copyWith(
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
-    ));
+    ) as $Val);
   }
 }
 
@@ -60,26 +63,25 @@ abstract class _$$_NumberRequestParamsCopyWith<$Res>
           $Res Function(_$_NumberRequestParams) then) =
       __$$_NumberRequestParamsCopyWithImpl<$Res>;
   @override
+  @useResult
   $Res call({int number});
 }
 
 /// @nodoc
 class __$$_NumberRequestParamsCopyWithImpl<$Res>
-    extends _$NumberRequestParamsCopyWithImpl<$Res>
+    extends _$NumberRequestParamsCopyWithImpl<$Res, _$_NumberRequestParams>
     implements _$$_NumberRequestParamsCopyWith<$Res> {
   __$$_NumberRequestParamsCopyWithImpl(_$_NumberRequestParams _value,
       $Res Function(_$_NumberRequestParams) _then)
-      : super(_value, (v) => _then(v as _$_NumberRequestParams));
+      : super(_value, _then);
 
-  @override
-  _$_NumberRequestParams get _value => super._value as _$_NumberRequestParams;
-
+  @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? number = freezed,
+    Object? number = null,
   }) {
     return _then(_$_NumberRequestParams(
-      number: number == freezed
+      number: null == number
           ? _value.number
           : number // ignore: cast_nullable_to_non_nullable
               as int,
@@ -105,15 +107,15 @@ class _$_NumberRequestParams implements _NumberRequestParams {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NumberRequestParams &&
-            const DeepCollectionEquality().equals(other.number, number));
+            (identical(other.number, number) || other.number == number));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(number));
+  int get hashCode => Object.hash(runtimeType, number);
 
   @JsonKey(ignore: true)
   @override
+  @pragma('vm:prefer-inline')
   _$$_NumberRequestParamsCopyWith<_$_NumberRequestParams> get copyWith =>
       __$$_NumberRequestParamsCopyWithImpl<_$_NumberRequestParams>(
           this, _$identity);
@@ -124,7 +126,7 @@ abstract class _NumberRequestParams implements NumberRequestParams {
       _$_NumberRequestParams;
 
   @override
-  int get number => throw _privateConstructorUsedError;
+  int get number;
   @override
   @JsonKey(ignore: true)
   _$$_NumberRequestParamsCopyWith<_$_NumberRequestParams> get copyWith =>
