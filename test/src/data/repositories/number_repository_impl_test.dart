@@ -19,12 +19,12 @@ void main() {
     },
   );
 
-  arrangeNumbersApiServiceGetNumberResponse() {
+  void arrangeNumbersApiServiceGetNumberResponse() {
     when(() => mockNumbersApiService.getNumber(params: numberRequestParams))
         .thenAnswer((_) async => const NumberModel(info: ''));
   }
 
-  arrangeNumbersApiServiceGetRandomNumberResponse() {
+  void arrangeNumbersApiServiceGetRandomNumberResponse() {
     when(() => mockNumbersApiService.getRandomNumber())
         .thenAnswer((_) async => const NumberModel(info: ''));
   }

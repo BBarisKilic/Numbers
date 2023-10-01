@@ -19,7 +19,7 @@ void main() {
     sut = GetNumberUseCase(repository: mockNumberRepository);
   });
 
-  arrangeNumberRepositoryResponse(NumberRequestParams params) {
+  void arrangeNumberRepositoryResponse(NumberRequestParams params) {
     when(
       () => mockNumberRepository.getNumber(params),
     ).thenAnswer((_) async => const DataSuccess(Number(info: _kResponseInfo)));

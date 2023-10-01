@@ -1,3 +1,10 @@
+analyzer:
+  exclude:
+    - '**.freezed.dart'
+    - '**.g.dart'
+    - '**.gr.dart'
+    - '**/generated_plugin_registrant.dart'
+
 include: package:very_good_analysis/analysis_options.5.1.0.yaml
 linter:
   rules:

@@ -1,15 +1,13 @@
-import 'package:flutter/material.dart';
+part of '../pages/settings_page.dart';
 
-import '../../../core/core.dart';
-
-class CopyrightText extends StatelessWidget {
-  const CopyrightText({Key? key}) : super(key: key);
+class _CopyrightText extends StatelessWidget {
+  const _CopyrightText();
 
   @override
   Widget build(BuildContext context) => Center(
         child: Text(
           kCopyrightText,
-          style: Theme.of(context).textTheme.bodyText2,
+          style: Theme.of(context).textTheme.bodyMedium,
         ),
       );
 }

@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:numbers/src/app/cubit/app_cubit.dart';
+import 'package:numbers/src/config/config.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/injector.dart' as di;
+import 'package:numbers/src/presentation/presentation.dart';
 import 'package:sizer/sizer.dart';
-
-import '../config/config.dart';
-import '../core/core.dart';
-import '../injector.dart' as di;
-import '../presentation/presentation.dart';
-import 'cubit/app_cubit.dart';
 
 export 'cubit/app_cubit.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  const App({super.key});
 
   @override
   Widget build(BuildContext context) => Sizer(

@@ -1,12 +1,11 @@
-import '../../core/core.dart';
-import '../../domain/domain.dart';
-import '../data.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/data/data.dart';
+import 'package:numbers/src/domain/domain.dart';
 
 class SharedPrefRepositoryImpl implements SharedPrefRepository {
-  final SharedPrefService _sharedPrefService;
-
   const SharedPrefRepositoryImpl({required SharedPrefService service})
       : _sharedPrefService = service;
+  final SharedPrefService _sharedPrefService;
 
   @override
   Future<DataState<String>> getString(

@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../../core/core.dart';
-import '../number.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/presentation/presentation.dart';
 
 class InfoContainer extends StatelessWidget {
   const InfoContainer({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) => Container(
@@ -25,18 +24,18 @@ class InfoContainer extends StatelessWidget {
                 initial: () => Text(
                   kSearchANumberText,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 loading: () => const CircularProgressIndicator(),
                 loaded: (info) => Text(
                   info,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
                 error: () => Text(
                   kCheckInternetConnection,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyText1,
+                  style: Theme.of(context).textTheme.bodyLarge,
                 ),
               ),
             ),

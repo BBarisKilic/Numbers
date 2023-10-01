@@ -1,12 +1,13 @@
-import '../../core/core.dart';
-import '../domain.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/domain/domain.dart';
 
 class GetStringUseCase
     implements UseCase<DataState<String>, SharedPrefStringRequestParams> {
-  final SharedPrefRepository _sharedPrefRepository;
+  const GetStringUseCase({
+    required SharedPrefRepository repository,
+  }) : _sharedPrefRepository = repository;
 
-  const GetStringUseCase({required SharedPrefRepository repository})
-      : _sharedPrefRepository = repository;
+  final SharedPrefRepository _sharedPrefRepository;
 
   @override
   Future<DataState<String>> call({

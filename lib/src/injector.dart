@@ -1,14 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
+import 'package:numbers/src/app/app.dart';
+import 'package:numbers/src/config/config.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/data/data.dart';
+import 'package:numbers/src/domain/domain.dart';
+import 'package:numbers/src/presentation/presentation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-
-import 'app/app.dart';
-import 'config/config.dart';
-import 'core/core.dart';
-import 'data/data.dart';
-import 'domain/domain.dart';
-import 'presentation/presentation.dart';
 
 final injector = GetIt.instance;
 

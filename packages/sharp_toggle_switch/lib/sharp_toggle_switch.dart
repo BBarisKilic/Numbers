@@ -71,7 +71,7 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
                   child: Center(
                     child: Text(
                       widget.leftSwitch,
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             color: position == SwitchPosition.right
                                 ? widget.primaryColor
                                 : widget.secondaryColor,
@@ -93,7 +93,7 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
                   child: Center(
                     child: Text(
                       widget.rightSwitch,
-                      style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                             color: position == SwitchPosition.right
                                 ? widget.secondaryColor
                                 : widget.primaryColor,

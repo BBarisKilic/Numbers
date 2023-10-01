@@ -1,7 +1,6 @@
 import 'package:go_router/go_router.dart';
-
-import '../../core/core.dart';
-import '../../presentation/presentation.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/presentation/presentation.dart';
 
 class AppRoute {
   final _router = GoRouter(

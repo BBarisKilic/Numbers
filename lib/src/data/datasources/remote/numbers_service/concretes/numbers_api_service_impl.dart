@@ -22,11 +22,10 @@ class NumbersApiServiceImpl implements NumbersApiService {
       return NumberModel(info: response.data!);
     }
 
-    throw DioError(
+    throw DioException(
       requestOptions: response.requestOptions,
       error: response.statusMessage,
       response: response,
-      type: DioErrorType.response,
     );
   }
 
@@ -38,11 +37,10 @@ class NumbersApiServiceImpl implements NumbersApiService {
       return NumberModel(info: response.data!);
     }
 
-    throw DioError(
+    throw DioException(
       requestOptions: response.requestOptions,
       error: response.statusMessage,
       response: response,
-      type: DioErrorType.response,
     );
   }
 }

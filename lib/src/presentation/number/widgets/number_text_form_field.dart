@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../number.dart';
+import 'package:numbers/src/presentation/presentation.dart';
 
 class NumberTextFormField extends StatelessWidget {
   const NumberTextFormField({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) => TextFormField(
@@ -16,15 +15,15 @@ class NumberTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           disabledBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(12.0),
-              topRight: Radius.circular(12.0),
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
             ),
             borderSide: BorderSide(color: Theme.of(context).dividerColor),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(12.0),
-              topRight: Radius.circular(12.0),
+              topLeft: Radius.circular(12),
+              topRight: Radius.circular(12),
             ),
             borderSide: BorderSide(color: Theme.of(context).dividerColor),
           ),

@@ -3,11 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:go_router/go_router.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+import 'package:numbers/src/app/app.dart';
+import 'package:numbers/src/config/config.dart';
+import 'package:numbers/src/core/core.dart';
 import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
-
-import '../../../app/app.dart';
-import '../../../config/config.dart';
-import '../../../core/core.dart';
 
 part 'settings_cubit.freezed.dart';
 part 'settings_state.dart';
@@ -18,7 +17,7 @@ class SettingsCubit extends Cubit<SettingsState> {
   }
 
   void _loadOptions() {
-    const List<Option> options = [
+    const options = <Option>[
       Option(iconPath: kThemeIconPath, title: kThemesText),
       Option(iconPath: kStarIconPath, title: kRateText),
       Option(iconPath: kMailIconPath, title: kContactsText),
@@ -37,7 +36,6 @@ class SettingsCubit extends Cubit<SettingsState> {
     switch (index) {
       case 0:
         await _callThemeBottomSheet(context: context, child: theme);
-        break;
       default:
         break;
     }
@@ -51,7 +49,7 @@ class SettingsCubit extends Cubit<SettingsState> {
       backgroundColor: Colors.transparent,
       context: context,
       useRootNavigator: true,
-      elevation: 4.0,
+      elevation: 4,
       topRadius: Radius.zero,
       builder: (context) => child,
     );

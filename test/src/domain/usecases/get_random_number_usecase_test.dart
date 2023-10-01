@@ -16,7 +16,7 @@ void main() {
     sut = GetRandomNumberUseCase(repository: mockNumberRepository);
   });
 
-  arrangeNumberRepositoryResponse() {
+  void arrangeNumberRepositoryResponse() {
     when(mockNumberRepository.getRandomNumber).thenAnswer(
       (_) async => const DataFailure(Failure(title: '', message: '')),
     );
