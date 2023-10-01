@@ -1,13 +1,11 @@
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/data/data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../../../core/core.dart';
-import '../../../../data.dart';
-
 class SharedPrefServiceImpl implements SharedPrefService {
-  final SharedPreferences _preferences;
-
   SharedPrefServiceImpl({required SharedPreferences preferences})
       : _preferences = preferences;
+  final SharedPreferences _preferences;
 
   @override
   Future<String> getString({

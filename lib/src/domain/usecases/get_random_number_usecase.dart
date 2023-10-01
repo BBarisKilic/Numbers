@@ -1,11 +1,11 @@
-import '../../core/core.dart';
-import '../domain.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/domain/domain.dart';
 
 class GetRandomNumberUseCase implements UseCase<DataState<Number>, NoParams> {
-  final NumberRepository _numberRepository;
-
   const GetRandomNumberUseCase({required NumberRepository repository})
       : _numberRepository = repository;
+
+  final NumberRepository _numberRepository;
 
   @override
   Future<DataState<Number>> call({required NoParams params}) =>

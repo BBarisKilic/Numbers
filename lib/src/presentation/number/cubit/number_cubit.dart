@@ -2,18 +2,13 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:go_router/go_router.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/domain/domain.dart';
 
-import '../../../core/core.dart';
-import '../../../domain/domain.dart';
-
-part 'number_state.dart';
 part 'number_cubit.freezed.dart';
+part 'number_state.dart';
 
 class NumberCubit extends Cubit<NumberState> {
-  final GetNumberUseCase _getNumberUseCase;
-  final GetRandomNumberUseCase _getRandomNumberUseCase;
-  final TextEditingController _editingController;
-
   NumberCubit({
     required GetNumberUseCase getNumberUseCase,
     required GetRandomNumberUseCase getRandomNumberUseCase,
@@ -22,6 +17,9 @@ class NumberCubit extends Cubit<NumberState> {
         _getRandomNumberUseCase = getRandomNumberUseCase,
         _editingController = controller,
         super(const NumberState.initial());
+  final GetNumberUseCase _getNumberUseCase;
+  final GetRandomNumberUseCase _getRandomNumberUseCase;
+  final TextEditingController _editingController;
 
   TextEditingController get getEditingController => _editingController;
 

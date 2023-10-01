@@ -1,4 +1,4 @@
-import '../../../../../core/core.dart';
+import 'package:numbers/src/core/core.dart';
 
 abstract class SharedPrefService {
   Future<String> getString({required SharedPrefStringRequestParams params});

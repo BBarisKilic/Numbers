@@ -1,12 +1,20 @@
 import 'package:custom_app_bar/custom_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nil/nil.dart';
+import 'package:numbers/src/app/app.dart';
+import 'package:numbers/src/config/config.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/presentation/presentation.dart';
+import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
 
-import '../../../core/core.dart';
-import '../settings.dart';
+part '../widgets/copyright_text.dart';
+part '../widgets/options_list_view.dart';
+part '../widgets/themes_bottom_sheet.dart';
 
 class SettingsPage extends StatelessWidget {
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
@@ -32,11 +40,11 @@ class SettingsPage extends StatelessWidget {
                       initial: () => const Center(
                         child: CircularProgressIndicator(),
                       ),
-                      loaded: OptionsListView.new,
+                      loaded: _OptionsListView.new,
                     ),
                   ),
                 ),
-                const CopyrightText(),
+                const _CopyrightText(),
               ],
             ),
           ),

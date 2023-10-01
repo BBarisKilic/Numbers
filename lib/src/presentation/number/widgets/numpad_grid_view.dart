@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-
-import '../../../core/core.dart';
-import '../number.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/presentation/presentation.dart';
 
 class NumpadGridView extends StatelessWidget {
   const NumpadGridView({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) => StaggeredGrid.count(
         crossAxisCount: 4,
-        mainAxisSpacing: 1.0,
-        crossAxisSpacing: 1.0,
+        mainAxisSpacing: 1,
+        crossAxisSpacing: 1,
         children: [
           NumpadNumberButton(
             kNumpadOneText,
@@ -88,7 +87,7 @@ class NumpadGridView extends StatelessWidget {
             kNumpadZeroText,
             crossAxisCellCount: 2,
             borderRadius: const BorderRadius.only(
-              bottomLeft: Radius.circular(12.0),
+              bottomLeft: Radius.circular(12),
             ),
             onPressed: () => context
                 .read<NumberCubit>()
@@ -98,7 +97,7 @@ class NumpadGridView extends StatelessWidget {
             kNumpadSearchText,
             crossAxisCellCount: 2,
             borderRadius: const BorderRadius.only(
-              bottomRight: Radius.circular(12.0),
+              bottomRight: Radius.circular(12),
             ),
             onPressed: () =>
                 context.read<NumberCubit>().onPressedSearchButton(),

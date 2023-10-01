@@ -1,16 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:nil/nil.dart';
+part of '../pages/settings_page.dart';
 
-import '../cubit/settings_cubit.dart';
-import 'themes_bottom_sheet.dart';
-
-class OptionsListView extends StatelessWidget {
-  const OptionsListView(
-    this.options, {
-    Key? key,
-  }) : super(key: key);
+class _OptionsListView extends StatelessWidget {
+  const _OptionsListView(
+    this.options,
+  );
 
   final List<Option> options;
 
@@ -24,7 +17,7 @@ class OptionsListView extends StatelessWidget {
                 onTap: () => context.read<SettingsCubit>().onTapListTile(
                       context: context,
                       index: index,
-                      theme: const ThemesBottomSheet(),
+                      theme: const _ThemesBottomSheet(),
                     ),
                 leading: Hero(
                   tag: 'option$index',
@@ -35,12 +28,12 @@ class OptionsListView extends StatelessWidget {
                 ),
                 title: Text(
                   options[index].title,
-                  style: Theme.of(context).textTheme.subtitle1,
+                  style: Theme.of(context).textTheme.titleMedium,
                 ),
               ),
         separatorBuilder: (context, index) => const Divider(
-          thickness: 1.0,
-          height: 4.0,
+          thickness: 1,
+          height: 4,
         ),
       );
 }

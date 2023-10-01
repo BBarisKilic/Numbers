@@ -1,19 +1,11 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:sharp_toggle_switch/sharp_toggle_switch.dart';
+part of '../pages/settings_page.dart';
 
-import '../../../app/app.dart';
-import '../../../config/config.dart';
-import '../../../core/core.dart';
-import '../cubit/settings_cubit.dart';
-
-class ThemesBottomSheet extends StatelessWidget {
-  const ThemesBottomSheet({Key? key}) : super(key: key);
+class _ThemesBottomSheet extends StatelessWidget {
+  const _ThemesBottomSheet();
 
   @override
   Widget build(BuildContext context) => Material(
-        color: Theme.of(context).backgroundColor,
+        color: Theme.of(context).colorScheme.background,
         child: DecoratedBox(
           decoration: BoxDecoration(
             border: Border(
@@ -27,7 +19,6 @@ class ThemesBottomSheet extends StatelessWidget {
                 vertical: kLongVerticalSpace,
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Row(
@@ -61,7 +52,7 @@ class ThemesBottomSheet extends StatelessWidget {
                   const SizedBox(height: kVerticalSpace),
                   Text(
                     kThemeOptionsText,
-                    style: Theme.of(context).textTheme.headline2,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                   const SizedBox(height: kVeryLongVerticalSpace),
                   _buildThemeSelectionRow(context),
@@ -77,7 +68,7 @@ class ThemesBottomSheet extends StatelessWidget {
         children: [
           Text(
             kThemeText,
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.titleMedium,
           ),
           SharpToggleSwitch(
             onToggle: (position) => context
@@ -90,7 +81,7 @@ class ThemesBottomSheet extends StatelessWidget {
             leftSwitch: kLightText,
             rightSwitch: kDarkText,
             primaryColor: Theme.of(context).primaryColorLight,
-            secondaryColor: Theme.of(context).backgroundColor,
+            secondaryColor: Theme.of(context).colorScheme.background,
           ),
         ],
       );

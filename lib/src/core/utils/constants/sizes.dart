@@ -1,10 +1,10 @@
-const double kIconSize = 32.0;
-const double kSmallIconSize = 24.0;
+const kIconSize = 32.0;
+const kSmallIconSize = 24.0;
 
-const double kVerticalSpace = 12.0;
-const double kLongVerticalSpace = 22.0;
-const double kVeryLongVerticalSpace = 44.0;
-const double kHorizontalSpace = 22.0;
+const kVerticalSpace = 12.0;
+const kLongVerticalSpace = 22.0;
+const kVeryLongVerticalSpace = 44.0;
+const kHorizontalSpace = 22.0;
 
-const double kThinStrokeWidth = 1.0;
-const double kThickStrokeWidth = 2.0;
+const kThinStrokeWidth = 1.0;
+const kThickStrokeWidth = 2.0;

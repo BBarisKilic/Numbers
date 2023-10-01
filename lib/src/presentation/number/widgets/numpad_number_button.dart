@@ -4,12 +4,12 @@ import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 class NumpadNumberButton extends StatelessWidget {
   const NumpadNumberButton(
     this.title, {
-    Key? key,
     required this.onPressed,
+    super.key,
     this.mainAxisCellCount = 1,
     this.crossAxisCellCount = 1,
     this.borderRadius = BorderRadius.zero,
-  }) : super(key: key);
+  });
 
   final String title;
   final void Function() onPressed;
@@ -38,7 +38,7 @@ class NumpadNumberButton extends StatelessWidget {
             title,
             style: Theme.of(context)
                 .textTheme
-                .subtitle1!
+                .titleMedium!
                 .copyWith(color: const Color(0xffF8F3F7)),
           ),
         ),

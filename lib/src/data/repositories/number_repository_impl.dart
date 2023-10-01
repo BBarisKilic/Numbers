@@ -1,14 +1,12 @@
 import 'package:dio/dio.dart';
-
-import '../../core/core.dart';
-import '../../domain/domain.dart';
-import '../data.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/data/data.dart';
+import 'package:numbers/src/domain/domain.dart';
 
 class NumberRepositoryImpl implements NumberRepository {
-  final NumbersApiService _numbersApiService;
-
   const NumberRepositoryImpl({required NumbersApiService service})
       : _numbersApiService = service;
+  final NumbersApiService _numbersApiService;
 
   @override
   Future<DataState<Number>> getNumber(NumberRequestParams params) async {
@@ -16,8 +14,8 @@ class NumberRepositoryImpl implements NumberRepository {
       final response = await _numbersApiService.getNumber(params: params);
 
       return DataSuccess(response.toEntity());
-    } on DioError catch (e) {
-      return DataFailure(Failure(title: '${e.type}', message: e.message));
+    } on DioException catch (e) {
+      return DataFailure(Failure(title: '${e.type}', message: e.message ?? ''));
     }
   }
 
@@ -27,8 +25,8 @@ class NumberRepositoryImpl implements NumberRepository {
       final response = await _numbersApiService.getRandomNumber();
 
       return DataSuccess(response.toEntity());
-    } on DioError catch (e) {
-      return DataFailure(Failure(title: '${e.type}', message: e.message));
+    } on DioException catch (e) {
+      return DataFailure(Failure(title: '${e.type}', message: e.message ?? ''));
     }
   }
 }
