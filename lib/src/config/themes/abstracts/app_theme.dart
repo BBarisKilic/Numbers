@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 
-enum AvailableTheme { light, dark }
+enum AvailableTheme {
+  light,
+  dark;
 
-abstract class AppTheme {
+  String get key => toString().split('.').first;
+
+  String get value => toString().split('.').last;
+}
+
+abstract interface class AppTheme {
   ThemeData get getData;
 }
