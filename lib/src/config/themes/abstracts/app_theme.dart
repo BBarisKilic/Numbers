@@ -22,5 +22,6 @@ enum AvailableTheme {
 /// An abstract interface class that blueprints of the concrete theme
 /// implementations.
 abstract interface class AppTheme {
+  /// Returns the [ThemeData] of the concrete theme implementations.
   ThemeData get getData;
 }
