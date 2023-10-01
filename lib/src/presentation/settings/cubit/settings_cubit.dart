@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:go_router/go_router.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:numbers/src/app/app.dart';
 import 'package:numbers/src/config/config.dart';
 import 'package:numbers/src/core/core.dart';
@@ -45,12 +44,11 @@ class SettingsCubit extends Cubit<SettingsState> {
     required BuildContext context,
     required Widget child,
   }) async {
-    await showCupertinoModalBottomSheet<void>(
+    await showModalBottomSheet<void>(
       backgroundColor: Colors.transparent,
       context: context,
       useRootNavigator: true,
       elevation: 4,
-      topRadius: Radius.zero,
       builder: (context) => child,
     );
   }
