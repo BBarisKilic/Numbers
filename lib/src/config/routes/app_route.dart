@@ -3,8 +3,14 @@ import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 import 'package:numbers/src/features/settings/settings.dart';
 
-class AppRoute {
-  final _router = GoRouter(
+/// {@template app_route}
+/// A class that provides the app routes.
+/// {@endtemplate}
+final class AppRoute {
+  /// {@macro app_route}
+  const AppRoute();
+
+  static final _router = GoRouter(
     routes: [
       GoRoute(
         path: kNumberPagePath,
@@ -17,5 +23,6 @@ class AppRoute {
     ],
   );
 
+  /// Returns the [GoRouter] instance.
   GoRouter get getRouter => _router;
 }

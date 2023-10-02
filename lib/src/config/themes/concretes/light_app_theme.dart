@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:numbers/src/config/config.dart';
 import 'package:sizer/sizer.dart';
 
+/// {@template light_app_theme}
 /// An implementation of the [AppTheme] interface class that provides the light
 /// theme.
+/// {@endtemplate}
 final class LightAppTheme implements AppTheme {
-  @override
-  ThemeData get getData => _data;
+  /// {@macro light_app_theme}
+  const LightAppTheme();
 
-  final ThemeData _data = ThemeData(
+  static final _data = ThemeData(
     fontFamily: 'RobotoMono',
     primaryColor: const Color(0xFFF8F3F7),
     primaryColorDark: const Color(0xFFF8F3F7),
@@ -79,4 +81,7 @@ final class LightAppTheme implements AppTheme {
           background: const Color(0xFFF8F3F7),
         ),
   );
+
+  @override
+  ThemeData get getData => _data;
 }

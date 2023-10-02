@@ -2,13 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:numbers/src/config/config.dart';
 import 'package:sizer/sizer.dart';
 
+/// {@template dark_app_theme}
 /// An implementation of the [AppTheme] interface class that provides the dark
 /// theme.
+/// {@endtemplate}
 final class DarkAppTheme implements AppTheme {
-  @override
-  ThemeData get getData => _data;
+  /// {@macro dark_app_theme}
+  const DarkAppTheme();
 
-  final _data = ThemeData(
+  static final _data = ThemeData(
     fontFamily: 'RobotoMono',
     primaryColor: const Color(0xFF181818),
     primaryColorDark: const Color(0xFF181818),
@@ -79,4 +81,7 @@ final class DarkAppTheme implements AppTheme {
           background: const Color(0xFF181818),
         ),
   );
+
+  @override
+  ThemeData get getData => _data;
 }
