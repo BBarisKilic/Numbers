@@ -19,7 +19,7 @@ Future<void> initializeDependencies() async {
       instanceName: '${AvailableTheme.light}',
     )
     ..registerLazySingleton<AppTheme>(
-      DarkAppThemeImpl.new,
+      DarkAppTheme.new,
       instanceName: '${AvailableTheme.dark}',
     )
     ..registerSingleton<AppRoute>(AppRoute())

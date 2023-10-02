@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 
 /// An implementation of the [AppTheme] interface class that provides the dark
 /// theme.
-class DarkAppThemeImpl implements AppTheme {
+class DarkAppTheme implements AppTheme {
   @override
   ThemeData get getData => _data;
 
