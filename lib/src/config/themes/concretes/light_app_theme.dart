@@ -4,7 +4,7 @@ import 'package:sizer/sizer.dart';
 
 /// An implementation of the [AppTheme] interface class that provides the light
 /// theme.
-class LightAppThemeImpl implements AppTheme {
+class LightAppTheme implements AppTheme {
   @override
   ThemeData get getData => _data;
 

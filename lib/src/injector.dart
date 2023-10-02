@@ -15,7 +15,7 @@ Future<void> initializeDependencies() async {
 
   injector
     ..registerLazySingleton<AppTheme>(
-      LightAppThemeImpl.new,
+      LightAppTheme.new,
       instanceName: '${AvailableTheme.light}',
     )
     ..registerLazySingleton<AppTheme>(
