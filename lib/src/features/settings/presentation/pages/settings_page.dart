@@ -21,16 +21,16 @@ class SettingsPage extends StatelessWidget {
         appBar: CustomAppBar(
           kSettingsTitle,
           iconPath: kBackIconPath,
-          iconSize: kSmallIconSize,
+          iconSize: IconSize.small,
           iconColor: Theme.of(context).primaryColorLight,
-          titleSpacing: kHorizontalSpace,
+          titleSpacing: Space.large,
           onTap: () => context.read<SettingsCubit>().onTapBackButton(context),
         ),
         body: SafeArea(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: kHorizontalSpace,
-              vertical: kVerticalSpace,
+              horizontal: Space.large,
+              vertical: Space.medium,
             ),
             child: Column(
               children: [

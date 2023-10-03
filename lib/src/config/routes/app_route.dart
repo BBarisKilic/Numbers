@@ -13,12 +13,14 @@ final class AppRoute {
   static final _router = GoRouter(
     routes: [
       GoRoute(
-        path: kNumberPagePath,
+        path: Path.numberPage,
         builder: (context, state) => const NumberPage(),
-      ),
-      GoRoute(
-        path: kSettingsPagePath,
-        builder: (context, state) => const SettingsPage(),
+        routes: [
+          GoRoute(
+            path: Path.settingsPage,
+            builder: (context, state) => const SettingsPage(),
+          ),
+        ],
       ),
     ],
   );

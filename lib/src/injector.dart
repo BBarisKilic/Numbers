@@ -22,7 +22,7 @@ Future<void> initializeDependencies() async {
       DarkAppTheme.new,
       instanceName: '${AvailableTheme.dark}',
     )
-    ..registerSingleton<AppRoute>(AppRoute())
+    ..registerSingleton<AppRoute>(const AppRoute())
     ..registerSingleton<SharedPreferences>(sharedPreferences)
     ..registerSingleton<Dio>(Dio())
     ..registerSingleton<TextEditingController>(TextEditingController(text: '0'))
@@ -30,7 +30,7 @@ Future<void> initializeDependencies() async {
       SharedPrefServiceImpl(preferences: injector()),
     )
     ..registerSingleton<NumbersApiService>(
-      NumbersApiServiceImpl(dio: injector(), baseUrl: kBaseUrl),
+      NumbersApiServiceImpl(dio: injector(), baseUrl: Url.numbersApi),
     )
     ..registerSingleton<SharedPrefRepository>(
       SharedPrefRepositoryImpl(service: injector()),

@@ -13,7 +13,9 @@ class SharedPrefServiceImpl implements SharedPrefService {
   }) async {
     final value = _preferences.getString(params.key);
 
-    if (value == null) throw Exception(kSharedPrefNoValueException);
+    if (value == null) {
+      throw Exception('No value was found for the entered key!');
+    }
 
     return value;
   }
@@ -24,6 +26,6 @@ class SharedPrefServiceImpl implements SharedPrefService {
   }) async {
     final isSuccess = await _preferences.setString(params.key, params.value);
 
-    if (!isSuccess) throw Exception(kSharedPrefCouldNotSetValue);
+    if (!isSuccess) throw Exception('Could not set the value!');
   }
 }

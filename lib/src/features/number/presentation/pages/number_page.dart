@@ -12,24 +12,24 @@ class NumberPage extends StatelessWidget {
         appBar: CustomAppBar(
           kAppTitle,
           iconPath: kSettingsIconPath,
-          iconSize: kSmallIconSize,
+          iconSize: IconSize.small,
           iconColor: Theme.of(context).primaryColorLight,
-          titleSpacing: kHorizontalSpace,
+          titleSpacing: Space.large,
           onTap: () => context.read<NumberCubit>().onTapSettingsButton(context),
         ),
         body: const SafeArea(
           child: Padding(
             padding: EdgeInsets.symmetric(
-              horizontal: kHorizontalSpace,
-              vertical: kVerticalSpace,
+              horizontal: Space.large,
+              vertical: Space.medium,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 NumberTextFormField(),
-                SizedBox(height: kVerticalSpace),
+                SizedBox(height: Space.medium),
                 Expanded(child: InfoContainer()),
-                SizedBox(height: kVerticalSpace),
+                SizedBox(height: Space.medium),
                 NumpadGridView(),
               ],
             ),

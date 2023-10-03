@@ -15,8 +15,8 @@ class _ThemesBottomSheet extends StatelessWidget {
           child: SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: kHorizontalSpace,
-                vertical: kLongVerticalSpace,
+                horizontal: Space.large,
+                vertical: Space.large,
               ),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
@@ -25,7 +25,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const SizedBox(width: kIconSize),
+                      const SizedBox(width: IconSize.medium),
                       Hero(
                         tag: 'option0',
                         child: SvgPicture.asset(
@@ -44,17 +44,17 @@ class _ThemesBottomSheet extends StatelessWidget {
                         child: SvgPicture.asset(
                           kCloseIconPath,
                           color: Theme.of(context).iconTheme.color,
-                          width: kIconSize,
+                          width: IconSize.medium,
                         ),
                       ),
                     ],
                   ),
-                  const SizedBox(height: kVerticalSpace),
+                  const SizedBox(height: Space.medium),
                   Text(
                     kThemeOptionsText,
                     style: Theme.of(context).textTheme.displayMedium,
                   ),
-                  const SizedBox(height: kVeryLongVerticalSpace),
+                  const SizedBox(height: Space.xxLarge),
                   _buildThemeSelectionRow(context),
                 ],
               ),
