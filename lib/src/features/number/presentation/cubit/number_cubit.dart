@@ -40,7 +40,7 @@ class NumberCubit extends Cubit<NumberState> {
   Future<void> _getRandomNumberInfo() async {
     emit(const NumberState.loading());
 
-    final dataState = await _getRandomNumberUseCase(params: const NoParams());
+    final dataState = await _getRandomNumberUseCase();
 
     if (dataState is DataFailure) {
       emit(const NumberState.error());

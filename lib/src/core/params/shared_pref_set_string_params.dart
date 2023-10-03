@@ -1,11 +1,11 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:numbers/src/core/core.dart';
 
-part 'shared_pref_set_string_params.freezed.dart';
+final class SharedPrefSetStringParams extends Params {
+  const SharedPrefSetStringParams({
+    required this.key,
+    required this.value,
+  });
 
-@freezed
-abstract class SharedPrefSetStringParams with _$SharedPrefSetStringParams {
-  const factory SharedPrefSetStringParams({
-    required String key,
-    required String value,
-  }) = _SharedPrefSetStringParams;
+  final String key;
+  final String value;
 }

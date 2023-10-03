@@ -1,10 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:numbers/src/core/core.dart';
 
-part 'shared_pref_string_request_params.freezed.dart';
+final class SharedPrefStringRequestParams extends Params {
+  const SharedPrefStringRequestParams({required this.key});
 
-@freezed
-abstract class SharedPrefStringRequestParams
-    with _$SharedPrefStringRequestParams {
-  const factory SharedPrefStringRequestParams({required String key}) =
-      _SharedPrefStringRequestParams;
+  final String key;
 }
