@@ -14,7 +14,13 @@ class NumberRepositoryImpl implements NumberRepository {
 
       return DataSuccess(response.toEntity());
     } on DioException catch (e) {
-      return DataFailure(Failure(title: '${e.type}', message: e.message ?? ''));
+      return DataFailure(
+        ErrorDetails(
+          message: e.message ?? '',
+          error: '',
+          stackTrace: '',
+        ),
+      );
     }
   }
 
@@ -25,7 +31,13 @@ class NumberRepositoryImpl implements NumberRepository {
 
       return DataSuccess(response.toEntity());
     } on DioException catch (e) {
-      return DataFailure(Failure(title: '${e.type}', message: e.message ?? ''));
+      return DataFailure(
+        ErrorDetails(
+          message: e.message ?? '',
+          error: '',
+          stackTrace: '',
+        ),
+      );
     }
   }
 }

@@ -1,3 +1,2 @@
-export 'abstracts/data_state.dart';
-export 'concretes/data_failure.dart';
-export 'concretes/data_success.dart';
+export 'data_state.dart';
+export 'error_details.dart';

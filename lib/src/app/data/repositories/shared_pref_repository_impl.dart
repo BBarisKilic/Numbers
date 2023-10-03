@@ -16,7 +16,11 @@ class SharedPrefRepositoryImpl implements SharedPrefRepository {
       return DataSuccess(response);
     } catch (e) {
       return DataFailure(
-        Failure(title: '$SharedPrefRepositoryImpl', message: '$e'),
+        ErrorDetails(
+          message: '$e',
+          error: '',
+          stackTrace: '',
+        ),
       );
     }
   }
@@ -29,7 +33,11 @@ class SharedPrefRepositoryImpl implements SharedPrefRepository {
       return DataSuccess(response);
     } catch (e) {
       return DataFailure(
-        Failure(title: '$SharedPrefRepositoryImpl', message: '$e'),
+        ErrorDetails(
+          message: '$e',
+          error: '',
+          stackTrace: '',
+        ),
       );
     }
   }
