@@ -1,7 +1,7 @@
 part of 'number_cubit.dart';
 
 @freezed
-abstract class NumberState with _$NumberState {
+sealed class NumberState with _$NumberState {
   const factory NumberState.initial() = _Initial;
   const factory NumberState.loading() = _Loading;
   const factory NumberState.loaded({required String info}) = _Loaded;
