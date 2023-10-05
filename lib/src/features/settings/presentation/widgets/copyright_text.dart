@@ -4,10 +4,12 @@ class _CopyrightText extends StatelessWidget {
   const _CopyrightText();
 
   @override
-  Widget build(BuildContext context) => Center(
-        child: Text(
-          kCopyrightText,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-      );
+  Widget build(BuildContext context) {
+    return Center(
+      child: Text(
+        kCopyrightText,
+        style: Theme.of(context).textTheme.bodyMedium,
+      ),
+    );
+  }
 }

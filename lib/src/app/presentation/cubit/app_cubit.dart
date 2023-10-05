@@ -13,12 +13,14 @@ class AppCubit extends Cubit<AppState> {
     required SetStringUseCase setStringUseCase,
   })  : _getStringUseCase = getStringUseCase,
         _setStringUseCase = setStringUseCase,
-        super(const AppState(theme: AvailableTheme.dark)) {
-    _getAppThemeFromSharedPref();
-  }
+        super(const AppState(theme: AvailableTheme.dark));
 
   final GetStringUseCase _getStringUseCase;
   final SetStringUseCase _setStringUseCase;
+
+  void init() {
+    _getAppThemeFromSharedPref();
+  }
 
   Future<void> _getAppThemeFromSharedPref() async {
     final dataState = await _getStringUseCase(

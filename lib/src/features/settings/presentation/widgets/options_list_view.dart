@@ -8,17 +8,28 @@ class _OptionsListView extends StatelessWidget {
   final List<Option> options;
 
   @override
-  Widget build(BuildContext context) => ListView.separated(
-        physics: const NeverScrollableScrollPhysics(),
-        itemCount: options.length + 1,
-        itemBuilder: (context, index) => index == options.length
+  Widget build(BuildContext context) {
+    return ListView.separated(
+      physics: const NeverScrollableScrollPhysics(),
+      itemCount: options.length + 1,
+      itemBuilder: (context, index) {
+        return index == options.length
             ? nil
             : ListTile(
-                onTap: () => context.read<SettingsCubit>().onTapListTile(
-                      context: context,
-                      index: index,
-                      theme: const _ThemesBottomSheet(),
-                    ),
+                onTap: () async {
+                  switch (index) {
+                    case 0:
+                      await showModalBottomSheet<void>(
+                        backgroundColor: Colors.transparent,
+                        context: context,
+                        useRootNavigator: true,
+                        elevation: 4,
+                        builder: (_) => const _ThemesBottomSheet(),
+                      );
+                    default:
+                      break;
+                  }
+                },
                 leading: Hero(
                   tag: 'option$index',
                   child: SvgPicture.asset(
@@ -30,10 +41,11 @@ class _OptionsListView extends StatelessWidget {
                   options[index].title,
                   style: Theme.of(context).textTheme.titleMedium,
                 ),
-              ),
-        separatorBuilder: (context, index) => const Divider(
-          thickness: 1,
-          height: 4,
-        ),
-      );
+              );
+      },
+      separatorBuilder: (context, index) {
+        return const Divider(thickness: 1, height: 4);
+      },
+    );
+  }
 }

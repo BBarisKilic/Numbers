@@ -4,85 +4,97 @@ class _ThemesBottomSheet extends StatelessWidget {
   const _ThemesBottomSheet();
 
   @override
-  Widget build(BuildContext context) => Material(
-        color: Theme.of(context).colorScheme.background,
-        child: DecoratedBox(
-          decoration: BoxDecoration(
-            border: Border(
-              top: BorderSide(color: Theme.of(context).colorScheme.secondary),
-            ),
+  Widget build(BuildContext context) {
+    return Material(
+      color: Theme.of(context).colorScheme.background,
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          border: Border(
+            top: BorderSide(color: Theme.of(context).colorScheme.secondary),
           ),
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: Space.large,
-                vertical: Space.large,
-              ),
-              child: Column(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const SizedBox(width: IconSize.medium),
-                      Hero(
-                        tag: 'option0',
-                        child: SvgPicture.asset(
-                          kThemeIconPath,
-                          color: Theme.of(context).iconTheme.color,
-                          height: MediaQuery.of(context).size.height * 0.10,
-                        ),
+        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: Space.large,
+              vertical: Space.large,
+            ),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(width: IconSize.medium),
+                    Hero(
+                      tag: 'option0',
+                      child: SvgPicture.asset(
+                        kThemeIconPath,
+                        color: Theme.of(context).iconTheme.color,
+                        height: MediaQuery.of(context).size.height * 0.10,
                       ),
-                      InkWell(
-                        onTap: () => context
-                            .read<SettingsCubit>()
-                            .onTapCloseButton(context),
-                        overlayColor:
-                            MaterialStateProperty.all(Colors.transparent),
-                        highlightColor: Colors.transparent,
-                        child: SvgPicture.asset(
-                          kCloseIconPath,
-                          color: Theme.of(context).iconTheme.color,
-                          width: IconSize.medium,
-                        ),
+                    ),
+                    InkWell(
+                      onTap: context.pop,
+                      overlayColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                      highlightColor: Colors.transparent,
+                      child: SvgPicture.asset(
+                        kCloseIconPath,
+                        color: Theme.of(context).iconTheme.color,
+                        width: IconSize.medium,
                       ),
-                    ],
-                  ),
-                  const SizedBox(height: Space.medium),
-                  Text(
-                    kThemeOptionsText,
-                    style: Theme.of(context).textTheme.displayMedium,
-                  ),
-                  const SizedBox(height: Space.xxLarge),
-                  _buildThemeSelectionRow(context),
-                ],
-              ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: Space.medium),
+                Text(
+                  kThemeOptionsText,
+                  style: Theme.of(context).textTheme.displayMedium,
+                ),
+                const SizedBox(height: Space.xxLarge),
+                const _ThemeSelector(),
+              ],
             ),
           ),
         ),
-      );
+      ),
+    );
+  }
+}
 
-  Widget _buildThemeSelectionRow(BuildContext context) => Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(
-            kThemeText,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-          SharpToggleSwitch(
-            onToggle: (position) => context
-                .read<SettingsCubit>()
-                .onToggleThemeSwitch(context, position),
-            initialPosition:
-                context.read<AppCubit>().state.theme == AvailableTheme.light
-                    ? SwitchPosition.left
-                    : SwitchPosition.right,
-            leftSwitch: kLightText,
-            rightSwitch: kDarkText,
-            primaryColor: Theme.of(context).primaryColorLight,
-            secondaryColor: Theme.of(context).colorScheme.background,
-          ),
-        ],
-      );
+class _ThemeSelector extends StatelessWidget {
+  const _ThemeSelector();
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          kThemeText,
+          style: Theme.of(context).textTheme.titleMedium,
+        ),
+        SharpToggleSwitch(
+          onToggle: (position) {
+            if (position == SwitchPosition.left) {
+              context.read<AppCubit>().updateTheme(AvailableTheme.light);
+              return;
+            }
+
+            context.read<AppCubit>().updateTheme(AvailableTheme.dark);
+          },
+          initialPosition:
+              context.read<AppCubit>().state.theme == AvailableTheme.light
+                  ? SwitchPosition.left
+                  : SwitchPosition.right,
+          leftSwitch: kLightText,
+          rightSwitch: kDarkText,
+          primaryColor: Theme.of(context).primaryColorLight,
+          secondaryColor: Theme.of(context).colorScheme.background,
+        ),
+      ],
+    );
+  }
 }
