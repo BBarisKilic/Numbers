@@ -1,16 +1,14 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:numbers/src/core/core.dart';
+part of '../pages/number_page.dart';
 
-class NumpadActionButton extends StatelessWidget {
-  const NumpadActionButton(
+class _NumpadActionButton extends StatelessWidget {
+  const _NumpadActionButton(
     this.title, {
     required this.onPressed,
-    this.mainAxisCellCount = 1,
-    this.crossAxisCellCount = 1,
     this.borderRadius = BorderRadius.zero,
-    super.key,
-  });
+    int? mainAxisCellCount,
+    int? crossAxisCellCount,
+  })  : mainAxisCellCount = mainAxisCellCount ?? 1,
+        crossAxisCellCount = crossAxisCellCount ?? 1;
 
   final String title;
   final void Function() onPressed;

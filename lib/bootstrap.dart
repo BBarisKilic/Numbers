@@ -64,9 +64,6 @@ Future<void> setup() async {
     ..registerLazySingleton<AppRoute>(() => const AppRoute())
     ..registerLazySingleton<SharedPreferences>(() => sharedPreferences)
     ..registerLazySingleton<Dio>(Dio.new)
-    ..registerLazySingleton<TextEditingController>(
-      () => TextEditingController(text: '0'),
-    )
     ..registerLazySingleton<SharedPrefService>(
       () => SharedPrefServiceImpl(preferences: getIt()),
     )
@@ -101,7 +98,6 @@ Future<void> setup() async {
       () => NumberCubit(
         getNumberUseCase: getIt(),
         getRandomNumberUseCase: getIt(),
-        controller: getIt(),
       ),
     )
     ..registerFactory<SettingsCubit>(SettingsCubit.new);

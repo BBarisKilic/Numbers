@@ -1,17 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:numbers/src/core/core.dart';
-import 'package:numbers/src/features/number/number.dart';
+part of '../pages/number_page.dart';
 
-class NumberTextFormField extends StatelessWidget {
-  const NumberTextFormField({
-    super.key,
-  });
+class _NumberTextFormField extends StatelessWidget {
+  const _NumberTextFormField({
+    required TextEditingController controller,
+  }) : _controller = controller;
+
+  final TextEditingController _controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
-      controller: context.read<NumberCubit>().getEditingController,
+      controller: _controller,
       style: context.textTheme.titleMedium,
       enabled: false,
       textDirection: TextDirection.rtl,
