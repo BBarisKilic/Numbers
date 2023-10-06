@@ -36,8 +36,8 @@ class NumpadNumberButton extends StatelessWidget {
           ),
           child: Text(
             title,
-            style: context.textTheme.titleMedium
-                ?.copyWith(color: const Color(0xffF8F3F7)),
+            style: context.textTheme.displayMedium
+                ?.copyWith(color: const Color(0xFFF8F3F7)),
           ),
         ),
       );

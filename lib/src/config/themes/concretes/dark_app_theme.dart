@@ -40,15 +40,15 @@ final class DarkAppTheme implements AppTheme {
     ),
     textTheme: const TextTheme(
       displayLarge: TextStyle(
-        fontSize: 24,
+        fontSize: 20,
         fontWeight: FontWeight.w400,
       ),
       displayMedium: TextStyle(
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: FontWeight.w700,
       ),
       displaySmall: TextStyle(
-        fontSize: 18,
+        fontSize: 16,
         fontWeight: FontWeight.w500,
       ),
       titleMedium: TextStyle(
@@ -60,11 +60,11 @@ final class DarkAppTheme implements AppTheme {
         fontWeight: FontWeight.w500,
       ),
       bodyLarge: TextStyle(
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: FontWeight.w700,
       ),
       bodyMedium: TextStyle(
-        fontSize: 10,
+        fontSize: 12,
         fontWeight: FontWeight.w400,
       ),
     ).apply(

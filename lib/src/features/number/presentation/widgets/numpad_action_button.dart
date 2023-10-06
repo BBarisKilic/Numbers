@@ -38,7 +38,7 @@ class NumpadActionButton extends StatelessWidget {
           ),
           child: Text(
             title,
-            style: context.textTheme.titleMedium!.copyWith(
+            style: context.textTheme.displayMedium?.copyWith(
               color: const Color(0xFFF8F3F7),
             ),
           ),

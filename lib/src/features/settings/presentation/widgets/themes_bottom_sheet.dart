@@ -32,7 +32,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                       child: SvgPicture.asset(
                         kThemeIconPath,
                         color: context.theme.iconTheme.color,
-                        height: MediaQuery.of(context).size.height * 0.10,
+                        height: IconSize.xLarge,
                       ),
                     ),
                     InkWell(

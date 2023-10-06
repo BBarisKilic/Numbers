@@ -9,25 +9,28 @@ class NumberTextFormField extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => TextFormField(
-        controller: context.read<NumberCubit>().getEditingController,
-        enabled: false,
-        textDirection: TextDirection.rtl,
-        decoration: InputDecoration(
-          disabledBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
-            ),
-            borderSide: BorderSide(color: context.theme.dividerColor),
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: context.read<NumberCubit>().getEditingController,
+      style: context.textTheme.titleMedium,
+      enabled: false,
+      textDirection: TextDirection.rtl,
+      decoration: InputDecoration(
+        disabledBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(12),
+            topRight: Radius.circular(12),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderRadius: const BorderRadius.only(
-              topLeft: Radius.circular(12),
-              topRight: Radius.circular(12),
-            ),
-            borderSide: BorderSide(color: context.theme.dividerColor),
-          ),
+          borderSide: BorderSide(color: context.theme.dividerColor),
         ),
-      );
+        focusedBorder: OutlineInputBorder(
+          borderRadius: const BorderRadius.only(
+            topLeft: Radius.circular(12),
+            topRight: Radius.circular(12),
+          ),
+          borderSide: BorderSide(color: context.theme.dividerColor),
+        ),
+      ),
+    );
+  }
 }
