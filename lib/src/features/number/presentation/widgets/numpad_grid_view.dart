@@ -49,60 +49,60 @@ class _NumpadGridView extends StatelessWidget {
       crossAxisSpacing: 1,
       children: [
         _NumpadNumberButton(
-          '${NumpadNumber.one}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.one}'),
+          '${_NumpadNumber.one}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.one}'),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.two}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.two}'),
+          '${_NumpadNumber.two}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.two}'),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.three}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.three}'),
+          '${_NumpadNumber.three}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.three}'),
         ),
         _NumpadActionButton(
           kNumpadClearText,
           onPressed: _onPressedClearButton,
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.four}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.four}'),
+          '${_NumpadNumber.four}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.four}'),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.five}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.five}'),
+          '${_NumpadNumber.five}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.five}'),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.six}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.six}'),
+          '${_NumpadNumber.six}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.six}'),
         ),
         _NumpadActionButton(
           kNumpadRemoveLastText,
           onPressed: _onPressedRemoveLastButton,
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.seven}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.seven}'),
+          '${_NumpadNumber.seven}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.seven}'),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.eight}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.eight}'),
+          '${_NumpadNumber.eight}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.eight}'),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.nine}',
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.nine}'),
+          '${_NumpadNumber.nine}',
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.nine}'),
         ),
         _NumpadActionButton(
           kNumpadRandomText,
           onPressed: () => _onPressedRandomButton(context),
         ),
         _NumpadNumberButton(
-          '${NumpadNumber.zero}',
+          '${_NumpadNumber.zero}',
           crossAxisCellCount: 2,
           borderRadius: const BorderRadius.only(
             bottomLeft: Radius.circular(12),
           ),
-          onPressed: () => _onPressedNumberButton('${NumpadNumber.zero}'),
+          onPressed: () => _onPressedNumberButton('${_NumpadNumber.zero}'),
         ),
         _NumpadActionButton(
           kNumpadSearchText,

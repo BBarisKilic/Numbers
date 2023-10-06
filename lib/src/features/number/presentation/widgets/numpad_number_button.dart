@@ -43,7 +43,7 @@ class _NumpadNumberButton extends StatelessWidget {
   }
 }
 
-enum NumpadNumber {
+enum _NumpadNumber {
   one,
   two,
   three,
@@ -55,7 +55,7 @@ enum NumpadNumber {
   nine,
   zero;
 
-  const NumpadNumber();
+  const _NumpadNumber();
 
   @override
   String toString() {
