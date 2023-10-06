@@ -15,7 +15,7 @@ class InfoContainer extends StatelessWidget {
           vertical: Space.medium,
         ),
         decoration: BoxDecoration(
-          border: Border.all(color: Theme.of(context).dividerColor),
+          border: Border.all(color: context.theme.dividerColor),
         ),
         child: Center(
           child: SingleChildScrollView(
@@ -24,18 +24,18 @@ class InfoContainer extends StatelessWidget {
                 initial: () => Text(
                   kSearchANumberText,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: context.textTheme.bodyLarge,
                 ),
                 loading: () => const CircularProgressIndicator(),
                 loaded: (info) => Text(
                   info,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: context.textTheme.bodyLarge,
                 ),
                 error: () => Text(
                   kCheckInternetConnection,
                   textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyLarge,
+                  style: context.textTheme.bodyLarge,
                 ),
               ),
             ),

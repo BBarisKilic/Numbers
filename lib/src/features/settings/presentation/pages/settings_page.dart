@@ -37,7 +37,7 @@ class _SettingsView extends StatelessWidget {
         kSettingsTitle,
         iconPath: kBackIconPath,
         iconSize: IconSize.small,
-        iconColor: Theme.of(context).primaryColorLight,
+        iconColor: context.theme.primaryColorLight,
         titleSpacing: Space.large,
         onTap: context.pop,
       ),

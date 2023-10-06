@@ -13,7 +13,7 @@ class NumberPage extends StatelessWidget {
           kAppTitle,
           iconPath: kSettingsIconPath,
           iconSize: IconSize.small,
-          iconColor: Theme.of(context).primaryColorLight,
+          iconColor: context.theme.primaryColorLight,
           titleSpacing: Space.large,
           onTap: () => context.read<NumberCubit>().onTapSettingsButton(context),
         ),

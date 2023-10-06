@@ -6,11 +6,11 @@ class _ThemesBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).colorScheme.background,
+      color: context.colorScheme.background,
       child: DecoratedBox(
         decoration: BoxDecoration(
           border: Border(
-            top: BorderSide(color: Theme.of(context).colorScheme.secondary),
+            top: BorderSide(color: context.colorScheme.secondary),
           ),
         ),
         child: SafeArea(
@@ -31,7 +31,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                       tag: 'option0',
                       child: SvgPicture.asset(
                         kThemeIconPath,
-                        color: Theme.of(context).iconTheme.color,
+                        color: context.theme.iconTheme.color,
                         height: MediaQuery.of(context).size.height * 0.10,
                       ),
                     ),
@@ -42,7 +42,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                       highlightColor: Colors.transparent,
                       child: SvgPicture.asset(
                         kCloseIconPath,
-                        color: Theme.of(context).iconTheme.color,
+                        color: context.theme.iconTheme.color,
                         width: IconSize.medium,
                       ),
                     ),
@@ -51,7 +51,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                 const SizedBox(height: Space.medium),
                 Text(
                   kThemeOptionsText,
-                  style: Theme.of(context).textTheme.displayMedium,
+                  style: context.textTheme.displayMedium,
                 ),
                 const SizedBox(height: Space.xxLarge),
                 const _ThemeSelector(),
@@ -74,7 +74,7 @@ class _ThemeSelector extends StatelessWidget {
       children: [
         Text(
           kThemeText,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: context.textTheme.titleMedium,
         ),
         SharpToggleSwitch(
           onToggle: (position) {
@@ -91,8 +91,8 @@ class _ThemeSelector extends StatelessWidget {
                   : SwitchPosition.right,
           leftSwitch: kLightText,
           rightSwitch: kDarkText,
-          primaryColor: Theme.of(context).primaryColorLight,
-          secondaryColor: Theme.of(context).colorScheme.background,
+          primaryColor: context.theme.primaryColorLight,
+          secondaryColor: context.colorScheme.background,
         ),
       ],
     );

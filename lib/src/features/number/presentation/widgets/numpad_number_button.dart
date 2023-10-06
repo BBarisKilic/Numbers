@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:numbers/src/core/core.dart';
 
 class NumpadNumberButton extends StatelessWidget {
   const NumpadNumberButton(
@@ -26,20 +27,17 @@ class NumpadNumberButton extends StatelessWidget {
           style: ButtonStyle(
             tapTargetSize: MaterialTapTargetSize.shrinkWrap,
             backgroundColor: MaterialStateProperty.all(
-              Theme.of(context).colorScheme.primary,
+              context.colorScheme.primary,
             ),
-            overlayColor:
-                MaterialStateProperty.all(Theme.of(context).splashColor),
+            overlayColor: MaterialStateProperty.all(context.theme.splashColor),
             shape: MaterialStateProperty.all(
               RoundedRectangleBorder(borderRadius: borderRadius),
             ),
           ),
           child: Text(
             title,
-            style: Theme.of(context)
-                .textTheme
-                .titleMedium!
-                .copyWith(color: const Color(0xffF8F3F7)),
+            style: context.textTheme.titleMedium
+                ?.copyWith(color: const Color(0xffF8F3F7)),
           ),
         ),
       );

@@ -34,12 +34,12 @@ class _OptionsListView extends StatelessWidget {
                   tag: 'option$index',
                   child: SvgPicture.asset(
                     options[index].iconPath,
-                    color: Theme.of(context).iconTheme.color,
+                    color: context.theme.iconTheme.color,
                   ),
                 ),
                 title: Text(
                   options[index].title,
-                  style: Theme.of(context).textTheme.titleMedium,
+                  style: context.textTheme.titleMedium,
                 ),
               );
       },

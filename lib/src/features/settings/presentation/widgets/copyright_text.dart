@@ -8,7 +8,7 @@ class _CopyrightText extends StatelessWidget {
     return Center(
       child: Text(
         kCopyrightText,
-        style: Theme.of(context).textTheme.bodyMedium,
+        style: context.textTheme.bodyMedium,
       ),
     );
   }
