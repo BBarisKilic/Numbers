@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:nil/nil.dart';
 import 'package:numbers/bootstrap.dart';
 import 'package:numbers/src/app/app.dart';
 import 'package:numbers/src/config/config.dart';
@@ -71,3 +70,5 @@ class _SettingsView extends StatelessWidget {
     );
   }
 }
+
+const _kHeroTagPrefix = 'option';

@@ -14,7 +14,7 @@ class _OptionsListView extends StatelessWidget {
       itemCount: options.length + 1,
       itemBuilder: (context, index) {
         return index == options.length
-            ? nil
+            ? const SizedBox.shrink()
             : ListTile(
                 onTap: () async {
                   switch (index) {
@@ -31,7 +31,7 @@ class _OptionsListView extends StatelessWidget {
                   }
                 },
                 leading: Hero(
-                  tag: 'option$index',
+                  tag: '$_kHeroTagPrefix$index',
                   child: SvgPicture.asset(
                     options[index].iconPath,
                     color: context.theme.iconTheme.color,
@@ -43,8 +43,8 @@ class _OptionsListView extends StatelessWidget {
                 ),
               );
       },
-      separatorBuilder: (context, index) {
-        return const Divider(thickness: 1, height: 4);
+      separatorBuilder: (_, __) {
+        return const Divider(thickness: 1, height: Space.xSmall);
       },
     );
   }

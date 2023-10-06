@@ -28,7 +28,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                   children: [
                     const SizedBox(width: IconSize.medium),
                     Hero(
-                      tag: 'option0',
+                      tag: '${_kHeroTagPrefix}0',
                       child: SvgPicture.asset(
                         kThemeIconPath,
                         color: context.theme.iconTheme.color,
