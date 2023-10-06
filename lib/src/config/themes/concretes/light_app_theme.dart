@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:numbers/src/config/config.dart';
-import 'package:sizer/sizer.dart';
 
 /// {@template light_app_theme}
 /// An implementation of the [AppTheme] interface class that provides the light
@@ -30,42 +29,42 @@ final class LightAppTheme implements AppTheme {
     iconTheme: const IconThemeData(
       color: Color(0xFF181818),
     ),
-    appBarTheme: AppBarTheme(
-      color: const Color(0xFFF8F3F7),
+    appBarTheme: const AppBarTheme(
+      color: Color(0xFFF8F3F7),
       elevation: 0,
       titleTextStyle: TextStyle(
-        fontSize: 24.sp,
+        fontSize: 24,
         fontWeight: FontWeight.w400,
-        color: const Color(0xFF181818),
+        color: Color(0xFF181818),
       ),
     ),
-    textTheme: TextTheme(
+    textTheme: const TextTheme(
       displayLarge: TextStyle(
-        fontSize: 24.sp,
+        fontSize: 24,
         fontWeight: FontWeight.w400,
       ),
       displayMedium: TextStyle(
-        fontSize: 18.sp,
+        fontSize: 18,
         fontWeight: FontWeight.w700,
       ),
       displaySmall: TextStyle(
-        fontSize: 18.sp,
+        fontSize: 18,
         fontWeight: FontWeight.w500,
       ),
       titleMedium: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 14,
         fontWeight: FontWeight.w700,
       ),
       titleSmall: TextStyle(
-        fontSize: 14.sp,
+        fontSize: 14,
         fontWeight: FontWeight.w500,
       ),
       bodyLarge: TextStyle(
-        fontSize: 10.sp,
+        fontSize: 10,
         fontWeight: FontWeight.w700,
       ),
       bodyMedium: TextStyle(
-        fontSize: 10.sp,
+        fontSize: 10,
         fontWeight: FontWeight.w400,
       ),
     ).apply(

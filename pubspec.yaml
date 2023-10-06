@@ -27,7 +27,6 @@ dependencies:
   shared_preferences: ^2.2.1
   sharp_toggle_switch:
     path: ./packages/sharp_toggle_switch
-  sizer: ^2.0.15
 
 dev_dependencies:
   bloc_test: ^9.1.4
