@@ -10,4 +10,10 @@ extension BuildContextExt on BuildContext {
 
   /// Provides direct access to color scheme.
   ColorScheme get colorScheme => theme.colorScheme;
+
+  /// Provides direct access to the height of the screen.
+  double get screenHeight => MediaQuery.sizeOf(this).height;
+
+  /// Provides direct access to the width of the screen.
+  double get screenWidth => MediaQuery.sizeOf(this).width;
 }
