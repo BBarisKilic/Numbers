@@ -1,6 +1,6 @@
 part of '../pages/number_page.dart';
 
-class _NumpadGridView extends StatelessWidget {
+final class _NumpadGridView extends StatelessWidget {
   const _NumpadGridView({
     required TextEditingController controller,
   }) : _controller = controller;

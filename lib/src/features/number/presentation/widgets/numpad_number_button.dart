@@ -1,6 +1,6 @@
 part of '../pages/number_page.dart';
 
-class _NumpadNumberButton extends StatelessWidget {
+final class _NumpadNumberButton extends StatelessWidget {
   const _NumpadNumberButton(
     this.title, {
     required this.onPressed,
@@ -40,46 +40,5 @@ class _NumpadNumberButton extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-enum _NumpadNumber {
-  one,
-  two,
-  three,
-  four,
-  five,
-  six,
-  seven,
-  eight,
-  nine,
-  zero;
-
-  const _NumpadNumber();
-
-  @override
-  String toString() {
-    switch (this) {
-      case one:
-        return '1';
-      case two:
-        return '2';
-      case three:
-        return '3';
-      case four:
-        return '4';
-      case five:
-        return '5';
-      case six:
-        return '6';
-      case seven:
-        return '7';
-      case eight:
-        return '8';
-      case nine:
-        return '9';
-      case zero:
-        return '0';
-    }
   }
 }

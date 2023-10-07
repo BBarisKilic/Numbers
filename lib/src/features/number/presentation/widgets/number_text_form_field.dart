@@ -1,6 +1,6 @@
 part of '../pages/number_page.dart';
 
-class _NumberTextFormField extends StatelessWidget {
+final class _NumberTextFormField extends StatelessWidget {
   const _NumberTextFormField({
     required TextEditingController controller,
   }) : _controller = controller;

@@ -1,6 +1,6 @@
 part of '../pages/number_page.dart';
 
-class _InfoContainer extends StatelessWidget {
+final class _InfoContainer extends StatelessWidget {
   const _InfoContainer();
 
   @override
