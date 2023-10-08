@@ -1,6 +1,6 @@
 part of '../pages/number_page.dart';
 
-final class _NumpadActionButton extends StatelessWidget {
+class _NumpadActionButton extends StatelessWidget {
   const _NumpadActionButton(
     this.title, {
     required this.onPressed,

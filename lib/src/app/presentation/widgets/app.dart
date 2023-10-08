@@ -4,7 +4,6 @@ import 'package:numbers/bootstrap.dart';
 import 'package:numbers/src/app/app.dart';
 import 'package:numbers/src/config/config.dart';
 import 'package:numbers/src/core/core.dart';
-import 'package:numbers/src/features/number/number.dart';
 
 export '../cubit/app_cubit.dart';
 
@@ -13,11 +12,8 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider(create: (_) => getIt<AppCubit>()..init()),
-        BlocProvider(create: (_) => getIt<NumberCubit>()),
-      ],
+    return BlocProvider(
+      create: (_) => getIt<AppCubit>()..init(),
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           return MaterialApp.router(

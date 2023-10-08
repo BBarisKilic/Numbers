@@ -1,6 +1,6 @@
 part of '../pages/number_page.dart';
 
-final class _NumpadGridView extends StatelessWidget {
+class _NumpadGridView extends StatelessWidget {
   const _NumpadGridView({
     required TextEditingController controller,
   }) : _controller = controller;
@@ -9,7 +9,7 @@ final class _NumpadGridView extends StatelessWidget {
 
   void _onPressedNumberButton(String number) {
     if (_controller.text.length > 15) return;
-    if (_controller.text == '0') {
+    if (_controller.text == '${_NumpadNumber.zero}') {
       _controller.text = number;
       return;
     }
@@ -18,12 +18,12 @@ final class _NumpadGridView extends StatelessWidget {
   }
 
   void _onPressedClearButton() {
-    _controller.text = '0';
+    _controller.text = '${_NumpadNumber.zero}';
   }
 
   void _onPressedRemoveLastButton() {
     if (_controller.text.length == 1) {
-      _controller.text = '0';
+      _controller.text = '${_NumpadNumber.zero}';
       return;
     }
 
