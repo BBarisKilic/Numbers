@@ -6,10 +6,7 @@ class _InfoContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        horizontal: Space.large,
-        vertical: Space.medium,
-      ),
+      padding: AppPadding.general,
       decoration: BoxDecoration(
         border: Border.all(color: context.theme.dividerColor),
       ),

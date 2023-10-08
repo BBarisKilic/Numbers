@@ -37,15 +37,12 @@ class _SettingsView extends StatelessWidget {
         iconPath: kBackIconPath,
         iconSize: IconSize.small,
         iconColor: context.theme.primaryColorLight,
-        titleSpacing: Space.large,
+        titleSpacing: AppPadding.large,
         onTap: context.pop,
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: Space.large,
-            vertical: Space.medium,
-          ),
+          padding: AppPadding.general,
           child: Column(
             children: [
               Expanded(

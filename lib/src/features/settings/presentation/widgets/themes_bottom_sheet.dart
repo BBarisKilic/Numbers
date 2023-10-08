@@ -15,9 +15,9 @@ class _ThemesBottomSheet extends StatelessWidget {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: Space.large,
-              vertical: Space.large,
+            padding: AppPadding.custom(
+              horizontal: AppPadding.large,
+              vertical: AppPadding.large,
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -48,12 +48,12 @@ class _ThemesBottomSheet extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: Space.medium),
+                const SizedBox(height: AppPadding.medium),
                 Text(
                   kThemeOptionsText,
                   style: context.textTheme.displayMedium,
                 ),
-                const SizedBox(height: Space.xxLarge),
+                const SizedBox(height: AppPadding.xxLarge),
                 const _ThemeSelector(),
               ],
             ),

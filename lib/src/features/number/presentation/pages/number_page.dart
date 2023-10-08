@@ -55,22 +55,19 @@ class _NumberViewState extends State<_NumberView> {
         iconPath: kSettingsIconPath,
         iconSize: IconSize.small,
         iconColor: context.theme.primaryColorLight,
-        titleSpacing: Space.large,
+        titleSpacing: AppPadding.large,
         onTap: () => context.push('/${Path.settingsPage}'),
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: Space.large,
-            vertical: Space.medium,
-          ),
+          padding: AppPadding.general,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               _NumberTextFormField(controller: _controller),
-              const SizedBox(height: Space.medium),
+              const SizedBox(height: AppPadding.medium),
               const Expanded(child: _InfoContainer()),
-              const SizedBox(height: Space.medium),
+              const SizedBox(height: AppPadding.medium),
               _NumpadGridView(controller: _controller),
             ],
           ),

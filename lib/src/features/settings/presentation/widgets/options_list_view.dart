@@ -44,7 +44,7 @@ class _OptionsListView extends StatelessWidget {
               );
       },
       separatorBuilder: (_, __) {
-        return const Divider(thickness: 1, height: Space.xSmall);
+        return const Divider(thickness: 1, height: AppPadding.xSmall);
       },
     );
   }
