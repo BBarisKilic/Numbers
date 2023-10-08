@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:numbers/src/app/app.dart';
@@ -27,11 +29,14 @@ class AppCubit extends Cubit<AppState> {
       params: SharedPrefStringRequestParams(key: '$AvailableTheme'),
     );
 
-    if (dataState is DataFailure) return;
+    if (dataState is DataFailure) {
+      unawaited(_saveAppThemeToSharedPref(AvailableTheme.dark));
+      return;
+    }
 
     emit(
       state.copyWith(
-        theme: dataState.data == '${AvailableTheme.light}'
+        theme: dataState.data == AvailableTheme.light.value
             ? AvailableTheme.light
             : AvailableTheme.dark,
       ),
@@ -41,8 +46,8 @@ class AppCubit extends Cubit<AppState> {
   Future<void> _saveAppThemeToSharedPref(AvailableTheme theme) async {
     await _setStringUseCase(
       params: SharedPrefSetStringParams(
-        key: '$AvailableTheme',
-        value: '$theme',
+        key: theme.key,
+        value: theme.value,
       ),
     );
   }
