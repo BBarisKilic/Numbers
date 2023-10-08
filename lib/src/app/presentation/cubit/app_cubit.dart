@@ -11,22 +11,22 @@ part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
   AppCubit({
-    required GetStringUseCase getStringUseCase,
-    required SetStringUseCase setStringUseCase,
-  })  : _getStringUseCase = getStringUseCase,
-        _setStringUseCase = setStringUseCase,
+    required GetThemeUseCase getThemeUseCase,
+    required SaveThemeUseCase saveThemeUseCase,
+  })  : _getThemeUseCase = getThemeUseCase,
+        _saveThemeUseCase = saveThemeUseCase,
         super(const AppState(theme: AvailableTheme.dark));
 
-  final GetStringUseCase _getStringUseCase;
-  final SetStringUseCase _setStringUseCase;
+  final GetThemeUseCase _getThemeUseCase;
+  final SaveThemeUseCase _saveThemeUseCase;
 
   void init() {
     _getAppThemeFromSharedPref();
   }
 
   Future<void> _getAppThemeFromSharedPref() async {
-    final dataState = await _getStringUseCase(
-      params: SharedPrefStringRequestParams(key: '$AvailableTheme'),
+    final dataState = await _getThemeUseCase(
+      params: GetThemeParams(key: '$AvailableTheme'),
     );
 
     if (dataState is DataFailure) {
@@ -44,8 +44,8 @@ class AppCubit extends Cubit<AppState> {
   }
 
   Future<void> _saveAppThemeToSharedPref(AvailableTheme theme) async {
-    await _setStringUseCase(
-      params: SharedPrefSetStringParams(
+    await _saveThemeUseCase(
+      params: SaveThemeParams(
         key: theme.key,
         value: theme.value,
       ),

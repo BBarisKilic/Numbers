@@ -64,23 +64,23 @@ Future<void> setup() async {
     ..registerLazySingleton<AppRoute>(() => const AppRoute())
     ..registerLazySingleton<SharedPreferences>(() => sharedPreferences)
     ..registerLazySingleton<Dio>(Dio.new)
-    ..registerLazySingleton<SharedPrefService>(
-      () => SharedPrefServiceImpl(preferences: getIt()),
+    ..registerLazySingleton<ThemeService>(
+      () => SharedPrefThemeService(preferences: getIt()),
     )
     ..registerLazySingleton<NumbersApiService>(
       () => NumbersApiServiceImpl(dio: getIt(), baseUrl: Url.numbersApi),
     )
-    ..registerLazySingleton<SharedPrefRepository>(
-      () => SharedPrefRepositoryImpl(service: getIt()),
+    ..registerLazySingleton<ThemeRepository>(
+      () => ThemeRepositoryImpl(service: getIt()),
     )
     ..registerLazySingleton<NumberRepository>(
       () => NumberRepositoryImpl(service: getIt()),
     )
-    ..registerLazySingleton<GetStringUseCase>(
-      () => GetStringUseCase(repository: getIt()),
+    ..registerLazySingleton<GetThemeUseCase>(
+      () => GetThemeUseCase(repository: getIt()),
     )
-    ..registerLazySingleton<SetStringUseCase>(
-      () => SetStringUseCase(repository: getIt()),
+    ..registerLazySingleton<SaveThemeUseCase>(
+      () => SaveThemeUseCase(repository: getIt()),
     )
     ..registerLazySingleton<GetNumberUseCase>(
       () => GetNumberUseCase(repository: getIt()),
@@ -90,8 +90,8 @@ Future<void> setup() async {
     )
     ..registerFactory<AppCubit>(
       () => AppCubit(
-        getStringUseCase: getIt(),
-        setStringUseCase: getIt(),
+        getThemeUseCase: getIt(),
+        saveThemeUseCase: getIt(),
       ),
     )
     ..registerFactory<NumberCubit>(
