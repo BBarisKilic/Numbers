@@ -29,26 +29,23 @@ class AppCubit extends Cubit<AppState> {
       params: GetThemeParams(key: '$AvailableTheme'),
     );
 
-    if (dataState is DataFailure) {
-      unawaited(_saveAppThemeToSharedPref(AvailableTheme.dark));
-      return;
+    switch (dataState) {
+      case DataSuccess(data: final theme):
+        emit(
+          state.copyWith(
+            theme: theme == AvailableTheme.light.value
+                ? AvailableTheme.light
+                : AvailableTheme.dark,
+          ),
+        );
+      case DataFailure():
+        unawaited(_saveAppThemeToSharedPref(state.theme));
     }
-
-    emit(
-      state.copyWith(
-        theme: dataState.data == AvailableTheme.light.value
-            ? AvailableTheme.light
-            : AvailableTheme.dark,
-      ),
-    );
   }
 
   Future<void> _saveAppThemeToSharedPref(AvailableTheme theme) async {
     await _saveThemeUseCase(
-      params: SaveThemeParams(
-        key: theme.key,
-        value: theme.value,
-      ),
+      params: SaveThemeParams(key: theme.key, value: theme.value),
     );
   }
 
@@ -56,6 +53,7 @@ class AppCubit extends Cubit<AppState> {
     if (state.theme == theme) return;
 
     _saveAppThemeToSharedPref(theme);
+
     emit(state.copyWith(theme: theme));
   }
 }
