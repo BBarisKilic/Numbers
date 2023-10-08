@@ -1,7 +1,7 @@
 import 'package:numbers/src/core/core.dart';
 
-final class SharedPrefSetStringParams extends Params {
-  const SharedPrefSetStringParams({
+final class SaveThemeParams extends Params {
+  const SaveThemeParams({
     required this.key,
     required this.value,
   });
