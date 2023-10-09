@@ -67,8 +67,8 @@ Future<void> setup() async {
     ..registerLazySingleton<ThemeService>(
       () => SharedPrefThemeService(preferences: getIt()),
     )
-    ..registerLazySingleton<NumbersApiService>(
-      () => NumbersApiServiceImpl(dio: getIt(), baseUrl: Url.numbersApi),
+    ..registerLazySingleton<NumbersService>(
+      () => DioNumbersService(dio: getIt(), baseUrl: Url.numbersApi),
     )
     ..registerLazySingleton<ThemeRepository>(
       () => ThemeRepositoryImpl(service: getIt()),

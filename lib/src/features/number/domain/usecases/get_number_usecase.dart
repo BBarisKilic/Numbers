@@ -1,8 +1,7 @@
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
-class GetNumberUseCase
-    implements UseCase<DataState<Number>, NumberRequestParams> {
+class GetNumberUseCase implements UseCase<DataState<Number>, GetNumberParams> {
   const GetNumberUseCase({
     required NumberRepository repository,
   }) : _numberRepository = repository;
@@ -10,6 +9,6 @@ class GetNumberUseCase
   final NumberRepository _numberRepository;
 
   @override
-  Future<DataState<Number>> call({required NumberRequestParams params}) =>
+  Future<DataState<Number>> call({required GetNumberParams params}) =>
       _numberRepository.getNumber(params);
 }
