@@ -1,7 +1,8 @@
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
-class GetNumberUseCase implements UseCase<DataState<Number>, GetNumberParams> {
+final class GetNumberUseCase
+    implements UseCase<DataState<Number>, GetNumberParams> {
   const GetNumberUseCase({
     required NumberRepository repository,
   }) : _numberRepository = repository;
