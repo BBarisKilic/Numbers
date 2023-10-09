@@ -5,7 +5,7 @@ import 'package:numbers/src/core/core.dart';
 part 'settings_cubit.freezed.dart';
 part 'settings_state.dart';
 
-class SettingsCubit extends Cubit<SettingsState> {
+final class SettingsCubit extends Cubit<SettingsState> {
   SettingsCubit() : super(const SettingsState.initial());
 
   void init() {
