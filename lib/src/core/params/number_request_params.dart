@@ -1,9 +1,7 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:numbers/src/core/core.dart';
 
-part 'number_request_params.freezed.dart';
+final class GetNumberParams extends Params {
+  const GetNumberParams({required this.number});
 
-@freezed
-abstract class NumberRequestParams with _$NumberRequestParams {
-  const factory NumberRequestParams({required int number}) =
-      _NumberRequestParams;
+  final int number;
 }

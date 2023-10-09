@@ -2,8 +2,19 @@ import 'dart:async';
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-import 'package:numbers/src/injector.dart' as di;
+import 'package:get_it/get_it.dart';
+import 'package:numbers/src/app/app.dart';
+import 'package:numbers/src/config/config.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/features/number/number.dart';
+import 'package:numbers/src/features/settings/settings.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+final getIt = GetIt.instance;
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -30,7 +41,64 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  await di.initializeDependencies();
+  // Sets preferred orientation.
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  await setup();
 
   runApp(await builder());
+}
+
+Future<void> setup() async {
+  final sharedPreferences = await SharedPreferences.getInstance();
+
+  getIt
+    ..registerLazySingleton<AppTheme>(
+      () => const LightAppTheme(),
+      instanceName: '${AvailableTheme.light}',
+    )
+    ..registerLazySingleton<AppTheme>(
+      () => const DarkAppTheme(),
+      instanceName: '${AvailableTheme.dark}',
+    )
+    ..registerLazySingleton<AppRoute>(() => const AppRoute())
+    ..registerLazySingleton<SharedPreferences>(() => sharedPreferences)
+    ..registerLazySingleton<Dio>(Dio.new)
+    ..registerLazySingleton<ThemeService>(
+      () => SharedPrefThemeService(preferences: getIt()),
+    )
+    ..registerLazySingleton<NumbersService>(
+      () => DioNumbersService(dio: getIt(), baseUrl: Url.numbersApi),
+    )
+    ..registerLazySingleton<ThemeRepository>(
+      () => ThemeRepositoryImpl(service: getIt()),
+    )
+    ..registerLazySingleton<NumberRepository>(
+      () => NumberRepositoryImpl(service: getIt()),
+    )
+    ..registerLazySingleton<GetThemeUseCase>(
+      () => GetThemeUseCase(repository: getIt()),
+    )
+    ..registerLazySingleton<SaveThemeUseCase>(
+      () => SaveThemeUseCase(repository: getIt()),
+    )
+    ..registerLazySingleton<GetNumberUseCase>(
+      () => GetNumberUseCase(repository: getIt()),
+    )
+    ..registerLazySingleton<GetRandomNumberUseCase>(
+      () => GetRandomNumberUseCase(repository: getIt()),
+    )
+    ..registerFactory<AppCubit>(
+      () => AppCubit(
+        getThemeUseCase: getIt(),
+        saveThemeUseCase: getIt(),
+      ),
+    )
+    ..registerFactory<NumberCubit>(
+      () => NumberCubit(
+        getNumberUseCase: getIt(),
+        getRandomNumberUseCase: getIt(),
+      ),
+    )
+    ..registerFactory<SettingsCubit>(SettingsCubit.new);
 }
