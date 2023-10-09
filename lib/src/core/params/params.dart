@@ -1,4 +1,4 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
 export 'get_theme_params.dart';
 export 'number_request_params.dart';
