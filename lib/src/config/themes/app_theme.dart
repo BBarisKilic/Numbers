@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+/// An abstract interface class that blueprints of the concrete theme
+/// implementations.
+abstract interface class AppTheme {
+  /// Returns the [ThemeData] of the concrete theme implementations.
+  ThemeData get getData;
+}
+
 /// An enum that represents the available themes.
 ///
 /// ```dart
@@ -17,11 +24,4 @@ enum AvailableTheme {
 
   /// Returns the value of the enum. Possible values are `light` and `dark`.
   String get value => toString().split('.').last;
-}
-
-/// An abstract interface class that blueprints of the concrete theme
-/// implementations.
-abstract interface class AppTheme {
-  /// Returns the [ThemeData] of the concrete theme implementations.
-  ThemeData get getData;
 }
