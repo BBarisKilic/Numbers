@@ -6,7 +6,7 @@ import 'package:numbers/src/features/number/number.dart';
 part 'number_cubit.freezed.dart';
 part 'number_state.dart';
 
-class NumberCubit extends Cubit<NumberState> {
+final class NumberCubit extends Cubit<NumberState> {
   NumberCubit({
     required GetNumberUseCase getNumberUseCase,
     required GetRandomNumberUseCase getRandomNumberUseCase,
@@ -21,14 +21,14 @@ class NumberCubit extends Cubit<NumberState> {
     emit(const NumberState.loading());
 
     final dataState =
-        await _getNumberUseCase(params: NumberRequestParams(number: number));
+        await _getNumberUseCase(params: GetNumberParams(number: number));
 
-    if (dataState is DataFailure) {
-      emit(const NumberState.error());
-      return;
+    switch (dataState) {
+      case DataSuccess(data: final number):
+        emit(NumberState.loaded(info: number!.info));
+      case DataFailure():
+        emit(const NumberState.error());
     }
-
-    emit(NumberState.loaded(info: dataState.data!.info));
   }
 
   Future<void> getRandomNumberInfo() async {
@@ -36,11 +36,11 @@ class NumberCubit extends Cubit<NumberState> {
 
     final dataState = await _getRandomNumberUseCase();
 
-    if (dataState is DataFailure) {
-      emit(const NumberState.error());
-      return;
+    switch (dataState) {
+      case DataSuccess(data: final number):
+        emit(NumberState.loaded(info: number!.info));
+      case DataFailure():
+        emit(const NumberState.error());
     }
-
-    emit(NumberState.loaded(info: dataState.data!.info));
   }
 }
