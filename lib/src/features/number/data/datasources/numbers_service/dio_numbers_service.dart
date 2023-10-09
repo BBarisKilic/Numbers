@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
-class DioNumbersService implements NumbersService {
+final class DioNumbersService implements NumbersService {
   const DioNumbersService({
     required Dio dio,
     required String baseUrl,
