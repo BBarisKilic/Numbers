@@ -10,16 +10,16 @@ class MockNumberRepository extends Mock implements NumberRepository {}
 
 void main() {
   late MockNumberRepository mockNumberRepository;
-  late NumberRequestParams numberRequestParams;
+  late GetNumberParams numberRequestParams;
   late GetNumberUseCase sut;
 
   setUp(() {
     mockNumberRepository = MockNumberRepository();
-    numberRequestParams = const NumberRequestParams(number: 0);
+    numberRequestParams = const GetNumberParams(number: 0);
     sut = GetNumberUseCase(repository: mockNumberRepository);
   });
 
-  void arrangeNumberRepositoryResponse(NumberRequestParams params) {
+  void arrangeNumberRepositoryResponse(GetNumberParams params) {
     when(
       () => mockNumberRepository.getNumber(params),
     ).thenAnswer((_) async => const DataSuccess(Number(info: _kResponseInfo)));

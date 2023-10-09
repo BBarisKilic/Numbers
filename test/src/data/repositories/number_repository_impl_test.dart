@@ -8,13 +8,13 @@ class MockNumbersApiService extends Mock implements NumbersApiService {}
 
 void main() {
   late MockNumbersApiService mockNumbersApiService;
-  late NumberRequestParams numberRequestParams;
+  late GetNumberParams numberRequestParams;
   late NumberRepositoryImpl sut;
 
   setUp(
     () {
       mockNumbersApiService = MockNumbersApiService();
-      numberRequestParams = const NumberRequestParams(number: 0);
+      numberRequestParams = const GetNumberParams(number: 0);
       sut = NumberRepositoryImpl(service: mockNumbersApiService);
     },
   );

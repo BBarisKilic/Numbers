@@ -1,24 +1,25 @@
-import 'package:dio/dio.dart';
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
-class NumberRepositoryImpl implements NumberRepository {
-  const NumberRepositoryImpl({required NumbersApiService service})
-      : _numbersApiService = service;
-  final NumbersApiService _numbersApiService;
+final class NumberRepositoryImpl implements NumberRepository {
+  const NumberRepositoryImpl({
+    required NumbersService service,
+  }) : _numbersService = service;
+
+  final NumbersService _numbersService;
 
   @override
-  Future<DataState<Number>> getNumber(NumberRequestParams params) async {
+  Future<DataState<Number>> getNumber(GetNumberParams params) async {
     try {
-      final response = await _numbersApiService.getNumber(params: params);
+      final response = await _numbersService.getNumber(params: params);
 
-      return DataSuccess(response.toEntity());
-    } on DioException catch (e) {
+      return DataSuccess(Number(info: response.info));
+    } on GetNumberException catch (error) {
       return DataFailure(
         ErrorDetails(
-          message: e.message ?? '',
-          error: '',
-          stackTrace: '',
+          error: '$error',
+          message: error.message,
+          stackTrace: error.stackTrace,
         ),
       );
     }
@@ -27,15 +28,15 @@ class NumberRepositoryImpl implements NumberRepository {
   @override
   Future<DataState<Number>> getRandomNumber() async {
     try {
-      final response = await _numbersApiService.getRandomNumber();
+      final response = await _numbersService.getRandomNumber();
 
-      return DataSuccess(response.toEntity());
-    } on DioException catch (e) {
+      return DataSuccess(Number(info: response.info));
+    } on GetRandomNumberException catch (error) {
       return DataFailure(
         ErrorDetails(
-          message: e.message ?? '',
-          error: '',
-          stackTrace: '',
+          error: '$error',
+          message: error.message,
+          stackTrace: error.stackTrace,
         ),
       );
     }
