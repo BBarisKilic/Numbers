@@ -9,7 +9,7 @@ import 'package:numbers/src/core/core.dart';
 part 'app_cubit.freezed.dart';
 part 'app_state.dart';
 
-class AppCubit extends Cubit<AppState> {
+final class AppCubit extends Cubit<AppState> {
   AppCubit({
     required GetThemeUseCase getThemeUseCase,
     required SaveThemeUseCase saveThemeUseCase,
