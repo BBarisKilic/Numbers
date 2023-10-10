@@ -20,7 +20,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => getIt<SettingsCubit>()..init(),
+      create: (_) => getIt<SettingsCubit>()..init(context.l10n),
       child: const _SettingsView(),
     );
   }
@@ -33,7 +33,7 @@ class _SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        kSettingsTitle,
+        context.l10n.settingsTitle,
         iconPath: Assets.images.back,
         iconSize: IconSize.small,
         iconColor: context.theme.primaryColorLight,

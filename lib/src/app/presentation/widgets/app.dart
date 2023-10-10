@@ -10,6 +10,9 @@ export '../cubit/app_cubit.dart';
 class App extends StatelessWidget {
   const App({super.key});
 
+  /// The title of the app.
+  static const _kAppTitle = 'Numbers';
+
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
@@ -17,8 +20,10 @@ class App extends StatelessWidget {
       child: BlocBuilder<AppCubit, AppState>(
         builder: (context, state) {
           return MaterialApp.router(
+            title: _kAppTitle,
             debugShowCheckedModeBanner: false,
-            title: kAppTitle,
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
             theme: getIt<AppTheme>(instanceName: '${state.theme}').getData,
             routeInformationProvider:
                 getIt<AppRoute>().getRouter.routeInformationProvider,

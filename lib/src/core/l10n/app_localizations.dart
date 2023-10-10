@@ -6,7 +6,6 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
 import 'app_localizations_en.dart';
-import 'app_localizations_es.dart';
 
 /// Callers can lookup localized strings with an instance of AppLocalizations
 /// returned by `AppLocalizations.of(context)`.
@@ -89,15 +88,116 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('en'),
-    Locale('es')
+    Locale('en')
   ];
 
-  /// Text shown in the AppBar of the Counter Page
+  /// Text shown in the AppBar of the HomePage
   ///
   /// In en, this message translates to:
-  /// **'Counter'**
-  String get counterAppBarTitle;
+  /// **'Numbers'**
+  String get appTitle;
+
+  /// Text shown in the AppBar of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Settings'**
+  String get settingsTitle;
+
+  /// Text shown in the info container of the HomePage
+  ///
+  /// In en, this message translates to:
+  /// **'Search a number!'**
+  String get searchANumber;
+
+  /// Text shown in the info container of the HomePage when there is no internet connection
+  ///
+  /// In en, this message translates to:
+  /// **'Oops!\n\nSomething went wrong. Please try again later.'**
+  String get checkInternetConnection;
+
+  /// Text shown in the option list of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Themes'**
+  String get themes;
+
+  /// Text shown in the option list of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Rate Us'**
+  String get rateUs;
+
+  /// Text shown in the option list of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Contact Us'**
+  String get contactUs;
+
+  /// Text shown in the option list of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Terms and Conditions'**
+  String get termsAndConditions;
+
+  /// Text shown in the option list of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get privacyPolicy;
+
+  /// Text shown in the bottom of the SettingsPage
+  ///
+  /// In en, this message translates to:
+  /// **'Copyright © 2023 BBK Development'**
+  String get copyRight;
+
+  /// Text shown as a title of the ThemesBottomSheet
+  ///
+  /// In en, this message translates to:
+  /// **'Theme Options'**
+  String get themeOptions;
+
+  /// Text shown as a subtitle in the ThemesBottomSheet
+  ///
+  /// In en, this message translates to:
+  /// **'Theme:'**
+  String get themeWithColon;
+
+  /// Text shown as a option in the ThemesBottomSheet
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get light;
+
+  /// Text shown as a option in the ThemesBottomSheet
+  ///
+  /// In en, this message translates to:
+  /// **'Dark'**
+  String get dark;
+
+  /// Text shown in the numpad button
+  ///
+  /// In en, this message translates to:
+  /// **'C'**
+  String get numpadClear;
+
+  /// Text shown in the numpad button
+  ///
+  /// In en, this message translates to:
+  /// **'CE'**
+  String get numpadRemoveLast;
+
+  /// Text shown in the numpad button
+  ///
+  /// In en, this message translates to:
+  /// **'Rand'**
+  String get numpadRandom;
+
+  /// Text shown in the numpad button
+  ///
+  /// In en, this message translates to:
+  /// **'Search'**
+  String get numpadSearch;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -109,7 +209,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['en', 'es'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -121,7 +221,6 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
     case 'en': return AppLocalizationsEn();
-    case 'es': return AppLocalizationsEs();
   }
 
   throw FlutterError(

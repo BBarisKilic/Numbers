@@ -1,0 +1,75 @@
+{
+    "@@locale": "en",
+    "appTitle": "Numbers",
+    "@appTitle": {
+        "description": "Text shown in the AppBar of the HomePage"
+    },
+    "settingsTitle": "Settings",
+    "@settingsTitle": {
+        "description": "Text shown in the AppBar of the SettingsPage"
+    },
+    "searchANumber": "Search a number!",
+    "@searchANumber": {
+        "description": "Text shown in the info container of the HomePage"
+    },
+    "checkInternetConnection": "Oops!\n\nSomething went wrong. Please try again later.",
+    "@checkInternetConnection": {
+        "description": "Text shown in the info container of the HomePage when there is no internet connection"
+    },
+    "themes": "Themes",
+    "@themes": {
+        "description": "Text shown in the option list of the SettingsPage"
+    },
+    "rateUs": "Rate Us",
+    "@rateUs": {
+        "description": "Text shown in the option list of the SettingsPage"
+    },
+    "contactUs": "Contact Us",
+    "@contactUs": {
+        "description": "Text shown in the option list of the SettingsPage"
+    },
+    "termsAndConditions": "Terms and Conditions",
+    "@termsAndConditions": {
+        "description": "Text shown in the option list of the SettingsPage"
+    },
+    "privacyPolicy": "Privacy Policy",
+    "@privacyPolicy": {
+        "description": "Text shown in the option list of the SettingsPage"
+    },
+    "copyRight": "Copyright © 2023 BBK Development",
+    "@copyRight": {
+        "description": "Text shown in the bottom of the SettingsPage"
+    },
+    "themeOptions": "Theme Options",
+    "@themeOptions": {
+        "description": "Text shown as a title of the ThemesBottomSheet"
+    },
+    "themeWithColon": "Theme:",
+    "@themeWithColon": {
+        "description": "Text shown as a subtitle in the ThemesBottomSheet"
+    },
+    "light": "Light",
+    "@light": {
+        "description": "Text shown as a option in the ThemesBottomSheet"
+    },
+    "dark": "Dark",
+    "@dark": {
+        "description": "Text shown as a option in the ThemesBottomSheet"
+    },
+    "numpadClear": "C",
+    "@numpadClear": {
+        "description": "Text shown in the numpad button"
+    },
+    "numpadRemoveLast": "CE",
+    "@numpadRemoveLast": {
+        "description": "Text shown in the numpad button"
+    },
+    "numpadRandom": "Rand",
+    "@numpadRandom": {
+        "description": "Text shown in the numpad button"
+    },
+    "numpadSearch": "Search",
+    "@numpadSearch": {
+        "description": "Text shown in the numpad button"
+    }
+}

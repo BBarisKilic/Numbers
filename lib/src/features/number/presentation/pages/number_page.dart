@@ -51,7 +51,7 @@ class _NumberViewState extends State<_NumberView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        kAppTitle,
+        context.l10n.appTitle,
         iconPath: Assets.images.settings,
         iconSize: IconSize.small,
         iconColor: context.theme.primaryColorLight,
