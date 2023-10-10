@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 /// Extension for [BuildContext] to add more capabilities to it.
 extension BuildContextExt on BuildContext {
+  /// Provides direct access to localization.
+  AppLocalizations get l10n => AppLocalizations.of(this);
+
   /// Provides direct access to theme data.
   ThemeData get theme => Theme.of(this);
 
