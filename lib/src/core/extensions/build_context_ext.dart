@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:numbers/src/core/core.dart';
 
 /// Extension for [BuildContext] to add more capabilities to it.
 extension BuildContextExt on BuildContext {

@@ -33,8 +33,8 @@ class _SettingsView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        kSettingsTitle,
-        iconPath: kBackIconPath,
+        context.l10n.settingsTitle,
+        iconPath: Assets.images.back,
         iconSize: IconSize.small,
         iconColor: context.theme.primaryColorLight,
         titleSpacing: AppPadding.large,

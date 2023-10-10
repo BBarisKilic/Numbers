@@ -30,18 +30,19 @@ class _ThemesBottomSheet extends StatelessWidget {
                     Hero(
                       tag: '${_kHeroTagPrefix}0',
                       child: SvgPicture.asset(
-                        kThemeIconPath,
+                        Assets.images.theme,
                         color: context.theme.iconTheme.color,
                         height: IconSize.xLarge,
                       ),
                     ),
                     InkWell(
                       onTap: context.pop,
-                      overlayColor:
-                          MaterialStateProperty.all(Colors.transparent),
+                      overlayColor: MaterialStateProperty.all(
+                        Colors.transparent,
+                      ),
                       highlightColor: Colors.transparent,
                       child: SvgPicture.asset(
-                        kCloseIconPath,
+                        Assets.images.close,
                         color: context.theme.iconTheme.color,
                         width: IconSize.medium,
                       ),
