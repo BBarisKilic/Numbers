@@ -7,7 +7,7 @@ class _CopyrightText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text(
-        kCopyrightText,
+        context.l10n.copyRight,
         style: context.textTheme.bodyMedium,
       ),
     );

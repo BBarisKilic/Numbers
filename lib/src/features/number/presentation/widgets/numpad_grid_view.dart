@@ -61,7 +61,7 @@ class _NumpadGridView extends StatelessWidget {
           onPressed: () => _onPressedNumberButton('${_NumpadNumber.three}'),
         ),
         _NumpadActionButton(
-          kNumpadClearText,
+          context.l10n.numpadClear,
           onPressed: _onPressedClearButton,
         ),
         _NumpadNumberButton(
@@ -77,7 +77,7 @@ class _NumpadGridView extends StatelessWidget {
           onPressed: () => _onPressedNumberButton('${_NumpadNumber.six}'),
         ),
         _NumpadActionButton(
-          kNumpadRemoveLastText,
+          context.l10n.numpadRemoveLast,
           onPressed: _onPressedRemoveLastButton,
         ),
         _NumpadNumberButton(
@@ -93,7 +93,7 @@ class _NumpadGridView extends StatelessWidget {
           onPressed: () => _onPressedNumberButton('${_NumpadNumber.nine}'),
         ),
         _NumpadActionButton(
-          kNumpadRandomText,
+          context.l10n.numpadRandom,
           onPressed: () => _onPressedRandomButton(context),
         ),
         _NumpadNumberButton(
@@ -105,7 +105,7 @@ class _NumpadGridView extends StatelessWidget {
           onPressed: () => _onPressedNumberButton('${_NumpadNumber.zero}'),
         ),
         _NumpadActionButton(
-          kNumpadSearchText,
+          context.l10n.numpadSearch,
           crossAxisCellCount: 2,
           borderRadius: const BorderRadius.only(
             bottomRight: Radius.circular(12),

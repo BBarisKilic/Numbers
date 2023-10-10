@@ -17,7 +17,7 @@ class _InfoContainer extends StatelessWidget {
               return state.when(
                 initial: () {
                   return Text(
-                    kSearchANumberText,
+                    context.l10n.searchANumber,
                     textAlign: TextAlign.center,
                     style: context.textTheme.titleMedium,
                   );
@@ -34,7 +34,7 @@ class _InfoContainer extends StatelessWidget {
                 },
                 error: () {
                   return Text(
-                    kCheckInternetConnection,
+                    context.l10n.checkInternetConnection,
                     textAlign: TextAlign.center,
                     style: context.textTheme.titleMedium,
                   );

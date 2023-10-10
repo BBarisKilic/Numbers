@@ -50,7 +50,7 @@ class _ThemesBottomSheet extends StatelessWidget {
                 ),
                 const SizedBox(height: AppPadding.medium),
                 Text(
-                  kThemeOptionsText,
+                  context.l10n.themeOptions,
                   style: context.textTheme.displayMedium,
                 ),
                 const SizedBox(height: AppPadding.xxLarge),
@@ -73,7 +73,7 @@ class _ThemeSelector extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          kThemeText,
+          context.l10n.themeWithColon,
           style: context.textTheme.titleMedium,
         ),
         SharpToggleSwitch(
@@ -89,8 +89,8 @@ class _ThemeSelector extends StatelessWidget {
               context.read<AppCubit>().state.theme == AvailableTheme.light
                   ? SwitchPosition.left
                   : SwitchPosition.right,
-          leftSwitch: kLightText,
-          rightSwitch: kDarkText,
+          leftSwitch: context.l10n.light,
+          rightSwitch: context.l10n.dark,
           primaryColor: context.theme.primaryColorLight,
           secondaryColor: context.colorScheme.background,
         ),
