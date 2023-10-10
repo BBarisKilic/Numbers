@@ -13,14 +13,14 @@ final class SettingsCubit extends Cubit<SettingsState> {
   }
 
   void _loadOptions() {
-    const options = <Option>[
-      Option(iconPath: kThemeIconPath, title: kThemesText),
-      Option(iconPath: kStarIconPath, title: kRateText),
-      Option(iconPath: kMailIconPath, title: kContactsText),
-      Option(iconPath: kTermsIconPath, title: kTermsText),
-      Option(iconPath: kPrivacyIconPath, title: kPrivacyText),
+    final options = <Option>[
+      Option(iconPath: Assets.images.theme, title: kThemesText),
+      Option(iconPath: Assets.images.star, title: kRateText),
+      Option(iconPath: Assets.images.mail, title: kContactsText),
+      Option(iconPath: Assets.images.terms, title: kTermsText),
+      Option(iconPath: Assets.images.privacy, title: kPrivacyText),
     ];
 
-    emit(const SettingsState.loaded(options: options));
+    emit(SettingsState.loaded(options: options));
   }
 }
