@@ -52,7 +52,7 @@ class _NumberViewState extends State<_NumberView> {
     return Scaffold(
       appBar: CustomAppBar(
         kAppTitle,
-        iconPath: kSettingsIconPath,
+        iconPath: Assets.images.settings,
         iconSize: IconSize.small,
         iconColor: context.theme.primaryColorLight,
         titleSpacing: AppPadding.large,
