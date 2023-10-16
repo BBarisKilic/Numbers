@@ -5,7 +5,7 @@ import 'package:numbers/src/core/core.dart';
 
 void main() {
   group('DataSuccess', () {
-    test('is extends from DataState', () {
+    test('extends from DataState', () {
       expect(
         DataSuccess<String>('test'),
         isA<DataState<String>>(),
@@ -21,7 +21,7 @@ void main() {
   });
 
   group('DataFailure', () {
-    test('is extends from DataState', () {
+    test('extends from DataState', () {
       expect(
         DataFailure<String>(
           ErrorDetails(
