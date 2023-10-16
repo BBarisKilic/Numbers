@@ -3,7 +3,7 @@ import 'package:numbers/src/core/core.dart';
 
 void main() {
   group('GetNumberParams', () {
-    test('is extends from Params', () {
+    test('extends from Params', () {
       expect(
         const GetNumberParams(number: 0),
         isA<Params>(),
