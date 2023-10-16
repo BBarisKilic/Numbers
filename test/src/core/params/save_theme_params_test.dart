@@ -3,7 +3,7 @@ import 'package:numbers/src/core/core.dart';
 
 void main() {
   group('SaveThemeParams', () {
-    test('is extends from Params', () {
+    test('extends from Params', () {
       expect(
         const SaveThemeParams(key: 'key', value: 'value'),
         isA<Params>(),
