@@ -1,56 +1,65 @@
-// import 'package:flutter_test/flutter_test.dart';
-// import 'package:mocktail/mocktail.dart';
-// import 'package:numbers/src/core/core.dart';
-// import 'package:numbers/src/domain/domain.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+import 'package:numbers/src/core/core.dart';
+import 'package:numbers/src/features/number/number.dart';
 
-// class MockNumberRepository extends Mock implements NumberRepository {}
+import '../../../../../helpers/helpers.dart';
 
-// void main() {
-//   late MockNumberRepository mockNumberRepository;
-//   late NoParams noParams;
-//   late GetRandomNumberUseCase sut;
+void main() {
+  late MockNumberRepository mockNumberRepository;
+  late GetRandomNumberUseCase sut;
 
-//   setUp(() {
-//     mockNumberRepository = MockNumberRepository();
-//     noParams = const NoParams();
-//     sut = GetRandomNumberUseCase(repository: mockNumberRepository);
-//   });
+  setUp(() {
+    mockNumberRepository = MockNumberRepository();
+    sut = GetRandomNumberUseCase(repository: mockNumberRepository);
+  });
 
-//   void arrangeNumberRepositoryResponse() {
-//     when(mockNumberRepository.getRandomNumber).thenAnswer(
-//       (_) async => const DataFailure(Failure(title: '', message: '')),
-//     );
-//   }
+  void fakeNumberRepositoryResponse(String? info) {
+    if (info == null) {
+      when(() => mockNumberRepository.getRandomNumber()).thenAnswer(
+        (_) async => const DataFailure(
+          ErrorDetails(
+            error: 'error',
+            message: 'message',
+            stackTrace: 'stackTrace',
+          ),
+        ),
+      );
+    } else {
+      when(
+        () => mockNumberRepository.getRandomNumber(),
+      ).thenAnswer((_) async => DataSuccess(Number(info: info)));
+    }
+  }
 
-//   group(
-//     'GetRandomNumberUseCase',
-//     () {
-//       test(
-//         'calls "getRandomNumber" function only one time',
-//         () async {
-//           arrangeNumberRepositoryResponse();
+  group(
+    'GetRandomNumberUsecase',
+    () {
+      test(
+        'returns DataSuccess that contains an info of a number',
+        () {
+          const info = 'test';
 
-//           await sut(params: noParams);
+          fakeNumberRepositoryResponse(info);
 
-//           verify(mockNumberRepository.getRandomNumber).called(1);
-//         },
-//       );
+          expect(
+            sut(),
+            completion(const DataSuccess(Number(info: info))),
+          );
+        },
+      );
 
-//       test(
-//         'gets failure from the repository',
-//         () async {
-//           arrangeNumberRepositoryResponse();
+      test(
+        'returns DataFailure when error occurs',
+        () {
+          fakeNumberRepositoryResponse(null);
 
-//           final result = await sut(params: noParams);
-
-//           expect(
-//             result,
-//             equals(const DataFailure<Number>(Failure(title: '', message: ''))),
-//           );
-//           verify(mockNumberRepository.getRandomNumber);
-//           verifyNoMoreInteractions(mockNumberRepository);
-//         },
-//       );
-//     },
-//   );
-// }
+          expect(
+            sut(),
+            completion(isA<DataFailure<Number>>()),
+          );
+        },
+      );
+    },
+  );
+}

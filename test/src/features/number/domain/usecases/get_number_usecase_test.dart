@@ -39,7 +39,7 @@ void main() {
     () {
       test(
         'returns DataSuccess that contains an info of a number',
-        () async {
+        () {
           const info = 'test';
 
           fakeNumberRepositoryResponse(info);
@@ -53,7 +53,7 @@ void main() {
 
       test(
         'returns DataFailure when error occurs',
-        () async {
+        () {
           fakeNumberRepositoryResponse(null);
 
           expect(
