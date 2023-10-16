@@ -4,12 +4,12 @@ import 'package:numbers/src/features/number/number.dart';
 final class GetRandomNumberUseCase
     implements UseCase<DataState<Number>, Params> {
   const GetRandomNumberUseCase({
-    required NumberRepository repository,
-  }) : _numberRepository = repository;
+    required NumbersRepository repository,
+  }) : _numbersRepository = repository;
 
-  final NumberRepository _numberRepository;
+  final NumbersRepository _numbersRepository;
 
   @override
   Future<DataState<Number>> call({Params params = const Params()}) =>
-      _numberRepository.getRandomNumber();
+      _numbersRepository.getRandomNumber();
 }

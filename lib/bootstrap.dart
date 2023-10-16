@@ -73,8 +73,8 @@ Future<void> setup() async {
     ..registerLazySingleton<ThemeRepository>(
       () => ThemeRepositoryImpl(service: getIt()),
     )
-    ..registerLazySingleton<NumberRepository>(
-      () => NumberRepositoryImpl(service: getIt()),
+    ..registerLazySingleton<NumbersRepository>(
+      () => NumbersRepositoryImpl(service: getIt()),
     )
     ..registerLazySingleton<GetThemeUseCase>(
       () => GetThemeUseCase(repository: getIt()),

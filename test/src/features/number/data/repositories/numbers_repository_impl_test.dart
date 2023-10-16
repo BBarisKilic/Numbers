@@ -8,13 +8,13 @@ import '../../../../../helpers/helpers.dart';
 void main() {
   late MockNumbersService mockNumbersService;
   late GetNumberParams getNumberParams;
-  late NumberRepositoryImpl sut;
+  late NumbersRepositoryImpl sut;
 
   setUpAll(
     () {
       mockNumbersService = MockNumbersService();
       getNumberParams = const GetNumberParams(number: 0);
-      sut = NumberRepositoryImpl(service: mockNumbersService);
+      sut = NumbersRepositoryImpl(service: mockNumbersService);
     },
   );
 
@@ -39,7 +39,7 @@ void main() {
   }
 
   group(
-    'NumberRepositoryImpl',
+    'NumbersRepositoryImpl',
     () {
       test(
         'getNumber returns DataSuccess that contains an info of a number',

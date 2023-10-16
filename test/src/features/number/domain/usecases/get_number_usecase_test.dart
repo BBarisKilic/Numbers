@@ -6,19 +6,19 @@ import 'package:numbers/src/features/number/number.dart';
 import '../../../../../helpers/helpers.dart';
 
 void main() {
-  late MockNumberRepository mockNumberRepository;
+  late MockNumbersRepository mockNumbersRepository;
   late GetNumberParams getNumberParams;
   late GetNumberUseCase sut;
 
   setUpAll(() {
-    mockNumberRepository = MockNumberRepository();
+    mockNumbersRepository = MockNumbersRepository();
     getNumberParams = const GetNumberParams(number: 0);
-    sut = GetNumberUseCase(repository: mockNumberRepository);
+    sut = GetNumberUseCase(repository: mockNumbersRepository);
   });
 
   void fakeNumberRepositoryResponse(String? info) {
     if (info == null) {
-      when(() => mockNumberRepository.getNumber(getNumberParams)).thenAnswer(
+      when(() => mockNumbersRepository.getNumber(getNumberParams)).thenAnswer(
         (_) async => const DataFailure(
           ErrorDetails(
             error: 'error',
@@ -29,7 +29,7 @@ void main() {
       );
     } else {
       when(
-        () => mockNumberRepository.getNumber(getNumberParams),
+        () => mockNumbersRepository.getNumber(getNumberParams),
       ).thenAnswer((_) async => DataSuccess(Number(info: info)));
     }
   }
