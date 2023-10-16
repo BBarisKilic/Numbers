@@ -15,7 +15,7 @@ void main() {
     test('supports value comparisons', () {
       expect(
         DataSuccess<String>('test'),
-        DataSuccess<String>('test'),
+        equals(DataSuccess<String>('test')),
       );
     });
   });
@@ -43,11 +43,13 @@ void main() {
             stackTrace: 'stackTrace',
           ),
         ),
-        DataFailure<String>(
-          ErrorDetails(
-            error: 'error',
-            message: 'message',
-            stackTrace: 'stackTrace',
+        equals(
+          DataFailure<String>(
+            ErrorDetails(
+              error: 'error',
+              message: 'message',
+              stackTrace: 'stackTrace',
+            ),
           ),
         ),
       );
