@@ -1,2 +1,2 @@
 export 'repositories/repositories.dart';
-export 'usecases/usecases.dart';
+export 'use_cases/use_cases.dart';
