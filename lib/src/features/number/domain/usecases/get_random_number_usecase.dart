@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
@@ -13,3 +14,6 @@ final class GetRandomNumberUseCase
   Future<DataState<Number>> call({Params params = const Params()}) =>
       _numbersRepository.getRandomNumber();
 }
+
+@visibleForTesting
+base mixin MockGetRandomNumberUseCaseMixin implements GetRandomNumberUseCase {}

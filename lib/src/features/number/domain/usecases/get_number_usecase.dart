@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
@@ -13,3 +14,6 @@ final class GetNumberUseCase
   Future<DataState<Number>> call({required GetNumberParams params}) =>
       _numbersRepository.getNumber(params);
 }
+
+@visibleForTesting
+base mixin MockGetNumberUseCaseMixin implements GetNumberUseCase {}
