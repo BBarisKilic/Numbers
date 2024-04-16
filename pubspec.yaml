@@ -8,7 +8,7 @@ environment:
 
 dependencies:
   bloc: ^8.1.4
-  cupertino_icons: ^1.0.6
+  cupertino_icons: ^1.0.8
   custom_app_bar:
     path: ./packages/custom_app_bar/
   dio: ^5.4.3+1
