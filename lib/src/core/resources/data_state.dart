@@ -1,12 +1,14 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:equatable/equatable.dart';
 import 'package:numbers/src/core/core.dart';
 
-@immutable
-sealed class DataState<T> {
+sealed class DataState<T> extends Equatable {
   const DataState({this.data, this.details});
 
   final T? data;
   final ErrorDetails? details;
+
+  @override
+  List<Object?> get props => [data, details];
 }
 
 final class DataSuccess<T> extends DataState<T> {
