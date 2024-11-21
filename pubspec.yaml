@@ -12,7 +12,7 @@ dependencies:
   custom_app_bar:
     path: ./packages/custom_app_bar/
   dio: ^5.7.0
-  equatable: ^2.0.5
+  equatable: ^2.0.7
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.6
