@@ -1,8 +1,8 @@
 import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
-final class NumberRepositoryImpl implements NumberRepository {
-  const NumberRepositoryImpl({
+final class NumbersRepositoryImpl implements NumbersRepository {
+  const NumbersRepositoryImpl({
     required NumbersService service,
   }) : _numbersService = service;
 
