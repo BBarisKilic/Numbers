@@ -11,7 +11,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   custom_app_bar:
     path: ./packages/custom_app_bar/
-  dio: ^5.7.0
+  dio: ^5.8.0+1
   equatable: ^2.0.7
   flutter:
     sdk: flutter
