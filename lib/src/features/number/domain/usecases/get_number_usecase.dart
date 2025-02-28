@@ -3,9 +3,8 @@ import 'package:numbers/src/features/number/number.dart';
 
 final class GetNumberUseCase
     implements UseCase<DataState<Number>, GetNumberParams> {
-  const GetNumberUseCase({
-    required NumberRepository repository,
-  }) : _numberRepository = repository;
+  const GetNumberUseCase({required NumberRepository repository})
+    : _numberRepository = repository;
 
   final NumberRepository _numberRepository;
 

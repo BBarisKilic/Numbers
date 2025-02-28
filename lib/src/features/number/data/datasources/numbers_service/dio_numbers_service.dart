@@ -5,11 +5,9 @@ import 'package:numbers/src/core/core.dart';
 import 'package:numbers/src/features/number/number.dart';
 
 final class DioNumbersService implements NumbersService {
-  const DioNumbersService({
-    required Dio dio,
-    required String baseUrl,
-  })  : _dio = dio,
-        _baseUrl = baseUrl;
+  const DioNumbersService({required Dio dio, required String baseUrl})
+    : _dio = dio,
+      _baseUrl = baseUrl;
 
   final Dio _dio;
   final String _baseUrl;

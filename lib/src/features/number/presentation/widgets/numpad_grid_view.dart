@@ -1,9 +1,8 @@
 part of '../pages/number_page.dart';
 
 class _NumpadGridView extends StatelessWidget {
-  const _NumpadGridView({
-    required TextEditingController controller,
-  }) : _controller = controller;
+  const _NumpadGridView({required TextEditingController controller})
+    : _controller = controller;
 
   final TextEditingController _controller;
 
@@ -27,8 +26,10 @@ class _NumpadGridView extends StatelessWidget {
       return;
     }
 
-    _controller.text =
-        _controller.text.substring(0, _controller.text.length - 1);
+    _controller.text = _controller.text.substring(
+      0,
+      _controller.text.length - 1,
+    );
   }
 
   void _onPressedRandomButton(BuildContext context) {
@@ -36,9 +37,9 @@ class _NumpadGridView extends StatelessWidget {
   }
 
   void _onPressedSearchButton(BuildContext context) {
-    context
-        .read<NumberCubit>()
-        .getNumberInfo(number: int.parse(_controller.text));
+    context.read<NumberCubit>().getNumberInfo(
+      number: int.parse(_controller.text),
+    );
   }
 
   @override

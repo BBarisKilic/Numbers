@@ -18,7 +18,8 @@ class AppLocalizationsEn extends AppLocalizations {
   String get searchANumber => 'Search a number!';
 
   @override
-  String get checkInternetConnection => 'Oops!\n\nSomething went wrong. Please try again later.';
+  String get checkInternetConnection =>
+      'Oops!\n\nSomething went wrong. Please try again later.';
 
   @override
   String get themes => 'Themes';

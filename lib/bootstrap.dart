@@ -89,10 +89,7 @@ Future<void> setup() async {
       () => GetRandomNumberUseCase(repository: getIt()),
     )
     ..registerFactory<AppCubit>(
-      () => AppCubit(
-        getThemeUseCase: getIt(),
-        saveThemeUseCase: getIt(),
-      ),
+      () => AppCubit(getThemeUseCase: getIt(), saveThemeUseCase: getIt()),
     )
     ..registerFactory<NumberCubit>(
       () => NumberCubit(

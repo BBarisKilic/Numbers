@@ -11,7 +11,7 @@ class _NumpadNumberButton extends StatelessWidget {
        crossAxisCellCount = crossAxisCellCount ?? 1;
 
   final String title;
-  final void Function() onPressed;
+  final VoidCallback onPressed;
   final int mainAxisCellCount;
   final int crossAxisCellCount;
   final BorderRadius borderRadius;

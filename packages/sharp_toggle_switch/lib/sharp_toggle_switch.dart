@@ -50,60 +50,60 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
 
   @override
   Widget build(BuildContext context) => Container(
-        height: widget.height ?? 40.0,
-        width: widget.width ?? 140.0,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: widget.primaryColor,
+    height: widget.height ?? 40.0,
+    width: widget.width ?? 140.0,
+    decoration: BoxDecoration(border: Border.all(color: widget.primaryColor)),
+    child: Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () => onTap(SwitchPosition.left),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color:
+                    position == SwitchPosition.left
+                        ? widget.primaryColor
+                        : widget.secondaryColor,
+              ),
+              child: Center(
+                child: Text(
+                  widget.leftSwitch,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color:
+                        position == SwitchPosition.right
+                            ? widget.primaryColor
+                            : widget.secondaryColor,
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
-        child: Row(
-          children: [
-            Expanded(
-              child: GestureDetector(
-                onTap: () => onTap(SwitchPosition.left),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: position == SwitchPosition.left
+        Expanded(
+          child: GestureDetector(
+            onTap: () => onTap(SwitchPosition.right),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color:
+                    position == SwitchPosition.right
                         ? widget.primaryColor
                         : widget.secondaryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      widget.leftSwitch,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: position == SwitchPosition.right
-                                ? widget.primaryColor
-                                : widget.secondaryColor,
-                          ),
-                    ),
+              ),
+              child: Center(
+                child: Text(
+                  widget.rightSwitch,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color:
+                        position == SwitchPosition.right
+                            ? widget.secondaryColor
+                            : widget.primaryColor,
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: GestureDetector(
-                onTap: () => onTap(SwitchPosition.right),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: position == SwitchPosition.right
-                        ? widget.primaryColor
-                        : widget.secondaryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      widget.rightSwitch,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: position == SwitchPosition.right
-                                ? widget.secondaryColor
-                                : widget.primaryColor,
-                          ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-      );
+      ],
+    ),
+  );
 }

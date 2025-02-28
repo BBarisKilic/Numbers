@@ -6,10 +6,7 @@ class _CopyrightText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Center(
-      child: Text(
-        context.l10n.copyRight,
-        style: context.textTheme.bodyMedium,
-      ),
+      child: Text(context.l10n.copyRight, style: context.textTheme.bodyMedium),
     );
   }
 }
