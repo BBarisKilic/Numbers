@@ -48,14 +48,12 @@ class _SettingsView extends StatelessWidget {
               Expanded(
                 child: BlocBuilder<SettingsCubit, SettingsState>(
                   builder: (context, state) {
-                    return state.when(
-                      initial: () {
-                        return const Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      },
-                      loaded: _OptionsListView.new,
-                    );
+                    return switch (state) {
+                      Initial() => const Center(
+                        child: CircularProgressIndicator(),
+                      ),
+                      Loaded(:final options) => _OptionsListView(options),
+                    };
                   },
                 ),
               ),

@@ -14,32 +14,24 @@ class _InfoContainer extends StatelessWidget {
         child: SingleChildScrollView(
           child: BlocBuilder<NumberCubit, NumberState>(
             builder: (context, state) {
-              return state.when(
-                initial: () {
-                  return Text(
-                    context.l10n.searchANumber,
-                    textAlign: TextAlign.center,
-                    style: context.textTheme.titleMedium,
-                  );
-                },
-                loading: () {
-                  return const CircularProgressIndicator();
-                },
-                loaded: (info) {
-                  return Text(
-                    info,
-                    textAlign: TextAlign.center,
-                    style: context.textTheme.titleMedium,
-                  );
-                },
-                error: () {
-                  return Text(
-                    context.l10n.checkInternetConnection,
-                    textAlign: TextAlign.center,
-                    style: context.textTheme.titleMedium,
-                  );
-                },
-              );
+              return switch (state) {
+                Initial() => Text(
+                  context.l10n.searchANumber,
+                  textAlign: TextAlign.center,
+                  style: context.textTheme.titleMedium,
+                ),
+                Loading() => const CircularProgressIndicator(),
+                Loaded(:final info) => Text(
+                  info,
+                  textAlign: TextAlign.center,
+                  style: context.textTheme.titleMedium,
+                ),
+                Error() => Text(
+                  context.l10n.checkInternetConnection,
+                  textAlign: TextAlign.center,
+                  style: context.textTheme.titleMedium,
+                ),
+              };
             },
           ),
         ),

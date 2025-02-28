@@ -25,7 +25,7 @@ final class NumberCubit extends Cubit<NumberState> {
 
     switch (dataState) {
       case DataSuccess(data: final number):
-        emit(NumberState.loaded(info: number!.info));
+        emit(NumberState.loaded(info: number.info));
       case DataFailure():
         emit(const NumberState.error());
     }
@@ -38,7 +38,7 @@ final class NumberCubit extends Cubit<NumberState> {
 
     switch (dataState) {
       case DataSuccess(data: final number):
-        emit(NumberState.loaded(info: number!.info));
+        emit(NumberState.loaded(info: number.info));
       case DataFailure():
         emit(const NumberState.error());
     }
