@@ -7,7 +7,8 @@ analyzer:
     - '**app_localizations**.dart'
     - '**/generated_plugin_registrant.dart'
 
-include: package:very_good_analysis/analysis_options.5.1.0.yaml
+include: package:very_good_analysis/analysis_options.yaml
 linter:
   rules:
     public_member_api_docs: false
+    avoid_catches_without_on_clauses: false
