@@ -1,4 +1,5 @@
-library sharp_toggle_switch;
+/// A Flutter package to create a toggle switch with sharp edges.
+library;
 
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,6 @@ enum SwitchPosition { left, right }
 
 class SharpToggleSwitch extends StatefulWidget {
   const SharpToggleSwitch({
-    Key? key,
     required this.onToggle,
     required this.leftSwitch,
     required this.rightSwitch,
@@ -15,7 +15,8 @@ class SharpToggleSwitch extends StatefulWidget {
     this.secondaryColor = Colors.white,
     this.height,
     this.width,
-  }) : super(key: key);
+    super.key,
+  });
 
   final void Function(SwitchPosition) onToggle;
   final String leftSwitch;
@@ -35,8 +36,8 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
 
   @override
   void initState() {
-    position = widget.initialPosition;
     super.initState();
+    position = widget.initialPosition;
   }
 
   void onTap(SwitchPosition position) {
@@ -54,7 +55,6 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
         decoration: BoxDecoration(
           border: Border.all(
             color: widget.primaryColor,
-            width: 1.0,
           ),
         ),
         child: Row(
