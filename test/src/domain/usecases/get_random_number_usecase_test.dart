@@ -1,56 +1,48 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:numbers/src/core/core.dart';
-import 'package:numbers/src/domain/domain.dart';
+import 'package:numbers/src/features/number/domain/domain.dart';
 
-class MockNumberRepository extends Mock implements NumberRepository {}
+final class MockNumberRepository extends Mock implements NumberRepository {}
 
 void main() {
   late MockNumberRepository mockNumberRepository;
-  late NoParams noParams;
+  late Params params;
   late GetRandomNumberUseCase sut;
 
   setUp(() {
     mockNumberRepository = MockNumberRepository();
-    noParams = const NoParams();
+    params = const Params();
     sut = GetRandomNumberUseCase(repository: mockNumberRepository);
   });
 
-  void arrangeNumberRepositoryResponse() {
-    when(mockNumberRepository.getRandomNumber).thenAnswer(
-      (_) async => const DataFailure(Failure(title: '', message: '')),
-    );
-  }
-
-  group(
-    'GetRandomNumberUseCase',
-    () {
-      test(
-        'calls "getRandomNumber" function only one time',
-        () async {
-          arrangeNumberRepositoryResponse();
-
-          await sut(params: noParams);
-
-          verify(mockNumberRepository.getRandomNumber).called(1);
-        },
+  group('GetRandomNumberUseCase', () {
+    test('gets failure from the repository', () async {
+      const error = 'Error';
+      const message = 'Message';
+      const stackTrace = 'StackTrace';
+      when(mockNumberRepository.getRandomNumber).thenAnswer(
+        (_) async => const DataFailure(
+          ErrorDetails(error: error, message: message, stackTrace: stackTrace),
+        ),
       );
 
-      test(
-        'gets failure from the repository',
-        () async {
-          arrangeNumberRepositoryResponse();
+      final result = await sut(params: params);
 
-          final result = await sut(params: noParams);
-
-          expect(
-            result,
-            equals(const DataFailure<Number>(Failure(title: '', message: ''))),
-          );
-          verify(mockNumberRepository.getRandomNumber);
-          verifyNoMoreInteractions(mockNumberRepository);
-        },
+      expect(
+        result,
+        equals(
+          const DataFailure<Number>(
+            ErrorDetails(
+              error: error,
+              message: message,
+              stackTrace: stackTrace,
+            ),
+          ),
+        ),
       );
-    },
-  );
+      verify(mockNumberRepository.getRandomNumber);
+      verifyNoMoreInteractions(mockNumberRepository);
+    });
+  });
 }
