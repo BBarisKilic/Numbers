@@ -1,4 +1,5 @@
-library sharp_toggle_switch;
+/// A Flutter package to create a toggle switch with sharp edges.
+library;
 
 import 'package:flutter/material.dart';
 
@@ -6,7 +7,6 @@ enum SwitchPosition { left, right }
 
 class SharpToggleSwitch extends StatefulWidget {
   const SharpToggleSwitch({
-    Key? key,
     required this.onToggle,
     required this.leftSwitch,
     required this.rightSwitch,
@@ -15,7 +15,8 @@ class SharpToggleSwitch extends StatefulWidget {
     this.secondaryColor = Colors.white,
     this.height,
     this.width,
-  }) : super(key: key);
+    super.key,
+  });
 
   final void Function(SwitchPosition) onToggle;
   final String leftSwitch;
@@ -35,8 +36,8 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
 
   @override
   void initState() {
-    position = widget.initialPosition;
     super.initState();
+    position = widget.initialPosition;
   }
 
   void onTap(SwitchPosition position) {
@@ -49,61 +50,60 @@ class _SharpToggleSwitchState extends State<SharpToggleSwitch> {
 
   @override
   Widget build(BuildContext context) => Container(
-        height: widget.height ?? 40.0,
-        width: widget.width ?? 140.0,
-        decoration: BoxDecoration(
-          border: Border.all(
-            color: widget.primaryColor,
-            width: 1.0,
+    height: widget.height ?? 40.0,
+    width: widget.width ?? 140.0,
+    decoration: BoxDecoration(border: Border.all(color: widget.primaryColor)),
+    child: Row(
+      children: [
+        Expanded(
+          child: GestureDetector(
+            onTap: () => onTap(SwitchPosition.left),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color:
+                    position == SwitchPosition.left
+                        ? widget.primaryColor
+                        : widget.secondaryColor,
+              ),
+              child: Center(
+                child: Text(
+                  widget.leftSwitch,
+                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                    color:
+                        position == SwitchPosition.right
+                            ? widget.primaryColor
+                            : widget.secondaryColor,
+                  ),
+                ),
+              ),
+            ),
           ),
         ),
-        child: Row(
-          children: [
-            Expanded(
-              child: GestureDetector(
-                onTap: () => onTap(SwitchPosition.left),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: position == SwitchPosition.left
+        Expanded(
+          child: GestureDetector(
+            onTap: () => onTap(SwitchPosition.right),
+            child: DecoratedBox(
+              decoration: BoxDecoration(
+                color:
+                    position == SwitchPosition.right
                         ? widget.primaryColor
                         : widget.secondaryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      widget.leftSwitch,
-                      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: position == SwitchPosition.right
-                                ? widget.primaryColor
-                                : widget.secondaryColor,
-                          ),
-                    ),
+              ),
+              child: Center(
+                child: Text(
+                  widget.rightSwitch,
+                  style: Theme.of(context).textTheme.bodyLarge!.copyWith(
+                    color:
+                        position == SwitchPosition.right
+                            ? widget.secondaryColor
+                            : widget.primaryColor,
                   ),
                 ),
               ),
             ),
-            Expanded(
-              child: GestureDetector(
-                onTap: () => onTap(SwitchPosition.right),
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    color: position == SwitchPosition.right
-                        ? widget.primaryColor
-                        : widget.secondaryColor,
-                  ),
-                  child: Center(
-                    child: Text(
-                      widget.rightSwitch,
-                      style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                            color: position == SwitchPosition.right
-                                ? widget.secondaryColor
-                                : widget.primaryColor,
-                          ),
-                    ),
-                  ),
-                ),
-              ),
-            ),
-          ],
+          ),
         ),
-      );
+      ],
+    ),
+  );
 }

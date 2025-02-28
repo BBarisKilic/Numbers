@@ -27,9 +27,7 @@ final class DarkAppTheme implements AppTheme {
     progressIndicatorTheme: const ProgressIndicatorThemeData(
       color: Color(0xFFF8F3F7),
     ),
-    iconTheme: const IconThemeData(
-      color: Color(0xFFF8F3F7),
-    ),
+    iconTheme: const IconThemeData(color: Color(0xFFF8F3F7)),
     appBarTheme: const AppBarTheme(
       color: Color(0xFF181818),
       elevation: 0,
@@ -40,34 +38,13 @@ final class DarkAppTheme implements AppTheme {
       ),
     ),
     textTheme: const TextTheme(
-      displayLarge: TextStyle(
-        fontSize: 20,
-        fontWeight: FontWeight.w400,
-      ),
-      displayMedium: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w700,
-      ),
-      displaySmall: TextStyle(
-        fontSize: 16,
-        fontWeight: FontWeight.w500,
-      ),
-      titleMedium: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w700,
-      ),
-      titleSmall: TextStyle(
-        fontSize: 14,
-        fontWeight: FontWeight.w500,
-      ),
-      bodyLarge: TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w700,
-      ),
-      bodyMedium: TextStyle(
-        fontSize: 12,
-        fontWeight: FontWeight.w400,
-      ),
+      displayLarge: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+      displayMedium: TextStyle(fontSize: 16, fontWeight: FontWeight.w700),
+      displaySmall: TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+      titleMedium: TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
+      titleSmall: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
+      bodyLarge: TextStyle(fontSize: 12, fontWeight: FontWeight.w700),
+      bodyMedium: TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
     ).apply(
       bodyColor: const Color(0xFFF8F3F7),
       displayColor: const Color(0xFFF8F3F7),
@@ -77,9 +54,7 @@ final class DarkAppTheme implements AppTheme {
           primary: const Color(0xFF838383),
           secondary: const Color(0xFFFF9E0B),
         )
-        .copyWith(
-          background: const Color(0xFF181818),
-        ),
+        .copyWith(surface: const Color(0xFF181818)),
   );
 
   @override

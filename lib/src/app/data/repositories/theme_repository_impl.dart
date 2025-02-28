@@ -2,9 +2,8 @@ import 'package:numbers/src/app/app.dart';
 import 'package:numbers/src/core/core.dart';
 
 final class ThemeRepositoryImpl implements ThemeRepository {
-  const ThemeRepositoryImpl({
-    required ThemeService service,
-  }) : _themeService = service;
+  const ThemeRepositoryImpl({required ThemeService service})
+    : _themeService = service;
 
   final ThemeService _themeService;
 

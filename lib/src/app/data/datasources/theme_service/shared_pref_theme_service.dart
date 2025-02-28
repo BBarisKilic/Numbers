@@ -3,9 +3,8 @@ import 'package:numbers/src/core/core.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 final class SharedPrefThemeService implements ThemeService {
-  SharedPrefThemeService({
-    required SharedPreferences preferences,
-  }) : _preferences = preferences;
+  SharedPrefThemeService({required SharedPreferences preferences})
+    : _preferences = preferences;
 
   final SharedPreferences _preferences;
 

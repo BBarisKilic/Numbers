@@ -1,99 +1,46 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:numbers/src/core/core.dart';
-import 'package:numbers/src/data/data.dart';
-import 'package:numbers/src/domain/domain.dart';
+import 'package:numbers/src/features/number/data/data.dart';
+import 'package:numbers/src/features/number/domain/domain.dart';
 
-class MockNumbersApiService extends Mock implements NumbersApiService {}
+final class MockNumbersService extends Mock implements NumbersService {}
 
 void main() {
-  late MockNumbersApiService mockNumbersApiService;
+  late MockNumbersService mockNumbersService;
   late GetNumberParams numberRequestParams;
   late NumberRepositoryImpl sut;
 
-  setUp(
-    () {
-      mockNumbersApiService = MockNumbersApiService();
-      numberRequestParams = const GetNumberParams(number: 0);
-      sut = NumberRepositoryImpl(service: mockNumbersApiService);
-    },
-  );
+  setUp(() {
+    mockNumbersService = MockNumbersService();
+    numberRequestParams = const GetNumberParams(number: 0);
+    sut = NumberRepositoryImpl(service: mockNumbersService);
+  });
 
-  void arrangeNumbersApiServiceGetNumberResponse() {
-    when(() => mockNumbersApiService.getNumber(params: numberRequestParams))
-        .thenAnswer((_) async => const NumberModel(info: ''));
-  }
+  group('NumberRepositoryImpl', () {
+    test('gets number from the service', () async {
+      const info = 'Info about number';
+      when(
+        () => mockNumbersService.getNumber(params: numberRequestParams),
+      ).thenAnswer((_) async => const NumberDto(info: info));
 
-  void arrangeNumbersApiServiceGetRandomNumberResponse() {
-    when(() => mockNumbersApiService.getRandomNumber())
-        .thenAnswer((_) async => const NumberModel(info: ''));
-  }
+      final result = await sut.getNumber(numberRequestParams);
+      expect(result, equals(const DataSuccess(Number(info: info))));
+      verify(() => mockNumbersService.getNumber(params: numberRequestParams));
+      verifyNoMoreInteractions(mockNumbersService);
+    });
 
-  group(
-    'NumberRepositoryImpl',
-    () {
-      test(
-        'calls "getNumber" function only one time',
-        () async {
-          arrangeNumbersApiServiceGetNumberResponse();
+    test('gets random number from the service', () async {
+      const info = 'Info about number';
+      when(
+        () => mockNumbersService.getRandomNumber(),
+      ).thenAnswer((_) async => const NumberDto(info: info));
 
-          await sut.getNumber(numberRequestParams);
+      final result = await sut.getRandomNumber();
 
-          verify(
-            () => mockNumbersApiService.getNumber(params: numberRequestParams),
-          ).called(1);
-        },
-      );
-
-      test(
-        'calls "getRandomNumber" function two times',
-        () async {
-          arrangeNumbersApiServiceGetRandomNumberResponse();
-
-          await sut.getRandomNumber();
-          await sut.getRandomNumber();
-
-          verify(
-            () => mockNumbersApiService.getRandomNumber(),
-          ).called(2);
-        },
-      );
-
-      test(
-        'gets number from the service',
-        () async {
-          arrangeNumbersApiServiceGetNumberResponse();
-
-          final result = await sut.getNumber(numberRequestParams);
-
-          expect(
-            result,
-            equals(DataSuccess(const NumberModel(info: '').toEntity())),
-          );
-          verify(
-            () => mockNumbersApiService.getNumber(params: numberRequestParams),
-          );
-          verifyNoMoreInteractions(mockNumbersApiService);
-        },
-      );
-
-      test(
-        'gets random number from the service',
-        () async {
-          arrangeNumbersApiServiceGetRandomNumberResponse();
-
-          final result = await sut.getRandomNumber();
-
-          expect(
-            result,
-            equals(const DataSuccess(Number(info: ''))),
-          );
-          verify(
-            () => mockNumbersApiService.getRandomNumber(),
-          );
-          verifyNoMoreInteractions(mockNumbersApiService);
-        },
-      );
-    },
-  );
+      expect(result, equals(const DataSuccess(Number(info: info))));
+      verify(() => mockNumbersService.getRandomNumber());
+      verifyNoMoreInteractions(mockNumbersService);
+    });
+  });
 }

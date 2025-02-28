@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,122 +10,133 @@ part of 'app_cubit.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
-
 /// @nodoc
 mixin _$AppState {
-  AvailableTheme get theme => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
-  $AppStateCopyWith<AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+ AvailableTheme get theme;
+/// Create a copy of AppState
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$AppStateCopyWith<AppState> get copyWith => _$AppStateCopyWithImpl<AppState>(this as AppState, _$identity);
+
+
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AppState&&(identical(other.theme, theme) || other.theme == theme));
+}
+
+
+@override
+int get hashCode => Object.hash(runtimeType,theme);
+
+@override
+String toString() {
+  return 'AppState(theme: $theme)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $AppStateCopyWith<$Res> {
-  factory $AppStateCopyWith(AppState value, $Res Function(AppState) then) =
-      _$AppStateCopyWithImpl<$Res, AppState>;
-  @useResult
-  $Res call({AvailableTheme theme});
-}
+abstract mixin class $AppStateCopyWith<$Res>  {
+  factory $AppStateCopyWith(AppState value, $Res Function(AppState) _then) = _$AppStateCopyWithImpl;
+@useResult
+$Res call({
+ AvailableTheme theme
+});
 
+
+
+
+}
 /// @nodoc
-class _$AppStateCopyWithImpl<$Res, $Val extends AppState>
+class _$AppStateCopyWithImpl<$Res>
     implements $AppStateCopyWith<$Res> {
-  _$AppStateCopyWithImpl(this._value, this._then);
+  _$AppStateCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final AppState _self;
+  final $Res Function(AppState) _then;
 
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? theme = null,
-  }) {
-    return _then(_value.copyWith(
-      theme: null == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as AvailableTheme,
-    ) as $Val);
-  }
+/// Create a copy of AppState
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? theme = null,}) {
+  return _then(_self.copyWith(
+theme: null == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
+as AvailableTheme,
+  ));
 }
 
-/// @nodoc
-abstract class _$$_AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
-  factory _$$_AppStateCopyWith(
-          _$_AppState value, $Res Function(_$_AppState) then) =
-      __$$_AppStateCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({AvailableTheme theme});
 }
 
-/// @nodoc
-class __$$_AppStateCopyWithImpl<$Res>
-    extends _$AppStateCopyWithImpl<$Res, _$_AppState>
-    implements _$$_AppStateCopyWith<$Res> {
-  __$$_AppStateCopyWithImpl(
-      _$_AppState _value, $Res Function(_$_AppState) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? theme = null,
-  }) {
-    return _then(_$_AppState(
-      theme: null == theme
-          ? _value.theme
-          : theme // ignore: cast_nullable_to_non_nullable
-              as AvailableTheme,
-    ));
-  }
-}
 
 /// @nodoc
 
-class _$_AppState implements _AppState {
-  const _$_AppState({required this.theme});
 
-  @override
-  final AvailableTheme theme;
+class _AppState implements AppState {
+  const _AppState({required this.theme});
+  
 
-  @override
-  String toString() {
-    return 'AppState(theme: $theme)';
-  }
+@override final  AvailableTheme theme;
 
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$_AppState &&
-            (identical(other.theme, theme) || other.theme == theme));
-  }
+/// Create a copy of AppState
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$AppStateCopyWith<_AppState> get copyWith => __$AppStateCopyWithImpl<_AppState>(this, _$identity);
 
-  @override
-  int get hashCode => Object.hash(runtimeType, theme);
 
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
-      __$$_AppStateCopyWithImpl<_$_AppState>(this, _$identity);
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AppState&&(identical(other.theme, theme) || other.theme == theme));
 }
 
-abstract class _AppState implements AppState {
-  const factory _AppState({required final AvailableTheme theme}) = _$_AppState;
 
-  @override
-  AvailableTheme get theme;
-  @override
-  @JsonKey(ignore: true)
-  _$$_AppStateCopyWith<_$_AppState> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+int get hashCode => Object.hash(runtimeType,theme);
+
+@override
+String toString() {
+  return 'AppState(theme: $theme)';
 }
+
+
+}
+
+/// @nodoc
+abstract mixin class _$AppStateCopyWith<$Res> implements $AppStateCopyWith<$Res> {
+  factory _$AppStateCopyWith(_AppState value, $Res Function(_AppState) _then) = __$AppStateCopyWithImpl;
+@override @useResult
+$Res call({
+ AvailableTheme theme
+});
+
+
+
+
+}
+/// @nodoc
+class __$AppStateCopyWithImpl<$Res>
+    implements _$AppStateCopyWith<$Res> {
+  __$AppStateCopyWithImpl(this._self, this._then);
+
+  final _AppState _self;
+  final $Res Function(_AppState) _then;
+
+/// Create a copy of AppState
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? theme = null,}) {
+  return _then(_AppState(
+theme: null == theme ? _self.theme : theme // ignore: cast_nullable_to_non_nullable
+as AvailableTheme,
+  ));
+}
+
+
+}
+
+// dart format on

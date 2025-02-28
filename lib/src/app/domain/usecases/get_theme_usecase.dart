@@ -3,9 +3,8 @@ import 'package:numbers/src/core/core.dart';
 
 final class GetThemeUseCase
     implements UseCase<DataState<String>, GetThemeParams> {
-  const GetThemeUseCase({
-    required ThemeRepository repository,
-  }) : _themeRepository = repository;
+  const GetThemeUseCase({required ThemeRepository repository})
+    : _themeRepository = repository;
 
   final ThemeRepository _themeRepository;
 

@@ -4,7 +4,7 @@ part 'number_dto.freezed.dart';
 part 'number_dto.g.dart';
 
 @freezed
-class NumberDto with _$NumberDto {
+abstract class NumberDto with _$NumberDto {
   const factory NumberDto({required String info}) = _NumberDto;
 
   factory NumberDto.fromJson(Map<String, dynamic> json) =>

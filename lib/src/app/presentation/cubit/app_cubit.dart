@@ -13,9 +13,9 @@ final class AppCubit extends Cubit<AppState> {
   AppCubit({
     required GetThemeUseCase getThemeUseCase,
     required SaveThemeUseCase saveThemeUseCase,
-  })  : _getThemeUseCase = getThemeUseCase,
-        _saveThemeUseCase = saveThemeUseCase,
-        super(const AppState(theme: AvailableTheme.dark));
+  }) : _getThemeUseCase = getThemeUseCase,
+       _saveThemeUseCase = saveThemeUseCase,
+       super(const AppState(theme: AvailableTheme.dark));
 
   final GetThemeUseCase _getThemeUseCase;
   final SaveThemeUseCase _saveThemeUseCase;
@@ -33,9 +33,10 @@ final class AppCubit extends Cubit<AppState> {
       case DataSuccess(data: final theme):
         emit(
           state.copyWith(
-            theme: theme == AvailableTheme.light.value
-                ? AvailableTheme.light
-                : AvailableTheme.dark,
+            theme:
+                theme == AvailableTheme.light.value
+                    ? AvailableTheme.light
+                    : AvailableTheme.dark,
           ),
         );
       case DataFailure():

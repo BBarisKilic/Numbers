@@ -7,8 +7,8 @@ class _NumpadActionButton extends StatelessWidget {
     this.borderRadius = BorderRadius.zero,
     int? mainAxisCellCount,
     int? crossAxisCellCount,
-  })  : mainAxisCellCount = mainAxisCellCount ?? 1,
-        crossAxisCellCount = crossAxisCellCount ?? 1;
+  }) : mainAxisCellCount = mainAxisCellCount ?? 1,
+       crossAxisCellCount = crossAxisCellCount ?? 1;
 
   final String title;
   final void Function() onPressed;
@@ -18,28 +18,24 @@ class _NumpadActionButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => StaggeredGridTile.count(
-        mainAxisCellCount: mainAxisCellCount,
-        crossAxisCellCount: crossAxisCellCount,
-        child: OutlinedButton(
-          onPressed: onPressed,
-          style: ButtonStyle(
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            backgroundColor: MaterialStateProperty.all(
-              context.colorScheme.secondary,
-            ),
-            overlayColor: MaterialStateProperty.all(
-              context.theme.splashColor,
-            ),
-            shape: MaterialStateProperty.all(
-              RoundedRectangleBorder(borderRadius: borderRadius),
-            ),
-          ),
-          child: Text(
-            title,
-            style: context.textTheme.displayMedium?.copyWith(
-              color: const Color(0xFFF8F3F7),
-            ),
-          ),
+    mainAxisCellCount: mainAxisCellCount,
+    crossAxisCellCount: crossAxisCellCount,
+    child: OutlinedButton(
+      onPressed: onPressed,
+      style: ButtonStyle(
+        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+        backgroundColor: WidgetStateProperty.all(context.colorScheme.secondary),
+        overlayColor: WidgetStateProperty.all(context.theme.splashColor),
+        shape: WidgetStateProperty.all(
+          RoundedRectangleBorder(borderRadius: borderRadius),
         ),
-      );
+      ),
+      child: Text(
+        title,
+        style: context.textTheme.displayMedium?.copyWith(
+          color: const Color(0xFFF8F3F7),
+        ),
+      ),
+    ),
+  );
 }

@@ -6,12 +6,10 @@ class _ThemesBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: context.colorScheme.background,
+      color: context.colorScheme.surface,
       child: DecoratedBox(
         decoration: BoxDecoration(
-          border: Border(
-            top: BorderSide(color: context.colorScheme.secondary),
-          ),
+          border: Border(top: BorderSide(color: context.colorScheme.secondary)),
         ),
         child: SafeArea(
           child: Padding(
@@ -31,19 +29,29 @@ class _ThemesBottomSheet extends StatelessWidget {
                       tag: '${_kHeroTagPrefix}0',
                       child: SvgPicture.asset(
                         Assets.images.theme,
-                        color: context.theme.iconTheme.color,
+                        colorFilter:
+                            context.theme.iconTheme.color != null
+                                ? ColorFilter.mode(
+                                  context.theme.iconTheme.color!,
+                                  BlendMode.srcIn,
+                                )
+                                : null,
                         height: IconSize.xLarge,
                       ),
                     ),
                     InkWell(
                       onTap: context.pop,
-                      overlayColor: MaterialStateProperty.all(
-                        Colors.transparent,
-                      ),
+                      overlayColor: WidgetStateProperty.all(Colors.transparent),
                       highlightColor: Colors.transparent,
                       child: SvgPicture.asset(
                         Assets.images.close,
-                        color: context.theme.iconTheme.color,
+                        colorFilter:
+                            context.theme.iconTheme.color != null
+                                ? ColorFilter.mode(
+                                  context.theme.iconTheme.color!,
+                                  BlendMode.srcIn,
+                                )
+                                : null,
                         width: IconSize.medium,
                       ),
                     ),
@@ -73,10 +81,7 @@ class _ThemeSelector extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(
-          context.l10n.themeWithColon,
-          style: context.textTheme.titleMedium,
-        ),
+        Text(context.l10n.themeWithColon, style: context.textTheme.titleMedium),
         SharpToggleSwitch(
           onToggle: (position) {
             if (position == SwitchPosition.left) {
@@ -93,7 +98,7 @@ class _ThemeSelector extends StatelessWidget {
           leftSwitch: context.l10n.light,
           rightSwitch: context.l10n.dark,
           primaryColor: context.theme.primaryColorLight,
-          secondaryColor: context.colorScheme.background,
+          secondaryColor: context.colorScheme.surface,
         ),
       ],
     );

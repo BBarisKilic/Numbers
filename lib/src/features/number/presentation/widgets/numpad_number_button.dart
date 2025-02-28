@@ -7,11 +7,11 @@ class _NumpadNumberButton extends StatelessWidget {
     this.borderRadius = BorderRadius.zero,
     int? mainAxisCellCount,
     int? crossAxisCellCount,
-  })  : mainAxisCellCount = mainAxisCellCount ?? 1,
-        crossAxisCellCount = crossAxisCellCount ?? 1;
+  }) : mainAxisCellCount = mainAxisCellCount ?? 1,
+       crossAxisCellCount = crossAxisCellCount ?? 1;
 
   final String title;
-  final void Function() onPressed;
+  final VoidCallback onPressed;
   final int mainAxisCellCount;
   final int crossAxisCellCount;
   final BorderRadius borderRadius;
@@ -25,18 +25,17 @@ class _NumpadNumberButton extends StatelessWidget {
         onPressed: onPressed,
         style: ButtonStyle(
           tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-          backgroundColor: MaterialStateProperty.all(
-            context.colorScheme.primary,
-          ),
-          overlayColor: MaterialStateProperty.all(context.theme.splashColor),
-          shape: MaterialStateProperty.all(
+          backgroundColor: WidgetStateProperty.all(context.colorScheme.primary),
+          overlayColor: WidgetStateProperty.all(context.theme.splashColor),
+          shape: WidgetStateProperty.all(
             RoundedRectangleBorder(borderRadius: borderRadius),
           ),
         ),
         child: Text(
           title,
-          style: context.textTheme.displayMedium
-              ?.copyWith(color: const Color(0xFFF8F3F7)),
+          style: context.textTheme.displayMedium?.copyWith(
+            color: const Color(0xFFF8F3F7),
+          ),
         ),
       ),
     );

@@ -14,26 +14,11 @@ final class SettingsCubit extends Cubit<SettingsState> {
 
   void _loadOptions(AppLocalizations l10n) {
     final options = <Option>[
-      Option(
-        iconPath: Assets.images.theme,
-        title: l10n.themeOptions,
-      ),
-      Option(
-        iconPath: Assets.images.star,
-        title: l10n.rateUs,
-      ),
-      Option(
-        iconPath: Assets.images.mail,
-        title: l10n.contactUs,
-      ),
-      Option(
-        iconPath: Assets.images.terms,
-        title: l10n.termsAndConditions,
-      ),
-      Option(
-        iconPath: Assets.images.privacy,
-        title: l10n.privacyPolicy,
-      ),
+      Option(iconPath: Assets.images.theme, title: l10n.themeOptions),
+      Option(iconPath: Assets.images.star, title: l10n.rateUs),
+      Option(iconPath: Assets.images.mail, title: l10n.contactUs),
+      Option(iconPath: Assets.images.terms, title: l10n.termsAndConditions),
+      Option(iconPath: Assets.images.privacy, title: l10n.privacyPolicy),
     ];
 
     emit(SettingsState.loaded(options: options));

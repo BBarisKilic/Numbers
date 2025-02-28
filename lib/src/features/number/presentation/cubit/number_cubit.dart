@@ -10,9 +10,9 @@ final class NumberCubit extends Cubit<NumberState> {
   NumberCubit({
     required GetNumberUseCase getNumberUseCase,
     required GetRandomNumberUseCase getRandomNumberUseCase,
-  })  : _getNumberUseCase = getNumberUseCase,
-        _getRandomNumberUseCase = getRandomNumberUseCase,
-        super(const NumberState.initial());
+  }) : _getNumberUseCase = getNumberUseCase,
+       _getRandomNumberUseCase = getRandomNumberUseCase,
+       super(const NumberState.initial());
 
   final GetNumberUseCase _getNumberUseCase;
   final GetRandomNumberUseCase _getRandomNumberUseCase;
@@ -20,12 +20,13 @@ final class NumberCubit extends Cubit<NumberState> {
   Future<void> getNumberInfo({required int number}) async {
     emit(const NumberState.loading());
 
-    final dataState =
-        await _getNumberUseCase(params: GetNumberParams(number: number));
+    final dataState = await _getNumberUseCase(
+      params: GetNumberParams(number: number),
+    );
 
     switch (dataState) {
       case DataSuccess(data: final number):
-        emit(NumberState.loaded(info: number!.info));
+        emit(NumberState.loaded(info: number.info));
       case DataFailure():
         emit(const NumberState.error());
     }
@@ -38,7 +39,7 @@ final class NumberCubit extends Cubit<NumberState> {
 
     switch (dataState) {
       case DataSuccess(data: final number):
-        emit(NumberState.loaded(info: number!.info));
+        emit(NumberState.loaded(info: number.info));
       case DataFailure():
         emit(const NumberState.error());
     }

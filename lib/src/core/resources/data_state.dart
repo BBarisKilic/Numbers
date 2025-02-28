@@ -1,18 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:numbers/src/core/core.dart';
 
-@immutable
-sealed class DataState<T> {
-  const DataState({this.data, this.details});
+part 'data_state.freezed.dart';
 
-  final T? data;
-  final ErrorDetails? details;
-}
-
-final class DataSuccess<T> extends DataState<T> {
-  const DataSuccess(T data) : super(data: data);
-}
-
-final class DataFailure<T> extends DataState<T> {
-  const DataFailure(ErrorDetails details) : super(details: details);
+@freezed
+sealed class DataState<T> with _$DataState<T> {
+  const factory DataState.dataSuccess(T data) = DataSuccess<T>;
+  const factory DataState.dataFailure(ErrorDetails details) = DataFailure<T>;
 }

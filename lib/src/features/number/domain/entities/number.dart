@@ -4,6 +4,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 part 'number.freezed.dart';
 
 @freezed
-class Number with _$Number {
+abstract class Number with _$Number {
   const factory Number({required String info}) = _Number;
 }
