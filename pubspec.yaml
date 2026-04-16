@@ -37,7 +37,7 @@ dev_dependencies:
     sdk: flutter
   freezed: ^3.2.5
   json_serializable: ^6.13.1
-  mocktail: ^1.0.4
+  mocktail: ^1.0.5
   very_good_analysis: ^10.2.0
 
 flutter_gen:
