@@ -38,7 +38,7 @@ dev_dependencies:
   freezed: ^3.2.5
   json_serializable: ^6.13.2
   mocktail: ^1.0.5
-  very_good_analysis: ^10.2.0
+  very_good_analysis: ^10.3.0
 
 flutter_gen:
   output: lib/src/core/constants/
